@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🪪Badiyatga Ro'yxatdan O'tish</title>
+    <link rel="stylesheet" href="sign-up.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>BADIYATDAN<br />RO‘YXATDAN O‘TING</h1>
+      <p>
+        Do‘stlaringiz nima o‘qiyotganini ko‘ring, kitob tavsiyalarini oling va
+        kitob ustida zavqli suhbatlar uyushtiring
+      </p>
+      <form>
+        <div class="radios">
+          <div class="role-wrapper">
+            <input value="author" name="role" id="author" type="radio" />
+            <label for="author">Author</label>
+          </div>
+          <div class="role-wrapper">
+            <input value="reader" name="role" id="reader" type="radio" />
+            <label for="reader">Reader</label>
+          </div>
+        </div>
+        <input id="firstName" type="text" placeholder="Ism" />
+        <input id="lastName" type="text" placeholder="Familiya" />
+        <input id="email" type="email" placeholder="Elektron pochta" />
+        <input id="phone" type="tel" placeholder="Telefon" />
+        <input id="addres" type="text" placeholder="Address" />
+        <input id="password" type="password" placeholder="Parol" />
+        <input
+          id="password2"
+          type="password"
+          placeholder="Parolni tasdiqlang"
+        />
+        <button onclick="auth()" type="button">Ro‘yxatdan o‘tish</button>
+        <a href="#">Akkountingiz bormi?</a>
+      </form>
+    </div>
+    <script src="sign-up.js"></script>
+  </body>
+</html>
