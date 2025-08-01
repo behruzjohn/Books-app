@@ -1,0 +1,189 @@
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'Steinbeck';
+  src: url(/Books-app/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf)
+    format('truetype');
+}
+
+:root {
+  --main-color: #c9ac8c;
+  --main-bg-color: #191919;
+  --main-font: 'Rotterburg Stylish', sans-serif;
+  --secondary-font: 'Steinbeck', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1224px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+body {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--secondary-font);
+  background-color: var(--main-bg-color);
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+header {
+  border-bottom: 2px solid #ffffff1a;
+  padding: 20px;
+  width: 100%;
+  background-color: transparent;
+}
+.header_nav_h1 {
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+.header_nav {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+.header_nav_ul {
+  display: flex;
+  gap: 50px;
+}
+.header_nav_ul li {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+}
+.header_nav_ul a {
+  font-size: 20px;
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+}
+.profile_box_img {
+  border-radius: 50%;
+}
+.main-book {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+.cover img {
+  width: 400px;
+  height: 600px;
+  border-radius: 10px;
+}
+.details h2 {
+  font-size: 36px;
+  color: #d4a373;
+  margin-bottom: 10px;
+}
+.details ul {
+  list-style: none;
+  padding: 0;
+}
+.details ul li {
+  margin-bottom: 5px;
+}
+.desc {
+  color: #fff;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+.formats span {
+  background: #333;
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.add-btn {
+  margin-top: 20px;
+  background: #d4a373;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+.footer {
+  margin-top: 50px;
+}
+.footer h3 {
+  margin-bottom: 15px;
+}
+.suggested {
+  display: flex;
+  gap: 45px;
+}
+.suggested img {
+  width: 120px;
+  border-radius: 8px;
+}
+.laster {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.misol {
+  display: flex;
+  align-items: center;
+}
+.misollar {
+  padding: 15px;
+  background-color: #3333337e;
+  margin: 10px;
+  width: 700px;
+  margin-left: 100px;
+}
+.misollar2 {
+  background-color: #33333389;
+  padding: 32px 10px;
+  width: 500px;
+  height: 106px;
+}
+.iqtibos {
+  color: #d4a373;
+}
+.footer-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+.footer {
+  margin-left: 120px;
+  margin-bottom: 100px;
+}
+.active {
+  background: transparent;
+  border: none;
+  padding: 3px;
+  border-bottom: 2px solid #d4a373;
+  color: #c9ac8c;
+}
+.adibim {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.adiblar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.imoje {
+  display: flex;
+  gap: 20px;
+}
+.profile-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}

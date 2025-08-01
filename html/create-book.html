@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/Books-app/css/create-book.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header_nav">
+        <h1 class="header_nav_h1">Badiiyat</h1>
+        <ul class="header_nav_ul">
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Bosh sahifa</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Adiblar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Kategoriya</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Maqolalar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Forum</a>
+          </li>
+        </ul>
+        <div class="profile_box">
+          <img
+            class="profile_box_img"
+            src="/Books-app/asign/image/user-photo.svg"
+            alt="User photo"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="main-page">
+        <div class="main-page_nav">
+          <h1 class="main-page_nav_h1">Yangi kitob qo’shish</h1>
+          <div class="warning">
+            <p class="warning_p">
+              Eslatma: Badiiyat ma'lumotlar bazasida allaqachon 12 milliondan
+              ortiq kitob mavjud, shuning uchun kitob qo'shishdan oldin
+              qidiring, chunki u duplikat bo'lishi mumkin. Iltimos, o'ng
+              tarafdagi ko'rsatmalarni, ayniqsa qanday kitoblarni qo'shish
+              kerakligi haqidagi qismini diqqat bilan o'qing.
+            </p>
+          </div>
+          <div class="main_page_box">
+            <div class="main_page_box1">
+              <div class="main-inp">
+                <p class="warning_p">Title</p>
+                <input
+                  id="book-name"
+                  class="warning_input1"
+                  type="text"
+                  placeholder="Kichkina Shahzoda"
+                />
+              </div>
+              <div class="inputs">
+                <div class="inputs_box">
+                  <p class="warning_p">Country</p>
+                  <input id="country" type="text" placeholder="Country" />
+                </div>
+                <div class="inputs_box">
+                  <p class="warning_p">language</p>
+                  <input id="inputs_ss" type="text" placeholder="language" />
+                </div>
+              </div>
+              <div class="inputs_box">
+                <p class="settings_sec_p">Description</p>
+                <input
+                  id="description"
+                  class="warning_input1"
+                  type="text"
+                  placeholder="Your Description"
+                />
+                <p class="warning_p">Sahifalar soni</p>
+                <input
+                  id="pages"
+                  class="num_inp"
+                  type="number"
+                  placeholder="458"
+                />
+              </div>
+              <div class="other_inp">
+                <div class="inputs_box">
+                  <p class="warning_p">Price</p>
+                  <input id="price" class="date_inp" type="number" />
+                </div>
+                <div class="inputs_box">
+                  <p class="warning_p">Rate</p>
+                  <input
+                    id="rate"
+                    class="last_inp"
+                    type="number"
+                    placeholder="Max 5"
+                  />
+                </div>
+              </div>
+              <p>Tavfsif</p>
+              <div class="tafsif_box">
+                <div class="tafsif_box_nav">
+                  <h3>Why you should read Ikki eshik orasi?</h3>
+                  <p class="tafsif_box_nav_p">
+                    Having worked with Peter - and the PayPal mafia more
+                    generally - for almost 10 years now, I have a unique
+                    perspective on Zero to One. Many of the ideas contained
+                    within are familiar to me. The launching point for the book
+                    is Peter's stock interview question - a question he asked me
+                    8 years ago. 'What is something you think is true, but that
+                    most people disagree with you on?' My answer at the time
+                    (2006) was: 'There is a bubble in housing.' Of course, that
+                    was cheating, since I knew this was a pet idea of Peter's.
+                    Not surprisingly, he asked if I had another answer. I
+                    didn't, but I extemp-ed some bs about how FDI in Iraq was a
+                    good idea. Luckily I was strong enough in other ways to make
+                    it through. His breakdown of this question and why it's so
+                    difficult to answer is incisive and in itself reveals a
+                    truth that is lying in plain sight. Very few ideas are both
+                    contrarian and correct. And, yet, finding that combination
+                    is critical to successful investing, entrepreneurship, or
+                    even career development. The book moves at a quick, clear
+                    pace with examples generously distributed throughout. Even
+                    the Bible quotes (and nerd Bible quotes - i.e. Lord of the
+                    Rings) feel natural or at least refreshing. Moreover, as
+                    Peter is wont to do, there are several easter eggs or dog
+                    whistles in the text which hint at some of Peter's more
+                    unique ideas. Of course I am biased, but particularly in the
+                    'business' category, Zero to One is a special and
+                    thought-provoking book.
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="settings">
+                <h1 class="settings_h1">Ishchi sozlamalar</h1>
+                <p class="settings_p">
+                  Asl nashr etilgan sana, personajlar, mukofotlar va sozlamalar
+                  ushbu asardagi barcha kitoblarga tegishli.
+                </p>
+              </div> -->
+
+              <button onclick="addBook()" class="time_box_btn">
+                Kitobni qo’shish
+              </button>
+            </div>
+
+            <div class="add-images">
+              <p class="add-images_p">Muqova</p>
+              <div class="image_box">
+                <div class="image_box_nav">
+                  <div class="image_box_nav1">
+                    <img
+                      src="/Books-app/asign/image/camera.svg"
+                      alt="Camera Logo"
+                    />
+                    <p class="image_box_nav1_p">
+                      Asl nashr etilgan sana, personajlar, mukofotlar va
+                    </p>
+                    <button
+                      id="showBtn"
+                      onclick="showFile()"
+                      class="image_box_nav_img"
+                    >
+                      Fayl yuklash
+                    </button>
+                    <input onclick="handleFileChange()" id="file" type="file" />
+                  </div>
+                </div>
+              </div>
+              <div class="qoidalar">
+                <h3 class="qoidalar_h3">Qoidalar</h3>
+                <div class="qoidalar_nav">
+                  <p class="Mualliflar">
+                    <span> Mualliflar:</span> Mualliflarni kitob muqovasida
+                    ko'rsatilgan tartibda yoki muqovasi bo'lmasa yoki turli
+                    nashrlar rozi bo'lmasa, alifbo tartibida qo'shing.
+                  </p>
+                  <p class="format">
+                    <span>Sarlavha: </span>Agar kitob turkumda bo'lsa,
+                    sarlavhadan keyin qaysi kitob ekanligini qavs ichiga
+                    qo'ying. Masalan, Garri Potter va sehrgarning toshi (Garri
+                    Potter, №1). Qo'shimcha qoidalar bu erda.
+                  </p>
+                  <p class="sarlafha">
+                    <span> Mualliflar:</span> Mualliflarni kitob muqovasida
+                    ko'rsatilgan tartibda yoki muqovasi bo'lmasa yoki turli
+                    nashrlar rozi bo'lmasa, alifbo tartibida qo'shing.
+                  </p>
+
+                  <p class="books_type">
+                    <span>Kitoblar turlari:</span>Iltimos, faqat kitoblarni
+                    qo'shing. Kitoblar odatda ISBN raqamlariga ega (lekin shart
+                    emas) va odatda nashr etiladi. Gazeta, jurnal va komikslar
+                    kabi davriy nashrlar kitob emas. Biroq, komikslar yoki
+                    maqolalar yoki grafik romanlar to'plami kitob hisoblanadi.
+                  </p>
+                </div>
+                <div class="add-book_box">
+                  <button onclick="addBook()" class="time_box_btn1">
+                    Kitobni qo’shish
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/Books-app/java-script/create-book.js"></script>
+  </body>
+</html>
