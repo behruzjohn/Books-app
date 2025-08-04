@@ -6,6 +6,7 @@ document.getElementById('file').addEventListener('click', handleFileChange);
 document.getElementById('showBtn').addEventListener('click', showFile);
 
 async function checkUser() {
+  const load = document.getElementById('load');
   const firstName = document.getElementById('firstName');
   const lastName = document.getElementById('lastName');
   const email = document.getElementById('email');
@@ -50,6 +51,8 @@ async function checkUser() {
       password.value
     );
 
+    load.style.display = 'flex';
+
     try {
       const res = await fetch(backendUrl + '/sign-up', {
         method: 'POST',
@@ -60,9 +63,9 @@ async function checkUser() {
       });
 
       const data = await res.json();
-      console.log(data);
 
       if (data.token) {
+        load.style.display = 'none';
         localStorage.setItem('token', data.token);
         alert(`Ro'yxatdan o'tdingiz`);
       }
