@@ -10,8 +10,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/sign-up.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
   </head>
   <body>
+    <div id="load" class="load">
+      <span class="loader"></span>
+    </div>
     <div class="container">
       <h1>BADIYATDAN<br />RO‘YXATDAN O‘TING</h1>
       <p>
@@ -19,20 +23,6 @@
         kitob ustida zavqli suhbatlar uyushtiring
       </p>
 
-      <div class="image_box">
-        <div class="image_box_nav">
-          <div class="image_box_nav1">
-            <img src="/asign/image/camera.svg" alt="Camera Logo" />
-            <p class="image_box_nav1_p">
-              Asl nashr etilgan sana, personajlar, mukofotlar va
-            </p>
-            <button id="showBtn" onclick="showFile()" class="image_box_nav_img">
-              Fayl yuklash
-            </button>
-            <input id="file" type="file" onchange="handleFileChange(this)" />
-          </div>
-        </div>
-      </div>
       <form>
         <div class="radios">
           <div class="role-wrapper">
@@ -55,9 +45,15 @@
           type="password"
           placeholder="Parolni tasdiqlang"
         />
-        <button onclick="auth()" type="button">Ro‘yxatdan o‘tish</button>
-        <a href="#">Akkountingiz bormi?</a>
       </form>
+      <button style="margin-top: 20px" onclick="checkUser()" id="registerBtn">
+        Ro'yxatdan o'tish
+      </button>
+      <div class="last_div">
+        <a href="http://127.0.0.1:5500/html/sign-in.html"
+          >Akkountingiz bormi?</a
+        >
+      </div>
     </div>
     <script src="/java-script/sign-up.js"></script>
   </body>

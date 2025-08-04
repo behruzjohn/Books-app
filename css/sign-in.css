@@ -1,33 +1,69 @@
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'Steinbeck';
+  src: url(../fonts/RotterburgstylishfreeRegular-ZVZ5B.otf) format('truetype');
+}
+
+:root {
+  --main-color: #c9ac8c;
+  --main-bg-color: #191919;
+  --main-font: 'Rotterburg Stylish', sans-serif;
+  --secondary-font: 'Steinbeck', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1224px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
 body {
   margin: 0;
-  background: #0f0f0f;
-  font-family: 'Georgia', serif;
   color: #e0d6c5;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
+  border-bottom: 2px solid #ffffff1a;
+  padding: 20px;
+  width: 100%;
+  background-color: transparent;
+}
+.header_nav_h1 {
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+.header_nav {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  justify-content: space-around;
   align-items: center;
-  padding: 20px 40px;
-  background-color: #1a1a1a;
+  display: flex;
 }
-
-.logo {
-  font-family: 'Georgia', cursive;
-  font-size: 24px;
+.header_nav_ul {
+  display: flex;
+  gap: 50px;
 }
-
-nav a {
-  margin: 0 10px;
-  color: #fff;
+.header_nav_ul li {
+  display: flex;
   text-decoration: none;
+  list-style: none;
 }
-
-nav .active {
-  border-bottom: 2px solid #d7b892;
+.header_nav_ul a {
+  font-size: 20px;
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
 }
-
+.profile_box_img {
+  border-radius: 50%;
+}
 .login-btn {
   padding: 10px 20px;
   background-color: #d7b892;
@@ -37,7 +73,7 @@ nav .active {
   cursor: pointer;
 }
 
-.container {
+.coontainer {
   max-width: 400px;
   margin: 100px auto;
   text-align: center;
@@ -77,4 +113,14 @@ a {
   font-size: 13px;
   color: #b8b8b8;
   text-decoration: none;
+}
+@media only screen and (max-width: 768px) {
+  .header_nav_ul {
+    flex-direction: column;
+    display: none;
+  }
+  .header_nav {
+    justify-content: space-between;
+    padding: 0 25px;
+  }
 }

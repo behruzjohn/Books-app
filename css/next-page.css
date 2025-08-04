@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'Rotterburg Stylish';
-  src: url(/Books-app/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf)
-    format('truetype');
+  src: url(/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf) format('truetype');
 }
 :root {
   --main-color: #c9ac8c;

@@ -1,45 +1,107 @@
-export const backendUrl = 'https://bookzone-backend.onrender.com/api';
+const backendUrl = 'https://bookzone-backend.onrender.com/api';
 let selectedFile;
 
-class GetUser {
-  constructor(firstName, lastName, email, phone, role, image, password) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.phone = phone;
-    this.role = role;
-    this.image = image;
-    this.password = password;
+document.getElementById('registerBtn').addEventListener('click', checkUser);
+document.getElementById('file').addEventListener('click', handleFileChange);
+document.getElementById('showBtn').addEventListener('click', showFile);
+
+async function checkUser() {
+  const load = document.getElementById('load');
+  const firstName = document.getElementById('firstName');
+  const lastName = document.getElementById('lastName');
+  const email = document.getElementById('email');
+  const phone = document.getElementById('phone');
+  const password = document.getElementById('password');
+  const password2 = document.getElementById('password2');
+
+  const isPasswordCorrect = checkPassword(password, password2);
+  const isNameTrue = checkName(firstName, lastName);
+  const isNumber = checkPhone(phone);
+
+  const checkRole = document.querySelectorAll("input[name='role']");
+  let role = null;
+  for (const key of checkRole) {
+    if (key.checked) {
+      role = key.value;
+    }
+  }
+
+  if (!role) {
+    alert('Rolni tanlang');
+    return;
+  }
+
+  if (isPasswordCorrect && isNameTrue && isNumber) {
+    class GetUser {
+      constructor(firstName, lastName, email, phone, role, password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.role = role;
+        this.password = password;
+      }
+    }
+    const user = new GetUser(
+      firstName.value,
+      lastName.value,
+      email.value,
+      phone.value,
+      role,
+      password.value
+    );
+
+    load.style.display = 'flex';
+
+    try {
+      const res = await fetch(backendUrl + '/sign-up', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...user, date_of_birth: new Date() }),
+      });
+
+      const data = await res.json();
+
+      if (data.token) {
+        load.style.display = 'none';
+        localStorage.setItem('token', data.token);
+        alert(`Ro'yxatdan o'tdingiz`);
+      }
+    } catch (err) {
+      console.error('Xatolik:', err);
+    }
   }
 }
+
 function checkPhone(phone) {
-  if (phone.value.length > 10) {
+  if (phone.value.length > 15 || isNaN(phone.value)) {
     phone.style.border = '3px solid red';
     phone.style.color = 'red';
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
-function checkName() {
+
+function checkName(firstName, lastName) {
   if (firstName.value === '' || lastName.value === '') {
     firstName.style.border = '3px solid red';
     lastName.style.border = '3px solid red';
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
 function checkPassword(password, confirmPassword) {
-  if (password.value.length > 8 || confirmPassword.value.length > 8) {
-    alert(`Siz parolni qaytadan to'gri yozing!`);
+  if (password.value !== confirmPassword.value) {
+    alert('Parollingiz xato');
     confirmPassword.style.border = '3px solid red';
-    confirmPassword.style.color = 'red';
     return false;
   } else {
-    return true;
+    confirmPassword.style.border = 'none';
   }
+  return true;
 }
 
 function showFile() {
@@ -48,88 +110,11 @@ function showFile() {
 
   file.style.display = 'block';
   showBtn.style.display = 'none';
-  console.log(file.files);
 }
 
 function handleFileChange(e) {
   const file = e.files[0];
-
   if (file) {
     selectedFile = file;
-  }
-}
-
-async function auth() {
-  const checkRole = document.querySelectorAll(`input[name='role']`);
-  let role = null;
-  for (const key of checkRole) {
-    if (key.checked) {
-      role = key.value;
-      break;
-    }
-  }
-
-  const firstName = document.getElementById('firstName');
-  const lastName = document.getElementById('lastName');
-  const email = document.getElementById('email');
-  const phone = document.getElementById('phone');
-  const address = document.getElementById('addres');
-  const password = document.getElementById('password');
-  const password2 = document.getElementById('password2');
-
-  if (firstName.value && lastName.value === '') {
-    alert('Error');
-  } else if (isNaN === phone.value) {
-    alert('Error');
-  } else if (password.value.lenght > 8) {
-    alert('Error');
-  }
-
-  const isPasswordCorrect = checkPassword(password, password2);
-  const isNameTrue = checkName(firstName, lastName);
-  const isNumber = checkPhone(phone);
-  let imgId = '';
-  if (selectedFile) {
-    const formData = new FormData();
-
-    formData.append('files', selectedFile);
-
-    console.log(selectedFile);
-
-    const imgUrl = await fetch(backendUrl + '/files/', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((res) => res);
-
-    if (imgUrl.payload[0]._id) {
-      imgId = imgUrl.payload[0]._id;
-    }
-  }
-
-  if (isPasswordCorrect && isNameTrue && isNumber) {
-    const user = new GetUser(
-      firstName.value,
-      lastName.value,
-      email.value,
-      phone.value,
-      role,
-      imgId,
-      password.value
-    );
-
-    const user3 = await fetch(backendUrl + '/sign-up', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ ...user, date_of_birth: new Date() }),
-    }).then((res) => res.json());
-    console.log(user3);
-    localStorage.setItem('token', user3);
   }
 }
