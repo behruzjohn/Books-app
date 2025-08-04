@@ -2,8 +2,7 @@
   font-style: normal;
   font-weight: normal;
   font-family: 'Steinbeck';
-  src: url(/Books-app/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf)
-    format('truetype');
+  src: url(/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf) format('truetype');
 }
 
 :root {

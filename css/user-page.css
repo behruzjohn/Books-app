@@ -1,0 +1,164 @@
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'Steinbeck';
+  src: url(../fonts/RotterburgstylishfreeRegular-ZVZ5B.otf) format('truetype');
+}
+
+:root {
+  --main-color: #c9ac8c;
+  --main-bg-color: #191919;
+  --main-font: 'Rotterburg Stylish', sans-serif;
+  --secondary-font: 'Steinbeck', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1224px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
+}
+
+header {
+  border-bottom: 2px solid #ffffff1a;
+  padding: 20px;
+  width: 100%;
+  background-color: transparent;
+}
+.header_nav_h1 {
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+.header_nav {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+.header_nav_ul {
+  display: flex;
+  gap: 50px;
+}
+.header_nav_ul li {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+}
+.header_nav_ul a {
+  font-size: 20px;
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+}
+.profile_box_img {
+  border-radius: 50%;
+}
+.imgages_h3 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #c9ac8c;
+}
+.imgages_p {
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+}
+.user-banner_nav {
+  padding: 20px;
+  gap: 35px;
+  display: flex;
+}
+.user-banner {
+  background-image: url(../asign/image/user-banner_bg.png);
+  border-radius: 15px;
+}
+.imgages {
+  text-align: center;
+}
+.imgages img {
+  width: 170px;
+  height: 170px;
+}
+.user-banner_info h1 {
+  color: #c9ac8c;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.user-banner_info {
+  margin-top: 10px;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.user-banner_info p {
+  color: gray;
+}
+.user-banner_info strong {
+  color: #fff;
+}
+.books-header_nav ul {
+  text-decoration: none;
+  list-style: none;
+  gap: 100px;
+  color: #ffffff99;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+}
+.main-li {
+  color: #c9ac8c;
+}
+.books-header_nav {
+  padding: 25px 0;
+  display: flex;
+  justify-content: center;
+}
+.books {
+  color: #fff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 20px;
+}
+.books_box_h3 {
+  color: var(--main-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.reyting {
+  color: #fff;
+  display: flex;
+  gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .header_nav_ul {
+    flex-direction: column;
+    display: none;
+  }
+  .header_nav {
+    justify-content: space-between;
+    padding: 0 25px;
+  }
+  .books-header_nav {
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+  }
+  .books-header_nav ul {
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .books-header_nav li {
+    width: 450px;
+    height: 30px;
+    background-color: rgba(39, 39, 40, 0.833);
+    border-radius: 12px;
+  }
+}

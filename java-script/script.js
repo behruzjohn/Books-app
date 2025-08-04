@@ -1,4 +1,11 @@
-import { backendUrl } from './sign-up.js';
+const backendUrl = 'https://bookzone-backend.onrender.com/api';
+const res = await fetch(backendUrl + '/books/', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  // GET metodida `body` bo‘lmaydi
+});
 
-console.log(backendUrl);
-        
+const data = await res.json();
+console.log(data);
