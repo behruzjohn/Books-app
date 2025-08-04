@@ -1,0 +1,146 @@
+@font-face {
+  font-family: 'Rotterburg Stylish';
+  src: url(/Books-app/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf)
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Steinbeck';
+  src: url(../fonts/Steinbeck\ Reg.ttf) format('truetype');
+}
+
+:root {
+  --main-color: #c9ac8c;
+  --main-bg-color: #191919;
+  --main-font: 'Rotterburg Stylish', sans-serif;
+  --secondary-font: 'Steinbeck', sans-serif;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  margin: 0;
+  background: #0f0f0f;
+  font-family: var(--secondary-font);
+  color: #e0d6c5;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--main-font);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #b8b8b8;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.image_box {
+  margin-bottom: 25px;
+  max-width: 100%;
+  /* height: 180px; */
+  padding: 24px 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  background-color: #333030;
+  align-items: center;
+}
+.image_box_nav1 {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+.image_box_nav1_p {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #b8b8b8;
+}
+
+.image_box_nav_img {
+  width: 141px;
+  background-color: var(--main-color);
+  color: #3c2710;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+#file {
+  display: none;
+  width: 141px;
+  height: 33px;
+}
+input {
+  padding: 12px;
+  background: #1f1f1f;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+button {
+  padding: 8px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  background-color: #d7b892;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #b8b8b8;
+  text-decoration: none;
+}
+.radios {
+  gap: 16px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.role-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 8px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #c9ac8c;
+
+  label {
+    color: black;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/create-book.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header_nav">
+      <h1 class="header_nav_h1">Badiiyat</h1>
+      <ul class="header_nav_ul">
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Bosh sahifa</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Adiblar</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Kategoriya</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Maqolalar</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Forum</a>
+        </li>
+      </ul>
+      <div class="profile_box">
+        <img class="profile_box_img" src="/asign/image/user-photo.svg" alt="User photo" />
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="main-page">
+      <div class="main-page_nav">
+        <h1 class="main-page_nav_h1">Kitobni tahrirlash!</h1>
+        <div class="warning">
+          <p class="warning_p">
+            Eslatma: Badiiyat ma'lumotlar bazasida allaqachon 12 milliondan
+            ortiq kitob mavjud, shuning uchun kitob qo'shishdan oldin
+            qidiring, chunki u duplikat bo'lishi mumkin. Iltimos, o'ng
+            tarafdagi ko'rsatmalarni, ayniqsa qanday kitoblarni qo'shish
+            kerakligi haqidagi qismini diqqat bilan o'qing.
+          </p>
+        </div>
+        <div class="main_page_box">
+          <div class="main_page_box1">
+            <div class="main-inp">
+              <p class="warning_p">Nomi</p>
+              <input id="book-name" class="warning_input1" type="text" placeholder="Kichkina Shahzoda" />
+            </div>
+            <div class="inputs">
+              <div class="inputs_box">
+                <p class="warning_p">Shahar</p>
+                <input id="country" type="text" placeholder="Country" />
+              </div>
+              <div class="inputs_box">
+                <p class="warning_p">Til</p>
+                <input id="inputs_ss" type="text" placeholder="language" />
+              </div>
+            </div>
+            <div class="inputs_box">
+              <p class="settings_sec_p">Tavsiflash</p>
+              <input id="description" class="warning_input1" type="text" placeholder="Your Description" />
+              <p class="warning_p">Sahifalar soni</p>
+              <input id="pages" class="num_inp" type="number" placeholder="458" />
+            </div>
+            <div class="other_inp">
+              <div class="inputs_box">
+                <p class="warning_p">Narx</p>
+                <input id="price" class="date_inp" type="number" placeholder="$" />
+              </div>
+              <div class="inputs_box">
+                <p class="warning_p">Ball</p>
+                <input id="rate" class="last_inp" type="number" placeholder="Max 5" />
+              </div>
+            </div>
+            <p class="settings_sec_p">Tavfsiflash</p>
+            <div class="tafsif_box">
+              <div class="tafsif_box_nav">
+                <h3>Nma uchun 2 eshik orasi kitobini uqiyabsiz?</h3>
+                <p class="tafsif_box_nav_p">
+                  Piter bilan va umuman PayPal mafiyasi bilan deyarli 10 yildan beri ishlaganim sababli, men "Zero to
+                  One"ga o'ziga xos nuqtai nazarga egaman. Ichidagi ko'plab fikrlar menga tanish. Kitobning boshlanish
+                  nuqtasi Piterning birja intervyusi savolidir - u menga 8 yil oldin bergan savol. — Sizning
+                  fikringizcha, rost, lekin ko'pchilik siz bilan rozi bo'lmagan narsa nima? O'sha paytdagi javobim (2006
+                  yil): "Uy-joyda pufak bor". Albatta, bu aldamchilik edi, chunki bu Piterning uy hayvonlari fikri
+                  ekanligini bilardim. Boshqa javobim bormi, deb so‘rasa ajabmas. Men buni qilmadim, lekin Iroqda
+                  to'g'ridan-to'g'ri xorijiy investitsiyalar qanday yaxshi g'oya bo'lganligi haqida ba'zi bslarni
+                  chiqarib tashladim. Yaxshiyamki, men buni amalga oshirish uchun boshqa yo'llar bilan etarlicha kuchli
+                  edim. Uning bu savolni va nima uchun javob berish juda qiyinligini ta'rifi keskin va o'z-o'zidan
+                  ko'zga tashlanadigan haqiqatni ochib beradi. Qarama-qarshi va to'g'ri fikrlar juda kam. Va shunga
+                  qaramay, bu kombinatsiyani topish muvaffaqiyatli investitsiya, tadbirkorlik yoki hatto martaba
+                  rivojlanishi uchun juda muhimdir. Kitob tez va aniq sur'atda harakat qiladi, misollar saxovatli tarzda
+                  tarqatiladi. Hatto Muqaddas Kitob iqtiboslari (va nodon Muqaddas Kitob iqtiboslari - ya'ni Uzuklar
+                  Egasi) tabiiy yoki hech bo'lmaganda tetiklantiruvchi his qiladi. Bundan tashqari, Piter odat
+                  qilganidek, matnda bir nechta Pasxa tuxumlari yoki it hushtaklari mavjud bo'lib, ular Butrusning ba'zi
+                  noyob g'oyalariga ishora qiladi. Albatta, men tarafkashman, lekin, ayniqsa, “biznes” toifasida, “Zero
+                  to One” alohida va o'ylantiruvchi kitob.
+                </p>
+              </div>
+            </div>
+            <!-- <div class="settings">
+                <h1 class="settings_h1">Ishchi sozlamalar</h1>
+                <p class="settings_p">
+                  Asl nashr etilgan sana, personajlar, mukofotlar va sozlamalar
+                  ushbu asardagi barcha kitoblarga tegishli.
+                </p>
+              </div> -->
+
+            <button onclick="addBook()" class="time_box_btn">
+              Kitobni tahrirlashga ruxsat!
+            </button>
+          </div>
+
+          <div class="add-images">
+            <p class="add-images_p">Muqova</p>
+            <div class="image_box">
+              <div class="image_box_nav">
+                <div class="image_box_nav1">
+                  <img src="/asign/image/camera.svg" alt="Camera Logo" />
+                  <p class="image_box_nav1_p">
+                    Asl nashr etilgan sana, personajlar, mukofotlar va
+                  </p>
+                  <button id="showBtn" onclick="showFile()" class="image_box_nav_img">
+                    Fayl yuklash
+                  </button>
+                  <input onclick="handleFileChange()" id="file" type="file" />
+                </div>
+              </div>
+            </div>
+            <div class="qoidalar">
+              <h3 class="qoidalar_h3">Qoidalar</h3>
+              <div class="qoidalar_nav">
+                <p class="Mualliflar">
+                  <span> Mualliflar:</span> Mualliflarni kitob muqovasida
+                  ko'rsatilgan tartibda yoki muqovasi bo'lmasa yoki turli
+                  nashrlar rozi bo'lmasa, alifbo tartibida qo'shing.
+                </p>
+                <p class="format">
+                  <span>Sarlavha: </span>Agar kitob turkumda bo'lsa,
+                  sarlavhadan keyin qaysi kitob ekanligini qavs ichiga
+                  qo'ying. Masalan, Garri Potter va sehrgarning toshi (Garri
+                  Potter, №1). Qo'shimcha qoidalar bu erda.
+                </p>
+                <p class="sarlafha">
+                  <span> Mualliflar:</span> Mualliflarni kitob muqovasida
+                  ko'rsatilgan tartibda yoki muqovasi bo'lmasa yoki turli
+                  nashrlar rozi bo'lmasa, alifbo tartibida qo'shing.
+                </p>
+
+                <p class="books_type">
+                  <span>Kitoblar turlari:</span>Iltimos, faqat kitoblarni
+                  qo'shing. Kitoblar odatda ISBN raqamlariga ega (lekin shart
+                  emas) va odatda nashr etiladi. Gazeta, jurnal va komikslar
+                  kabi davriy nashrlar kitob emas. Biroq, komikslar yoki
+                  maqolalar yoki grafik romanlar to'plami kitob hisoblanadi.
+                </p>
+              </div>
+              <div class="add-book_box">
+                <button onclick="addBook()" class="time_box_btn1">
+                  Kitobni qo’shish
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/java-script/create-book.js"></script>
+</body>
+
+</html>

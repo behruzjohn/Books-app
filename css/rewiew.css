@@ -1,0 +1,170 @@
+:root {
+  --main-color: #c9ac8c;
+  --main-bg-color: #191919;
+  --main-font: 'Rotterburg Stylish', sans-serif;
+  --secondary-font: 'Steinbeck', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  font-family: var(--secondary-font);
+  background-color: var(--main-bg-color);
+}
+
+.container {
+  max-width: 1224px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+  border-bottom: 2px solid #ffffff1a;
+  padding: 20px;
+  width: 100%;
+}
+
+.header_nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_nav_h1 {
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 24px;
+}
+
+.header_nav_ul {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.header_nav_ul li {
+  list-style: none;
+}
+
+.header_nav_ul a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile_box_img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.main-book {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+.cover img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.details {
+  max-width: 600px;
+}
+
+.details h2 {
+  font-size: 32px;
+  color: #d4a373;
+}
+
+.desc {
+  color: #fff;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.formats {
+  margin: 15px 0;
+}
+
+.formats span {
+  background: #333;
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.add-btn {
+  margin-top: 20px;
+  background: #d4a373;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+@media (max-width: 808px) {
+  .header_nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .menu-toggle {
+    display: flex;
+    margin: 20px;
+  }
+
+  .main-book {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cover img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .details {
+    max-width: 100%;
+  }
+
+  .header_nav_ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-h {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .laster {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .misol {
+    flex-direction: column;
+    align-items: center;
+  }
+}

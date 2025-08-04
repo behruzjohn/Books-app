@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Qorqma - Rewiew</title>
+  <link rel="stylesheet" href="/css/rewiew.css">
+</head>
+
+<body>
+  <header>
+    <div class="header_nav">
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h1 class="header_nav_h1">Badiiyat</h1>
+      <ul class="header_nav_ul">
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Bosh sahifa</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Adiblar</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Kategoriya</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Maqolalar</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Forum</a>
+        </li>
+      </ul>
+      <div class="profile_box">
+        <img class="profile_box_img" src="/asign/image/user-photo.svg" alt="User photo" />
+      </div>
+    </div>
+  </header>
+  <container class="main-book">
+    <div class="cover">
+      <img src="/asign/image/qurqma.jpg" alt="Qorqma">
+    </div>
+    <div class="details">
+      <h2>QORQMA</h2>
+      <p>Sahifalar soni: <b>376</b></p>
+      <p>Chop etilgan: <b>2021</b></p>
+      <p>Janri: <b>Tarixiy</b></p>
+      <p>Nashriyot: <b>Nihol Nashr</b></p>
+      <h3 class="iqtibos"> To'liq ma'lumot <img src="/asign/image/Subtract.svg" alt="">
+        ---------------------------------------------------------------------</h3>
+      <p class="desc">
+
+        Роман ўтган асрнинг йигирманчи йилларида Германияда таҳсил олган ва собиқ Совет Иттифоқи томонидан
+        шафқатсизларча қатл этилган миллат йигит-қизларининг хотирасига бағишланади.
+
+        Роман воқеаларини қисқача сўзлар билан ифода этиб бўлмайди. Барчаси шу қадар тиғизки, шошириб қўяди. Мажоз,
+        образ, ифода, ўт, ҳеч кимникига ўхшамаган лиризмни ҳис қиласиз. Миллият, соф муҳаббат, кўринмас ва ошкор
+        фожиалар, тарих, бугун ва эртанинг бир-бирига кавшарланган ҳалқаси, ростлик даъвосидаги ёлғонлар, руҳ ва қондаги
+        парадокслар сизни ўтмиш ва келажак куйига асир қилади, ўйлатади, йиғлатади ва аччиқ-аччиқ кулдиради. Ўтган аср
+        бошида Германияда ўқиган талабалар, улар маслаги ва фожиали қисмати бугунги ёшлар мақсади билан бир тарозига
+        тортилади.
+        Мажоз, образ, ифода, ўт, ҳеч кимникига ўхшамаган лиризмни ҳис қиласиз. Миллият, соф муҳаббат, кўринмас ва ошкор
+        фожиалар, тарих, бугун ва эртанинг бир-бирига кавшарланган ҳалқаси, ростлик даъвосидаги ёлғонлар, руҳ ва қондаги
+        парадокслар сизни ўтмиш ва келажак куйига асир қилади, ўйлатади, йиғлатади ва аччиқ-аччиқ кулдиради.
+      </p>
+      <div class="formats">
+        <span>PDF</span>
+        <span>EPUB</span>
+        <span>Audio</span>
+        <span>Onlayn o‘qish</span>
+      </div>
+      <button class="add-btn">Javonga qo‘shish</button>
+
+    </div>
+
+    </div>
+  </container>
+  <script>
+    function toggleMenu() {
+      document.querySelector('nav ul').classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>
