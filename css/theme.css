@@ -1,10 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
   font-family: 'Rotterburg Stylish';
   src: url(/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf) format('truetype');
 }
+
 :root {
   --main-color: #c9ac8c;
   --main-bg-color: #191919;
   --main-font: 'Rotterburg Stylish', sans-serif;
-  --secondary-font: 'Montserrat';
+  --secondary-font: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1224px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
 }

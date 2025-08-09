@@ -82,7 +82,15 @@ nav a {
   margin: 20px 0;
   line-height: 1.6;
 }
+.laster a {
+  color: #fff;
+  text-decoration: none;
+}
 
+.img-sec{
+  display: flex;
+  width: 150px;
+}
 .formats span {
   background: #333;
   padding: 5px 12px;
@@ -153,7 +161,10 @@ nav a {
   justify-content: space-between;
   margin-bottom: 50px;
 }
-
+.active {
+  border-bottom: 2px solid #000;
+  color: #ff6600;
+}
 .imoje {
   width: 30px;
   margin-right: 10px;

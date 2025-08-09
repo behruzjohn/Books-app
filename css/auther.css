@@ -22,6 +22,11 @@
   width: 100%;
   padding: 0 15px;
 }
+.laster a {
+  color: #fff;
+  text-decoration: none;
+}
+
 body {
   color: #fff;
   margin: 0;
@@ -29,6 +34,10 @@ body {
   box-sizing: border-box;
   font-family: var(--secondary-font);
   background-color: var(--main-bg-color);
+}
+.img-sec{
+  display: flex;
+  width: 150px;
 }
 .container {
   width: 90%;
