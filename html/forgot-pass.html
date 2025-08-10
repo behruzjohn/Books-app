@@ -5,46 +5,50 @@
     <title>🪪Badiyatga Kirish</title>
     <link rel="stylesheet" href="/css/sign-in.css" />
     <link rel="stylesheet" href="/css/loader.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/forgot-pass.css" />
   </head>
   <body>
     <div id="load" class="load">
       <span class="loader"></span>
     </div>
-    <div class="container">
-      <header>
-        <div class="header_nav">
-          <h1 class="header_nav_h1">Badiiyat</h1>
-          <ul class="header_nav_ul">
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Bosh sahifa</a>
-            </li>
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Adiblar</a>
-            </li>
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Kategoriya</a>
-            </li>
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Maqolalar</a>
-            </li>
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Forum</a>
-            </li>
-          </ul>
-          <button class="login-btn">Kirish</button>
-        </div>
-      </header>
-    </div>
+    <!-- <div class="container"> -->
+    <header>
+      <div class="header_nav">
+        <h1 class="header_nav_h1">Badiiyat</h1>
+        <ul class="header_nav_ul">
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Bosh sahifa</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Adiblar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Kategoriya</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Maqolalar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Forum</a>
+          </li>
+        </ul>
+        <button class="login-btn">Kirish</button>
+      </div>
+    </header>
+    <!-- </div> -->
 
-    <div class="coontainer">
-      <h2 class="hhh">Parol esdan chiqdimi?!</h2>
-      <form>
-        <input id="email" type="email" placeholder="Elektron pochta" />
-        <button onclick="saveUserInfo()" type="button">
-          Habar yuborish
-        </button>
-        <a href="http://127.0.0.1:5500/html/sign-up.html">Akkountingiz yo'qmi?</a>
-      </form>
+    <div class="forgot">
+      <div class="coontainer">
+        <h2 class="hhh">Parol esdan chiqdimi?!</h2>
+        <form>
+          <input id="email" type="email" placeholder="Elektron pochta" />
+          <button onclick="saveUserInfo()" type="button">Habar yuborish</button>
+          <a href="http://127.0.0.1:5500/html/sign-up.html"
+            >Akkountingiz yo'qmi?</a
+          >
+        </form>
+      </div>
     </div>
     <script src="/java-script/sign-in.js"></script>
   </body>

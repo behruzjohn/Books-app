@@ -1,6 +1,7 @@
 const backendUrl = 'https://bookzone-backend.onrender.com/api';
 const shoirs = document.getElementById('shoirs');
 const load = document.getElementById('load');
+load.style.display = 'flex';
 const bookSeach = document.getElementById('book-search');
 
 let allBooks = [];
@@ -35,7 +36,6 @@ function innerBooks(books) {
 
 const getAuthors = async (text) => {
   shoirs.innerHTML = '';
-  load.style.display = 'flex';
 
   const res = await fetch(
     `${backendUrl}/books/search${text ? `?title=${text}` : ''}`,
