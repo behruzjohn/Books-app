@@ -42,25 +42,30 @@ input {
   color: #ffffff;
 }
 .main-inp {
+  border-radius: 5px;
   margin-top: 20px;
 }
 .num_inp {
   width: 100%;
+  border-radius: 5px;
 }
 .inputs {
   width: 100%;
   margin-top: 5px;
   display: flex;
   gap: 20px;
+  border-radius: 5px;
 }
 .inputs input {
   width: 300px;
+  border-radius: 5px;
 }
 .price {
   width: 100%;
 }
 #inputs_ss {
-  width: 100%;
+  width: 350px;
+  border-radius: 5px;
 }
 .warning_input1 {
   color: #fff;
@@ -69,6 +74,7 @@ input {
   background-color: #333030;
   border: none;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .inputs_box {
@@ -90,10 +96,12 @@ input {
 .date_inp {
   background-color: #544d4d;
   color: #fff;
-  width: 100%;
+  width: 250px;
+  border-radius: 5px;
 }
 .last_inp {
   width: 383px;
+  border-radius: 5px;
 }
 .tafsif_box_nav {
   color: #fff;

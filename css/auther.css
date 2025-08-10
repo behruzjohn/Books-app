@@ -4,7 +4,23 @@
   width: 100%;
   padding: 0 15px;
 }
+.laster a {
+  color: #fff;
+  text-decoration: none;
+}
 
+body {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--secondary-font);
+  background-color: var(--main-bg-color);
+}
+.img-sec {
+  display: flex;
+  width: 150px;
+}
 .container {
   width: 90%;
   margin: auto;
@@ -13,62 +29,78 @@ header {
   border-bottom: 2px solid #ffffff1a;
   padding: 20px;
   width: 100%;
-  background-color: transparent;
 }
+
+.header_nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header_nav_h1 {
   color: var(--main-color);
   font-family: var(--main-font);
+  font-size: 24px;
 }
-.header_nav {
-  justify-content: space-around;
-  align-items: center;
-  display: flex;
-}
+
 .header_nav_ul {
   display: flex;
-  gap: 50px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
+
 .header_nav_ul li {
-  display: flex;
-  text-decoration: none;
   list-style: none;
 }
+
 .header_nav_ul a {
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
-  list-style: none;
   color: #fff;
 }
+
 .profile_box_img {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
+
 .main-book {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
   margin-top: 30px;
+  padding: 0 20px;
+  justify-content: center;
 }
+
 .cover img {
-  width: 400px;
-  height: 600px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   border-radius: 10px;
 }
+
+.details {
+  max-width: 600px;
+}
+
 .details h2 {
-  font-size: 36px;
+  font-size: 32px;
   color: #d4a373;
-  margin-bottom: 10px;
 }
-.details ul {
-  list-style: none;
-  padding: 0;
-}
-.details ul li {
-  margin-bottom: 5px;
-}
+
 .desc {
   color: #fff;
   margin: 20px 0;
   line-height: 1.6;
 }
+
+.formats {
+  margin: 15px 0;
+}
+
 .formats span {
   background: #333;
   padding: 5px 12px;
@@ -85,79 +117,120 @@ header {
   color: #000;
   cursor: pointer;
 }
-.footer {
-  margin-top: 50px;
+
+.label {
+  padding: 20px;
 }
-.footer h3 {
-  margin-bottom: 15px;
-}
-.suggested {
-  display: flex;
-  gap: 45px;
-}
-.suggested img {
-  width: 120px;
-  border-radius: 8px;
-}
+
 .laster {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
 }
+
 .misol {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
 }
-.misollar {
-  padding: 15px;
-  background-color: #3333337e;
-  margin: 10px;
-  width: 700px;
-  margin-left: 100px;
-}
+
+.misollar,
 .misollar2 {
-  background-color: #33333389;
-  padding: 32px 10px;
-  width: 500px;
-  height: 106px;
+  background-color: #3333337e;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 300px;
 }
+
 .iqtibos {
   color: #d4a373;
 }
-.footer-h {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-bottom: 50px;
-}
-.footer {
-  margin-left: 120px;
-  margin-bottom: 100px;
-}
-.active {
-  background: transparent;
-  border: none;
-  padding: 3px;
-  border-bottom: 2px solid #d4a373;
-  color: #c9ac8c;
-}
-.adibim {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
+
+.adibim,
 .adiblar {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 15px;
+  margin-top: 10px;
 }
-.imoje {
+
+.footer {
+  padding: 20px;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.footer-h {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
-.profile-icon img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
+
+.suggested {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.suggested img {
+  width: 100px;
+  border-radius: 8px;
+}
+
+/* Media queries */
+@media (max-width: 808px) {
+  .header_nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .menu-toggle {
+    display: flex;
+    margin: 20px;
+  }
+
+  .main-book {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cover img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .details {
+    max-width: 100%;
+  }
+
+  .header_nav_ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-h {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .laster {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .misol {
+    flex-direction: column;
+    align-items: center;
+  }
 }
