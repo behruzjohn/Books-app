@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/create-book.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
   </head>
   <body>
+    <div id="load" class="load">
+      <span class="loader"></span>
+    </div>
     <header>
       <div class="header_nav">
-        <h1 class="header_nav_h1">Badiiyat</h1>
+        <img src="/asign/image/Logo.svg" alt="" />
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a href="#">Bosh sahifa</a>
@@ -38,7 +43,7 @@
     </header>
     <div class="container">
       <div class="main-page">
-        <div class="main-page_nav">
+        <form id="form" class="main-page_nav">
           <h1 class="main-page_nav_h1">Yangi kitob qo’shish</h1>
           <div class="warning">
             <p class="warning_p">
@@ -57,13 +62,19 @@
                   id="book-name"
                   class="warning_input1"
                   type="text"
+                  required
                   placeholder="Kichkina Shahzoda"
                 />
               </div>
               <div class="inputs">
                 <div class="inputs_box">
-                  <p class="warning_p">Shahr</p>
-                  <input id="country" type="text" placeholder="Country" />
+                  <p class="warning_p">Country</p>
+                  <input
+                    id="country"
+                    required
+                    type="text"
+                    placeholder="Country"
+                  />
                 </div>
                 <div class="inputs_box">
                   <p class="warning_p">Til</p>
@@ -71,75 +82,70 @@
                 </div>
               </div>
               <div class="inputs_box">
-                <p class="settings_sec_p">Tavsiflash</p>
+                <!-- <p class="settings_sec_p">Description</p>
                 <input
                   id="description"
                   class="warning_input1"
                   type="text"
+                  required
                   placeholder="Your Description"
-                />
+                /> -->
                 <p class="warning_p">Sahifalar soni</p>
                 <input
                   id="pages"
                   class="num_inp"
                   type="number"
+                  required
                   placeholder="458"
                 />
               </div>
               <div class="other_inp">
                 <div class="inputs_box">
-                  <p class="warning_p">Narxi</p>
-                  <input id="price" class="date_inp" type="number" />
+                  <p class="warning_p">Price</p>
+                  <input id="price" required class="date_inp" type="number" />
                 </div>
                 <div class="inputs_box">
                   <p class="warning_p">Ball</p>
                   <input
                     id="rate"
                     class="last_inp"
+                    required
                     type="number"
                     placeholder="Max 5"
                   />
                 </div>
-              </div>
-              <p class="settings_sec_p">Tavsif</p>
-              <div class="tafsif_box">
-                <div class="tafsif_box_nav">
-                  <h3>Nma uchun 2 eshik orasi kitobini uqiyabsiz?</h3>
-                  <p class="tafsif_box_nav_p">
-                    Piter bilan va umuman PayPal mafiyasi bilan deyarli 10 yildan beri ishlaganim sababli, men "Zero to
-                  One"ga o'ziga xos nuqtai nazarga egaman. Ichidagi ko'plab fikrlar menga tanish. Kitobning boshlanish
-                  nuqtasi Piterning birja intervyusi savolidir - u menga 8 yil oldin bergan savol. — Sizning
-                  fikringizcha, rost, lekin ko'pchilik siz bilan rozi bo'lmagan narsa nima? O'sha paytdagi javobim (2006
-                  yil): "Uy-joyda pufak bor". Albatta, bu aldamchilik edi, chunki bu Piterning uy hayvonlari fikri
-                  ekanligini bilardim. Boshqa javobim bormi, deb so‘rasa ajabmas. Men buni qilmadim, lekin Iroqda
-                  to'g'ridan-to'g'ri xorijiy investitsiyalar qanday yaxshi g'oya bo'lganligi haqida ba'zi bslarni
-                  chiqarib tashladim. Yaxshiyamki, men buni amalga oshirish uchun boshqa yo'llar bilan etarlicha kuchli
-                  edim. Uning bu savolni va nima uchun javob berish juda qiyinligini ta'rifi keskin va o'z-o'zidan
-                  ko'zga tashlanadigan haqiqatni ochib beradi. Qarama-qarshi va to'g'ri fikrlar juda kam. Va shunga
-                  qaramay, bu kombinatsiyani topish muvaffaqiyatli investitsiya, tadbirkorlik yoki hatto martaba
-                  rivojlanishi uchun juda muhimdir. Kitob tez va aniq sur'atda harakat qiladi, misollar saxovatli tarzda
-                  tarqatiladi. Hatto Muqaddas Kitob iqtiboslari (va nodon Muqaddas Kitob iqtiboslari - ya'ni Uzuklar
-                  Egasi) tabiiy yoki hech bo'lmaganda tetiklantiruvchi his qiladi. Bundan tashqari, Piter odat
-                  qilganidek, matnda bir nechta Pasxa tuxumlari yoki it hushtaklari mavjud bo'lib, ular Butrusning ba'zi
-                  noyob g'oyalariga ishora qiladi. Albatta, men tarafkashman, lekin, ayniqsa, “biznes” toifasida, “Zero
-                  to One” alohida va o'ylantiruvchi kitob.
-                  </p>
+                <div class="catogor">
+                  <label for="book-type">Kitob turi:</label>
+                  <select id="book-type" name="book_type">
+                    <option value="classic">Classic</option>
+                    <option value="biography">Biography</option>
+                    <option value="science">Science</option>
+                  </select>
                 </div>
               </div>
-              <!-- <div class="settings">
+              <p class="tafsif">Tavfsif</p>
+              <div class="tafsif_box">
+                <div class="tafsif_box_nav">
+                  <!-- <h3>Why you should read Ikki eshik orasi?</h3> -->
+                  <textarea id="description" class="tafsif_box_nav_p">
+                  </textarea>
+                </div>
+              </div>
+              <div class="add-images">
+                <div class="add-book_box">
+                  <button type="submit" class="time_box_btn1">
+                    Kitobni qo’shish
+                  </button>
+                </div>
+                <!-- <div class="settings">
                 <h1 class="settings_h1">Ishchi sozlamalar</h1>
                 <p class="settings_p">
                   Asl nashr etilgan sana, personajlar, mukofotlar va sozlamalar
                   ushbu asardagi barcha kitoblarga tegishli.
                 </p>
               </div> -->
+              </div>
 
-              <button onclick="addBook()" class="time_box_btn">
-                Kitobni qo’shish
-              </button>
-            </div>
-
-            <div class="add-images">
               <p class="add-images_p">Muqova</p>
               <div class="image_box">
                 <div class="image_box_nav">
@@ -150,12 +156,17 @@
                     </p>
                     <button
                       id="showBtn"
+                      type="button"
                       onclick="showFile()"
                       class="image_box_nav_img"
                     >
                       Fayl yuklash
                     </button>
-                    <input onclick="handleFileChange()" id="file" type="file" />
+                    <input
+                      type="file"
+                      id="file"
+                      onchange="handleFileChange(event)"
+                    />
                   </div>
                 </div>
               </div>
@@ -187,15 +198,10 @@
                     maqolalar yoki grafik romanlar to'plami kitob hisoblanadi.
                   </p>
                 </div>
-                <div class="add-book_box">
-                  <button onclick="addBook()" class="time_box_btn1">
-                    Kitobni qo’shish
-                  </button>
-                </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <script src="/java-script/create-book.js"></script>

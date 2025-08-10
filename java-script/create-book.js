@@ -1,3 +1,4 @@
+const form = document.getElementById('form');
 const title = document.getElementById('book-name');
 const country = document.getElementById('country');
 const language = document.getElementById('inputs_ss');
@@ -5,37 +6,78 @@ const pages = document.getElementById('pages');
 const price = document.getElementById('price');
 const rate = document.getElementById('rate');
 const description = document.getElementById('description');
+const load = document.getElementById('load');
+const bookType = document.getElementById('book-type');
 
 const file = document.getElementById('file');
-function handleFileChange(e) {
-  const file = e.files[0];
+let selectedFile = '';
+let imageId = null;
 
-  if (file) {
-    selectedFile = file;
+function checkTextInputValue(value) {
+  if (value) {
+    return true;
+  } else {
+    return false;
   }
 }
 
 const backendUrl = 'https://bookzone-backend.onrender.com/api';
 
+async function handleFileChange(e) {
+  selectedFile = e.target.files[0];
+  if (!selectedFile) {
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('files', selectedFile);
+
+  try {
+    const response = await fetch(backendUrl + '/files/', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    const data = await response.json();
+    imageId = data.payload[0]._id;
+    if (data.msg === 'jwt expired') {
+      alert("Iltimos ro'yxatdan o'ting");
+      location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+    }
+  } catch (err) {
+    console.log('Xatolik', err);
+  }
+}
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  addBook();
+});
+
 function addBook() {
+  load.style.display = 'flex';
   class getBookInfo {
     constructor(
       title,
       country,
+      image,
       language,
       description,
       pages,
-      image,
       price,
+      category,
       rate
     ) {
       this.title = title;
       this.country = country;
+      this.image = image;
       this.language = language;
       this.description = description;
       this.pages = pages;
-      this.image = image;
       this.price = price;
+      this.category = category;
       this.rate = rate;
     }
   }
@@ -43,10 +85,12 @@ function addBook() {
   const form = new getBookInfo(
     title.value,
     country.value,
+    imageId,
     language.value,
     description.value,
     pages.value,
     price.value,
+    bookType.value,
     rate.value
   );
 
@@ -63,21 +107,23 @@ function addBook() {
         })
           .then((val) => val?.json())
           .then((val) => val);
-        if (books.succses === false) {
-          location.href = 'http://127.0.0.1:5500/Books-app/sign-in.html';
+
+        console.log(books.success);
+        if (books.success === true) {
+          load.style.display = 'none';
+          alert("Kitob muvaoqiyatli qo'shildi✅");
+          location.href = 'http://127.0.0.1:5500/html/user-page.html';
         } else {
-          alert('Kitob muvoqiyatli qushildi');
+          // alert('Nmadir Xato ketti!');
         }
       } catch (error) {
-        console.log('Eror');
+        alert(`Xatolik:${error}`);
       }
     } else {
-      console.log('Please get token!');
+      alert('Please get token!');
     }
   };
-  if (imgUrl.payload[0]._id) {
-    imgId = imgUrl.payload[0]._id;
-  }
+
   getBooks();
 }
 
@@ -182,20 +228,18 @@ const actors = [
     img: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Ahmad_donish.png',
   },
 ];
-console.log(actors);
 
-const getAuthors = async () => {
-  const authors = await fetch(backendUrl + '/authors')
-    .then((value) => value?.json())
-    .then((value) => value);
+// const getAuthors = async () => {
+//   const authors = await fetch(backendUrl + '/authors')
+//     .then((value) => value?.json())
+//     .then((value) => value);
 
-  console.log(authors);
-};
-getAuthors();
+//   console.log(authors);
+// };
+// getAuthors();
 
 function showFile() {
   const showBtn = document.getElementById('showBtn');
   file.style.display = 'block';
   showBtn.style.display = 'none';
-  console.log(file.files[0]);
 }

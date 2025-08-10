@@ -1,85 +1,109 @@
 <!DOCTYPE html>
 <html lang="uz">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Qorqma - Rewiew</title>
-  <link rel="stylesheet" href="/css/theme.css">
-  <link rel="stylesheet" href="/css/rewiew.css">
-</head>
-
-<body>
-  <div class="clicked"></div>
-    <div class="container">
-      <div class="header">
-        <div class="rating">
-          <span>⭐ 4.4 • 3900 ta baho</span>
-          <span>1200 ta taqriz</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qo'rqma Rewiew</title>
+    <link rel="stylesheet" href="/css/rewiew.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header_nav">
+        <img src="/asign/image/Logo.svg" alt="" />
+        <ul class="header_nav_ul">
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Bosh sahifa</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Adiblar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Kategoriya</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Maqolalar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Forum</a>
+          </li>
+        </ul>
+        <div class="profile_box">
+          <img
+            class="profile_box_img"
+            src="/asign/image/user-photo.svg"
+            alt="User photo"
+          />
         </div>
       </div>
-
-      <div class="review-form">
-        <div class="user">
-          <img src="/asign/image/autor1.png" alt="User" />
-          <strong>Kenjabek Toshmatov</strong>
-        </div>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <button class="write-btn">Taqriz yozish</button>
+    </header>
+    <div class="review-form">
+      <div class="user">
+        <img src="/asign/image/autor1.png" alt="User" />
+        <strong>Kenjabek Toshmatov</strong>
       </div>
-
-      <div class="review">
-        <div class="user">
-          <img src="/asign/image/profile2.png" alt="User" />
-          <strong>Mahin Nursaïdova</strong>
-        </div>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p>"Bu kitob ayollarning ham, ayollarga mansub emas. Bu shunchaki urush dahshatidan jovonmarz bo‘lgan avlod
-          haqidagi...</p>
-        <p>Asar 1914-1918 yillari 1-jahon urushi haqida bo‘lib, Paul tilidan hikoya qilinadi...</p>
-        <div class="actions">
-          <span>👍 78 ta yoqtirishlar</span>
-          <span>💬 44 ta sharhlar</span>
-          <span>🔗 Ulashish</span>
-        </div>
-      </div>
-
-      <div class="review">
-        <div class="user">
-          <img src="/asign/image/profile3.jpg" alt="User" />
-          <strong>Sherzod Ortiqov</strong>
-        </div>
-        <div class="stars">⭐⭐⭐⭐</div>
-        <p>O‘zbek adabiy muhitiga kirib kelganlarning e’tiboridan chetda qolmaydigan mazmundagi asar.</p>
-        <div class="actions">
-          <span>👍 78 ta yoqtirishlar</span>
-          <span>💬 44 ta sharhlar</span>
-          <span>🔗 Ulashish</span>
-        </div>
-      </div>
-
-      <div class="review">
-        <div class="user">
-          <img src="/asign/image/profile4.jpg" alt="User" />
-          <strong>Bookerberg</strong>
-        </div>
-        <div class="stars">⭐⭐⭐</div>
-        <p>Bu kitob kirish qismida yozilgan jumlalari yaxshi. Biroq – tanqidimizning ko‘pchiligimiz bilmagan sahifasi
-          bu.
-        </p>
-        <div class="actions">
-          <span>👍 78 ta yoqtirishlar</span>
-          <span>💬 44 ta sharhlar</span>
-          <span>🔗 Ulashish</span>
-        </div>
-      </div>
-
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <button class="write-btn">Taqriz yozish</button>
     </div>
-  </div>
-  <script>
-    function toggleMenu() {
-      document.querySelector('nav ul').classList.toggle('active');
-    }
-  </script>
-</body>
 
+    <div class="review">
+      <div class="user">
+        <img src="/asign/image/profile2.png" alt="User" />
+        <strong>Mahin Nursaïdova</strong>
+      </div>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>
+        "Bu kitob ayollarning ham, ayollarga mansub emas. Bu shunchaki urush
+        dahshatidan jovonmarz bo‘lgan avlod haqidagi...
+      </p>
+      <p>
+        Asar 1914-1918 yillari 1-jahon urushi haqida bo‘lib, Paul tilidan hikoya
+        qilinadi...
+      </p>
+      <div class="actions">
+        <span>👍 78 ta yoqtirishlar</span>
+        <span>💬 44 ta sharhlar</span>
+        <span>🔗 Ulashish</span>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="user">
+        <img src="/asign/image/profile3.jpg" alt="User" />
+        <strong>Sherzod Ortiqov</strong>
+      </div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <p>
+        O‘zbek adabiy muhitiga kirib kelganlarning e’tiboridan chetda
+        qolmaydigan mazmundagi asar.
+      </p>
+      <div class="actions">
+        <span>👍 78 ta yoqtirishlar</span>
+        <span>💬 44 ta sharhlar</span>
+        <span>🔗 Ulashish</span>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="user">
+        <img src="/asign/image/profile4.jpg" alt="User" />
+        <strong>Bookerberg</strong>
+      </div>
+      <div class="stars">⭐⭐⭐</div>
+      <p>
+        Bu kitob kirish qismida yozilgan jumlalari yaxshi. Biroq –
+        tanqidimizning ko‘pchiligimiz bilmagan sahifasi bu.
+      </p>
+      <div class="actions">
+        <span>👍 78 ta yoqtirishlar</span>
+        <span>💬 44 ta sharhlar</span>
+        <span>🔗 Ulashish</span>
+      </div>
+    </div>
+    <script>
+      function toggleMenu() {
+        document.querySelector('nav ul').classList.toggle('active');
+      }
+    </script>
+  </body>
 </html>
