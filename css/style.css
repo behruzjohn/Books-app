@@ -1,63 +1,5 @@
-@font-face {
-  font-family: 'Rotterburg Stylish';
-  src: url(/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf) format('truetype');
-}
-:root {
-  --main-color: #c9ac8c;
-  --main-bg-color: #191919;
-  --main-font: 'Rotterburg Stylish', sans-serif;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.container {
-  max-width: 1224px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 15px;
-}
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: var(--main-bg-color);
-}
-header {
-  border-bottom: 2px solid #ffffff1a;
-  padding: 20px;
-  width: 100%;
-  background-color: transparent;
-}
-.header_nav_h1 {
-  color: var(--main-color);
-  font-family: var(--main-font);
-}
-.header_nav {
-  justify-content: space-around;
-  align-items: center;
-  display: flex;
-}
-.header_nav_ul {
-  display: flex;
-  gap: 50px;
-}
-.header_nav_ul li {
-  display: flex;
-  text-decoration: none;
-  list-style: none;
-}
-.header_nav_ul a {
-  font-size: 20px;
-  text-decoration: none;
-  list-style: none;
-  color: #fff;
-}
-.profile_box_img {
-  border-radius: 50%;
-}
 .main {
+  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   padding: 40px 0;
@@ -144,9 +86,16 @@ header {
 .reyting {
   color: #fff;
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
+.reyting img {
+  width: 20px;
+  height: 20px;
+}
 .books {
+  gap: 20px;
+  display: flex;
   margin-top: 20px;
 }
 .books_box_h3 {
@@ -168,6 +117,9 @@ header {
     margin-left: 0;
     padding: 25px 25px;
   } */
+  .books {
+    flex-direction: column;
+  }
   .text-input_btn {
     margin-top: 10px;
     margin-left: -3px;
@@ -183,24 +135,6 @@ header {
   .user_info_h1 {
     font-size: 35px;
   }
-  /* .main_img {
-    width: 600px;
-    height: 600px;
-    margin-left: 25px;
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-  } */
-
-  .header_nav_ul {
-    flex-direction: column;
-    display: none;
-  }
-  .header_nav {
-    justify-content: space-between;
-    padding: 0 25px;
-  }
-
-  /* next -page media*/
   .main-page_nav_img {
     width: 100%;
   }

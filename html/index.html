@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
   </head>
   <body>
     <header>
       <div class="header_nav">
-        <h1 class="header_nav_h1">Badiiyat</h1>
+        <img src="/asign/image/Logo.svg" alt="" />
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a href="#">Bosh sahifa</a>
@@ -40,6 +46,7 @@
       <div class="main">
         <div class="user-born">
           <img
+            onclick="addId()"
             class="main_img"
             src="/asign/image/O'tkir.png"
             alt="O'tkir Aka"
@@ -47,20 +54,22 @@
         </div>
         <div class="user_info">
           <div class="user_info_nav">
-            <h1 style="text-transform: uppercase" class="user_info_h1">
-              O'tkir Xoshimov
-            </h1>
+            <h1
+              id="user_name"
+              style="text-transform: uppercase"
+              class="user_info_h1"
+            ></h1>
             <div class="born">
               <div class="born_nav">
                 <div class="born-1">
                   <p class="born_nav_p">Tavvalud sanasi:</p>
-                  <h1 class="born_nav_h1">5-Avg 1941</h1>
+                  <h1 id="born" class="born_nav_h1"></h1>
                   <p class="born_nav_p">Toshkent, Uzbekistan</p>
                 </div>
                 <h1 class="born_nav_h1">-</h1>
                 <div class="born-2">
                   <p class="born_nav_p">Tavvalud sanasi:</p>
-                  <h1 class="born_nav_h1">24-MAY 2013</h1>
+                  <h1 id="died" class="born_nav_h1"></h1>
                   <p class="born_nav_p">Toshkent, Uzbekistan</p>
                 </div>
               </div>
@@ -104,6 +113,36 @@
                   </h1>
                 </div>
                 <div class="books">
+                  <div class="books_box">
+                    <img src="/asign/image/dunyoni ishi.png" alt="Books 1" />
+                    <h3 class="books_box_h3" style="text-transform: uppercase">
+                      Dunyoning ishlari
+                    </h3>
+                    <div class="reyting">
+                      <img src="/asign/image/star.svg" alt="Star" />
+                      <p>4.1 • 3400 ta fikrlar</p>
+                    </div>
+                  </div>
+                  <div class="books_box">
+                    <img src="/asign/image/dunyoni ishi.png" alt="Books 1" />
+                    <h3 class="books_box_h3" style="text-transform: uppercase">
+                      Dunyoning ishlari
+                    </h3>
+                    <div class="reyting">
+                      <img src="/asign/image/star.svg" alt="Star" />
+                      <p>4.1 • 3400 ta fikrlar</p>
+                    </div>
+                  </div>
+                  <div class="books_box">
+                    <img src="/asign/image/dunyoni ishi.png" alt="Books 1" />
+                    <h3 class="books_box_h3" style="text-transform: uppercase">
+                      Dunyoning ishlari
+                    </h3>
+                    <div class="reyting">
+                      <img src="/asign/image/star.svg" alt="Star" />
+                      <p>4.1 • 3400 ta fikrlar</p>
+                    </div>
+                  </div>
                   <div class="books_box">
                     <img src="/asign/image/dunyoni ishi.png" alt="Books 1" />
                     <h3 class="books_box_h3" style="text-transform: uppercase">

@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/create-book.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
   </head>
   <body>
+    <div id="load" class="load">
+      <span class="loader"></span>
+    </div>
     <header>
       <div class="header_nav">
-        <h1 class="header_nav_h1">Badiiyat</h1>
+        <img src="/asign/image/Logo.svg" alt="" />
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a href="#">Bosh sahifa</a>
@@ -38,7 +43,7 @@
     </header>
     <div class="container">
       <div class="main-page">
-        <div class="main-page_nav">
+        <form id="form" class="main-page_nav">
           <h1 class="main-page_nav_h1">Yangi kitob qo’shish</h1>
           <div class="warning">
             <p class="warning_p">
@@ -57,13 +62,19 @@
                   id="book-name"
                   class="warning_input1"
                   type="text"
+                  required
                   placeholder="Kichkina Shahzoda"
                 />
               </div>
               <div class="inputs">
                 <div class="inputs_box">
                   <p class="warning_p">Country</p>
-                  <input id="country" type="text" placeholder="Country" />
+                  <input
+                    id="country"
+                    required
+                    type="text"
+                    placeholder="Country"
+                  />
                 </div>
                 <div class="inputs_box">
                   <p class="warning_p">language</p>
@@ -71,84 +82,70 @@
                 </div>
               </div>
               <div class="inputs_box">
-                <p class="settings_sec_p">Description</p>
+                <!-- <p class="settings_sec_p">Description</p>
                 <input
                   id="description"
                   class="warning_input1"
                   type="text"
+                  required
                   placeholder="Your Description"
-                />
+                /> -->
                 <p class="warning_p">Sahifalar soni</p>
                 <input
                   id="pages"
                   class="num_inp"
                   type="number"
+                  required
                   placeholder="458"
                 />
               </div>
               <div class="other_inp">
                 <div class="inputs_box">
                   <p class="warning_p">Price</p>
-                  <input id="price" class="date_inp" type="number" />
+                  <input id="price" required class="date_inp" type="number" />
                 </div>
                 <div class="inputs_box">
                   <p class="warning_p">Rate</p>
                   <input
                     id="rate"
                     class="last_inp"
+                    required
                     type="number"
                     placeholder="Max 5"
                   />
                 </div>
-              </div>
-              <p>Tavfsif</p>
-              <div class="tafsif_box">
-                <div class="tafsif_box_nav">
-                  <h3>Why you should read Ikki eshik orasi?</h3>
-                  <p class="tafsif_box_nav_p">
-                    Having worked with Peter - and the PayPal mafia more
-                    generally - for almost 10 years now, I have a unique
-                    perspective on Zero to One. Many of the ideas contained
-                    within are familiar to me. The launching point for the book
-                    is Peter's stock interview question - a question he asked me
-                    8 years ago. 'What is something you think is true, but that
-                    most people disagree with you on?' My answer at the time
-                    (2006) was: 'There is a bubble in housing.' Of course, that
-                    was cheating, since I knew this was a pet idea of Peter's.
-                    Not surprisingly, he asked if I had another answer. I
-                    didn't, but I extemp-ed some bs about how FDI in Iraq was a
-                    good idea. Luckily I was strong enough in other ways to make
-                    it through. His breakdown of this question and why it's so
-                    difficult to answer is incisive and in itself reveals a
-                    truth that is lying in plain sight. Very few ideas are both
-                    contrarian and correct. And, yet, finding that combination
-                    is critical to successful investing, entrepreneurship, or
-                    even career development. The book moves at a quick, clear
-                    pace with examples generously distributed throughout. Even
-                    the Bible quotes (and nerd Bible quotes - i.e. Lord of the
-                    Rings) feel natural or at least refreshing. Moreover, as
-                    Peter is wont to do, there are several easter eggs or dog
-                    whistles in the text which hint at some of Peter's more
-                    unique ideas. Of course I am biased, but particularly in the
-                    'business' category, Zero to One is a special and
-                    thought-provoking book.
-                  </p>
+                <div class="catogor">
+                  <label for="book-type">Kitob turi:</label>
+                  <select id="book-type" name="book_type">
+                    <option value="classic">Classic</option>
+                    <option value="biography">Biography</option>
+                    <option value="science">Science</option>
+                  </select>
                 </div>
               </div>
-              <!-- <div class="settings">
+              <p class="tafsif">Tavfsif</p>
+              <div class="tafsif_box">
+                <div class="tafsif_box_nav">
+                  <!-- <h3>Why you should read Ikki eshik orasi?</h3> -->
+                  <textarea id="description" class="tafsif_box_nav_p">
+                  </textarea>
+                </div>
+              </div>
+              <div class="add-images">
+                <div class="add-book_box">
+                  <button type="submit" class="time_box_btn1">
+                    Kitobni qo’shish
+                  </button>
+                </div>
+                <!-- <div class="settings">
                 <h1 class="settings_h1">Ishchi sozlamalar</h1>
                 <p class="settings_p">
                   Asl nashr etilgan sana, personajlar, mukofotlar va sozlamalar
                   ushbu asardagi barcha kitoblarga tegishli.
                 </p>
               </div> -->
+              </div>
 
-              <button onclick="addBook()" class="time_box_btn">
-                Kitobni qo’shish
-              </button>
-            </div>
-
-            <div class="add-images">
               <p class="add-images_p">Muqova</p>
               <div class="image_box">
                 <div class="image_box_nav">
@@ -159,12 +156,17 @@
                     </p>
                     <button
                       id="showBtn"
+                      type="button"
                       onclick="showFile()"
                       class="image_box_nav_img"
                     >
                       Fayl yuklash
                     </button>
-                    <input onclick="handleFileChange()" id="file" type="file" />
+                    <input
+                      type="file"
+                      id="file"
+                      onchange="handleFileChange(event)"
+                    />
                   </div>
                 </div>
               </div>
@@ -196,15 +198,10 @@
                     maqolalar yoki grafik romanlar to'plami kitob hisoblanadi.
                   </p>
                 </div>
-                <div class="add-book_box">
-                  <button onclick="addBook()" class="time_box_btn1">
-                    Kitobni qo’shish
-                  </button>
-                </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <script src="/java-script/create-book.js"></script>

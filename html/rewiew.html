@@ -5,25 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Qo'rqma Rewiew</title>
     <link rel="stylesheet" href="/css/rewiew.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
   </head>
   <body>
-    <header class="navbar">
-      <div class="user">BADIIYAT</div>
-      <nav>
-        <ul>
-          <button class="active">Bosh Sahifa</button>
-          <li><a href="#">Nasr</a></li>
-          <li><a href="#">Nazm</a></li>
-          <li><a href="#">Maqolalar</a></li>
-          <li><a href="#">Forum</a></li>
+    <header>
+      <div class="header_nav">
+        <img src="/asign/image/Logo.svg" alt="" />
+        <ul class="header_nav_ul">
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Bosh sahifa</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Adiblar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Kategoriya</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Maqolalar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Forum</a>
+          </li>
         </ul>
-      </nav>
-      <div class="profile-icon">
-        <img
-          src="/asign/image/autor1.png"
-          alt="Qo'rqma Kitob Muqovasi"
-          class="book-cover"
-        />
+        <div class="profile_box">
+          <img
+            class="profile_box_img"
+            src="/asign/image/user-photo.svg"
+            alt="User photo"
+          />
+        </div>
       </div>
     </header>
 

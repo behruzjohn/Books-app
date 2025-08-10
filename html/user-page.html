@@ -12,39 +12,44 @@
     />
     <link rel="stylesheet" href="../css/user-page.css" />
     <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
   </head>
   <body>
-    <div class="container">
-      <header>
-        <div class="header_nav">
-          <h1 class="header_nav_h1">Badiiyat</h1>
-          <ul class="header_nav_ul">
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Bosh sahifa</a>
-            </li>
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Adiblar</a>
-            </li>
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Kategoriya</a>
-            </li>
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Maqolalar</a>
-            </li>
-            <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-              <a href="#">Forum</a>
-            </li>
-          </ul>
-          <div class="profile_box">
+    <div id="load" class="load">
+      <span class="loader"></span>
+    </div>
+    <!-- <div class="container"> -->
+    <header>
+      <div class="header_nav">
+        <img src="/asign/image/Logo.svg" alt="" />
+        <ul class="header_nav_ul">
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Bosh sahifa</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Adiblar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Kategoriya</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Maqolalar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="#">Forum</a>
+          </li>
+        </ul>
+        <div class="profile_box">
+          <a href="http://127.0.0.1:5500/html/user-page.html#">
             <img
               class="profile_box_img"
-              src="/asign/image/user-photo.svg"
+              src="/asign/image/defult.img"
               alt="User photo"
             />
-          </div>
+          </a>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
     <div class="container">
       <div class="user-banner">
         <div class="user-banner_nav">
@@ -56,9 +61,9 @@
           <div class="user-banner_info">
             <h1>Farruxbek Abdullayev</h1>
             <div class="user-banner-info_p">
-            <p><strong>Tavallud:</strong> February 08, 1999</p>
-            <p><strong>Manzil:</strong> Jizzax</p>
-            <p><strong>Bio:</strong> Graphic designer and Developer</p>
+              <p><strong>Tavallud:</strong> February 08, 1999</p>
+              <p><strong>Manzil:</strong> Jizzax</p>
+              <p><strong>Bio:</strong> Graphic designer and Developer</p>
             </div>
           </div>
         </div>
@@ -66,27 +71,25 @@
     </div>
     <div class="books-header">
       <div class="books-header_nav">
-        <ul>
-          <li><a href="#"></a>O’qilganlar</li>
-          <li class="main-li"><a href="#"></a>O’qishni xohlayman</li>
-          <li><a href="#"></a>O’qilmoqda</li>
-          <li><a href="#"></a>Adiblar</li>
+        <ul class="books-header_ul">
+          <li><a onclick="booksMenu(this)" href="#">O’qilganlar</a></li>
+          <li id="main-li">
+            <a onclick="booksMenu(this)" href="#">O’zim yaratgan kitoblarim</a>
+          </li>
+          <li><a onclick="booksMenu(this)" href="#">O’qilmoqda</a></li>
+          <li><a onclick="booksMenu(this)" href="#">Adiblar</a></li>
         </ul>
       </div>
     </div>
     <div class="container">
-      <div class="books">
-        <div class="books_box">
-          <img src="/asign/image/dunyoni ishi.png" alt="Books 1" />
-          <h3 class="books_box_h3" style="text-transform: uppercase">
-            Dunyoning ishlari
-          </h3>
-          <div class="reyting">
-            <img src="/asign/image/star.svg" alt="Star" />
-            <p>4.1 • 3400 ta fikrlar</p>
-          </div>
-        </div>
-      </div>
+      <div id="books" class="books"></div>
     </div>
+    <footer>
+      <p>
+        @2025 <strong>Behruz</strong> and <strong>Muhammad</strong> All Rights
+        Reserved.
+      </p>
+    </footer>
+    <script src="/java-script/user-page.js"></script>
   </body>
 </html>
