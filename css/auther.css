@@ -1,35 +1,10 @@
-@font-face {
-  font-style: normal;
-  font-weight: normal;
-  font-family: 'Steinbeck';
-  src: url(/fonts/RotterburgstylishfreeRegular-ZVZ5B.otf) format('truetype');
-}
-
-:root {
-  --main-color: #c9ac8c;
-  --main-bg-color: #191919;
-  --main-font: 'Rotterburg Stylish', sans-serif;
-  --secondary-font: 'Steinbeck', sans-serif;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .container {
   max-width: 1224px;
   margin: 0 auto;
   width: 100%;
   padding: 0 15px;
 }
-body {
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--secondary-font);
-  background-color: var(--main-bg-color);
-}
+
 .container {
   width: 90%;
   margin: auto;
