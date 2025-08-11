@@ -10,6 +10,8 @@ function innerBooks(books) {
   shoirs.innerHTML = '';
   // console.log(books);
   books.forEach((item) => {
+    console.log(item);
+
     let resImg = '';
     if (item.image?.url) {
       resImg = item.image?.url;
@@ -22,15 +24,20 @@ function innerBooks(books) {
       item.category.slice(1).toLowerCase();
 
     shoirs.innerHTML += `
-      <div class="shoirs_nav_box">
+      <div class="shoirs_nav_box" data-id="${item._id}">
         <img class="shoirs_nav_box_img" src="${resImg}" alt="${item.title}" />
         <div class="shoirs_text">
           <h3 class="shoirs_nav_box_h3">${item.title}</h3>
           <p class="shoirs_nav_box_p">${categoryName}</p>
-          
         </div>
       </div>
     `;
+  });
+  document.querySelectorAll('.shoirs_nav_box').forEach((box) => {
+    box.addEventListener('click', () => {
+      const bookId = box.getAttribute('data-id');
+      location.href = `http://127.0.0.1:5500/html/book.html?id=${bookId}`;
+    });
   });
 }
 
@@ -65,12 +72,9 @@ const getAuthors = async (text) => {
 function filterClassic(e) {
   e.style.color = 'red';
   let classics = allBooks.filter((book) => book.category === 'classic');
-  console.log(typeof classics);
+  // console.log(typeof classics);
 
   innerBooks(classics);
-  // if () {
-
-  // }
 }
 
 function filterBiography(e) {
@@ -86,8 +90,10 @@ function filterScients(e) {
 }
 
 function search() {
+  load.style.display = 'flex';
   if (bookSeach.value) {
     getAuthors(bookSeach.value);
+    getAutload.style.display = 'none';
   }
 }
 

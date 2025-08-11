@@ -18,44 +18,47 @@
       <span class="loader"></span>
     </div>
     <div class="sign-up">
-      <div class="container">
-        <h1>BADIYATDAN<br />RO‘YXATDAN O‘TING</h1>
-        <p>
-          Do‘stlaringiz nima o‘qiyotganini ko‘ring, kitob tavsiyalarini oling va
-          kitob ustida zavqli suhbatlar uyushtiring
-        </p>
+      <h1>RO‘YXATDAN O‘TING</h1>
+      <p>
+        Do‘stlaringiz nima o‘qiyotganini ko‘ring, kitob tavsiyalarini oling va
+        kitob ustida zavqli suhbatlar uyushtiring
+      </p>
 
-        <form>
-          <div class="radios">
-            <div class="role-wrapper">
-              <input value="author" name="role" id="author" type="radio" />
-              <label for="author">Author</label>
-            </div>
-            <div class="role-wrapper">
-              <input value="reader" name="role" id="reader" type="radio" />
-              <label for="reader">Reader</label>
-            </div>
+      <form>
+        <div class="radios">
+          <div class="role-wrapper">
+            <input value="author" name="role" id="author" type="radio" />
+            <label for="author">Author</label>
           </div>
-          <input id="firstName" type="text" placeholder="Ism" />
-          <input id="lastName" type="text" placeholder="Familiya" />
-          <input id="email" type="email" placeholder="Elektron pochta" />
-          <input id="phone" type="tel" placeholder="Telefon" />
-          <input id="addres" type="text" placeholder="Address" />
-          <input id="password" type="password" placeholder="Parol" />
-          <input
-            id="password2"
-            type="password"
-            placeholder="Parolni tasdiqlang"
-          />
-        </form>
-        <button style="margin-top: 20px" onclick="checkUser()" id="registerBtn">
-          Ro'yxatdan o'tish
-        </button>
-        <div class="last_div">
-          <a href="http://127.0.0.1:5500/html/sign-in.html"
-            >Akkountingiz bormi?</a
-          >
+          <div class="role-wrapper">
+            <input value="reader" name="role" id="reader" type="radio" />
+            <label for="reader">Reader</label>
+          </div>
         </div>
+        <input id="firstName" type="text" placeholder="Ism" />
+        <input id="lastName" type="text" placeholder="Familiya" />
+        <input id="email" type="email" placeholder="Elektron pochta" />
+        <input id="phone" type="tel" placeholder="Telefon" />
+        <input id="addres" type="text" placeholder="Address" />
+        <input
+          id="birth"
+          type="date"
+          placeholder="Tugulgan yilingiz va kungiz.Misol:(2025-04)"
+        />
+        <input id="password" type="password" placeholder="Parol" />
+        <input
+          id="password2"
+          type="password"
+          placeholder="Parolni tasdiqlang"
+        />
+      </form>
+      <button style="margin-top: 20px" onclick="checkUser()" id="registerBtn">
+        Ro'yxatdan o'tish
+      </button>
+      <div class="last_div">
+        <a href="http://127.0.0.1:5500/html/sign-in.html"
+          >Akkountingiz bormi?</a
+        >
       </div>
     </div>
     <script src="/java-script/sign-up.js"></script>

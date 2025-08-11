@@ -11,6 +11,7 @@ async function checkUser() {
   const lastName = document.getElementById('lastName');
   const email = document.getElementById('email');
   const phone = document.getElementById('phone');
+  const birth = document.getElementById('birth');
   const password = document.getElementById('password');
   const password2 = document.getElementById('password2');
 
@@ -59,11 +60,14 @@ async function checkUser() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...user, date_of_birth: new Date() }),
+        body: JSON.stringify({ ...user, date_of_birth: birth.value }),
       });
 
       const data = await res.json();
-
+      // localStorage.setItem('userInfo', data);
+      if (data.success) {
+        location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+      }
       if (data.token) {
         load.style.display = 'none';
         localStorage.setItem('token', data.token);

@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
@@ -53,21 +53,26 @@ nav a {
 .main-book {
   display: flex;
   gap: 40px;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 .cover img {
+  height: 400px;
+  background-size: cover;
+
   width: 300px;
   border-radius: 10px;
 }
 
 .details h2 {
+  font-family: var(--main-font);
   font-size: 36px;
   color: #d4a373;
   margin-bottom: 10px;
 }
 
 .details ul {
+  font-family: var(--secondary-font);
   list-style: none;
   padding: 0;
 }
@@ -95,16 +100,35 @@ nav a {
   border-radius: 5px;
   margin-right: 10px;
 }
-
+.icons {
+  margin-top: 30px;
+}
+.info p {
+  font-size: 20px;
+}
 .add-btn {
-  margin-top: 20px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--secondary-font);
+  margin-top: 45px;
   background: #d4a373;
   border: none;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;
-  color: #000;
+  color: #efe2e2;
   cursor: pointer;
+}
+
+.info {
+  flex-direction: row;
+
+  display: flex;
+}
+#b {
+  margin-left: 10px;
 }
 
 .footer {
@@ -128,7 +152,15 @@ nav a {
   border-radius: 8px;
 }
 
+.pBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .laster {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-family: var(--secondary-font);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -139,15 +171,17 @@ nav a {
   align-items: center;
   gap: 0px;
 }
+
 .rasmi img {
-  width: 200px;
+  width: 150px;
   border-radius: 10px;
-  margin-left: 60px;
+  /* margin-left: 60px; */
 }
 .ismi {
   margin-left: 50px;
 }
 .iqtibos {
+  font-family: var(--main-font);
   margin: 20px 0;
   color: #d4a373;
 }
@@ -158,9 +192,16 @@ nav a {
   justify-content: space-between;
   margin-bottom: 50px;
 }
+.footer-h h3 {
+  font-family: var(--secondary-font);
+}
 .active {
   border-bottom: 2px solid #000;
   color: #ff6600;
+}
+#social {
+  display: flex;
+  gap: 5px;
 }
 .imoje {
   width: 30px;

@@ -9,6 +9,9 @@ body {
   color: #e0d6c5;
 }
 .sign-up {
+  margin-top: 130px;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -114,6 +117,9 @@ a {
   align-items: center;
   display: flex;
   flex-direction: row;
+}
+.radios input {
+  width: 200px;
 }
 
 .role-wrapper {

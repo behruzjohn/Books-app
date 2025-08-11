@@ -30,15 +30,14 @@ async function saveUserInfo() {
   }).then((res) => {
     return res.json();
   });
-   if (data.msg === 'jwt expired') {
-     alert("Iltimos ro'yxatdan o'ting");
-     location.href = 'http://127.0.0.1:5500/html/sign-in.html';
-   }
+  // localStorage.setItem('userInfo', json.stringify(user2.user));
 
   if (user2.success) {
     load.style.display = 'none';
-    location.href = 'http://127.0.0.1:5500/html/user-page.html';
+    // location.href = 'http://127.0.0.1:5500/html/user-page.html';
   } else {
+    alert('Parol yoki emailingiz xato!');
+    load.style.display = 'none';
     return false;
   }
 

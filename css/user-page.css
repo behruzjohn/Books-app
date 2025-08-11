@@ -24,6 +24,7 @@
 }
 
 .imgages_h3 {
+  margin-top: 8px;
   font-family: var(--secondary-font);
   color: #c9ac8c;
 }
@@ -32,6 +33,7 @@
   font-family: var(--secondary-font);
 }
 .user-banner_nav {
+  width: 100%;
   flex-wrap: wrap;
   flex: 1;
   padding: 20px;
@@ -112,6 +114,8 @@
   font-family: var(--secondary-font);
 }
 .books_box_h3 {
+  display: flex;
+  justify-content: center;
   font-family: var(--main-font);
   color: var(--main-color);
   font-weight: bold;
@@ -155,6 +159,9 @@
   gap: 10px;
 }
 @media only screen and (max-width: 768px) {
+  .user-banner_nav {
+    justify-content: center;
+  }
   .header_nav_ul {
     flex-direction: column;
     display: none;
