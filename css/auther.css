@@ -25,6 +25,24 @@ body {
   width: 90%;
   margin: auto;
 }
+.addComment{
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border: none;
+}
+.addComment p{
+  color: #d4a373;
+}
+.addComment input{
+  outline: none;
+  padding: 7px;
+  width: 98%;
+  color: #fff;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: #333;
+}
 header {
   border-bottom: 2px solid #ffffff1a;
   padding: 20px;
