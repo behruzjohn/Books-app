@@ -1,28 +1,3 @@
-@font-face {
-  font-style: normal;
-  font-weight: normal;
-  font-family: 'Steinbeck';
-  src: url(../fonts/RotterburgstylishfreeRegular-ZVZ5B.otf) format('truetype');
-}
-
-:root {
-  --main-color: #c9ac8c;
-  --main-bg-color: #191919;
-  --main-font: 'Rotterburg Stylish', sans-serif;
-  --secondary-font: 'Steinbeck', sans-serif;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.container {
-  max-width: 1224px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 15px;
-}
-
 .imgages_h3 {
   margin-top: 8px;
   font-family: var(--secondary-font);
@@ -88,6 +63,11 @@
   font-family: var(--secondary-font);
   display: flex;
 }
+#img {
+  background-size: cover;
+  border-radius: 20px;
+  height: 180px;
+}
 #main-li a {
   color: #c9ac8c;
 }
@@ -111,11 +91,10 @@
   display: flex;
 }
 #tafsif {
-  font-family: var(--secondary-font);
+  /* font-family: var(--secondary-font); */
 }
 .books_box_h3 {
   display: flex;
-  justify-content: center;
   font-family: var(--main-font);
   color: var(--main-color);
   font-weight: bold;
@@ -125,7 +104,7 @@
 }
 #booksBox {
   min-width: 180px;
-  flex: 1;
+  flex: 0 0 200px;
   border-radius: 12px;
   padding: 15px;
   background-color: #212121;
@@ -148,9 +127,12 @@
   gap: 10px;
   display: flex;
 }
+#startsDiv span {
+  margin-top: -5px;
+}
 .reyting {
+  align-items: start;
   margin-top: 10px;
-  align-items: center;
   width: 100%;
   justify-content: center;
   flex-direction: column;

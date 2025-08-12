@@ -106,13 +106,17 @@ nav a {
 .info p {
   font-size: 20px;
 }
+.boxIc {
+  margin-top: 40px;
+  justify-content: space-between;
+  display: flex;
+}
 .add-btn {
   font-size: 15px;
   display: flex;
   align-items: center;
   gap: 5px;
   font-family: var(--secondary-font);
-  margin-top: 45px;
   background: #d4a373;
   border: none;
   padding: 12px 24px;

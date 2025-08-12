@@ -33,7 +33,8 @@ async function getMyBooks() {
     for (const key in dateLoop) {
       let imgUrl = '';
       if (!dateLoop[key].imageLink) {
-        imgUrl = 'https://static.thenounproject.com/png/1077596-200.png';
+        imgUrl =
+          'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
       } else {
         imgUrl = `https://bookzone-backend.onrender.com/api/${dateLoop[key].imageLink}`;
       }
@@ -63,7 +64,7 @@ async function getMyBooks() {
     }
   }
 
-  load.style.display = 'none'; // faqat hammasi tugagach yo‘qoladi
+  load.style.display = 'none';
 }
 
 getMyBooks();

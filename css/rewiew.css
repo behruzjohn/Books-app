@@ -4,9 +4,11 @@
   cursor: pointer;
 }
 .add-btn {
-  margin-top: 50px;
+  margin-top: 5px;
   background: #d4a373;
   border: none;
+  height: 40px;
+  width: 200px;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;

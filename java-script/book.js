@@ -87,7 +87,8 @@ async function getBookById() {
               <p class="desc">
               ${item.description}
               </p>
-              <div class='icons'>
+              <div class='boxIc'>
+              <div class="boxIc_img">
               <img
               class="imoje"
               src="/asign/image/Frame (1).png"
@@ -99,12 +100,34 @@ async function getBookById() {
               src="/asign/image/Frame (2).png"
               alt="Ulashish"
               />
+              </div>
              
-              <button class="add-btn">Javonga qo'shish <img src="/asign/image/add-icon.svg"/></button>
-              
+              <button id="addShelf" class="add-btn">Javonga qo'shish <img src="/asign/image/add-icon.svg"/></button>
+              </div>
             </div>`;
     //
   }
+  async function addShelfBook() {
+    const res = await fetch(backendUrl + '/users/shelf', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify({
+        BookId: location.search.slice(4),
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+  }
+
+  const addShelf = document.getElementById('addShelf');
+  addShelf.addEventListener('click', () => {
+    addShelfBook();
+  });
+
   let authorInfo = item.author;
   let socialMedia = '';
   let phoneNum = '';

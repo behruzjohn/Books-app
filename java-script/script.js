@@ -9,6 +9,7 @@ const res = await fetch(backendUrl + '/authors/', {
 });
 
 const data = await res.json();
+
 if (data.msg === 'jwt expired') {
   alert("Iltimos ro'yxatdan o'ting");
   location.href = 'http://127.0.0.1:5500/html/sign-in.html';
