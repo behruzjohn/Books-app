@@ -101,6 +101,14 @@
   gap: 100px;
   justify-content: center;
 }
+#shoirs {
+  margin-top: 15px;
+}
+#shoirs_h3 {
+  color: var(--main-color);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .catagor_nav_header_ul li {
   list-style: none;
 }
@@ -142,6 +150,8 @@
   background-color: #1d1d1d;
 }
 .shoirs_nav_box_p {
+  margin-top: 8px;
+  margin-bottom: 2px;
   color: #ffffff99;
 }
 .shoirs_text {

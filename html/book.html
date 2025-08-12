@@ -5,20 +5,21 @@
     <title>Qorqma - Book</title>
     <link rel="stylesheet" href="/css/book.css" />
     <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
   </head>
 
   <body>
+    <div id="load" class="load">
+      <span class="loader"></span>
+      <!-- <h1><a href="">Header _nav</a></h1> -->
+    </div>
     <header>
       <div class="header_nav">
-        <div class="menu-toggle" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <img src="/asign/image/logo.png" class="img-sec" alt="" />
+        <img src="/asign/image/Logo.svg" alt="" />
+        <!-- <img src="/asign/image/add-icon.svg" /> -->
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Bosh sahifa</a>
+            <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a href="#">Adiblar</a>
@@ -43,54 +44,11 @@
       </div>
     </header>
     <div class="container">
-      <section class="main-book">
-        <div class="cover">
-          <img src="/asign/image/qurqma.jpg" alt="Qorqma" />
-        </div>
-        <div class="details">
-          <h2>QORQMA</h2>
-          <p>Sahifalar soni: <b>376</b></p>
-          <p>Chop etilgan: <b>2021</b></p>
-          <p>Janri: <b>Tarixiy</b></p>
-          <p>Nashriyot: <b>Nihol Nashr</b></p>
-          <h3 class="iqtibos">
-            To'liq ma'lumot
-            <img src="/asign/image/Subtract.svg" alt="" />
-            ---------------------------------------------------------------------
-          </h3>
-          <p class="desc">
-            Роман ўтган асрнинг йигирманчи йилларида Германияда таҳсил олган ва
-            собиқ Совет Иттифоқи томонидан шафқатсизларча қатл этилган миллат
-            йигит-қизларининг хотирасига бағишланади. Роман воқеаларини қисқача
-            сўзлар билан ифода этиб бўлмайди. Барчаси шу қадар тиғизки, шошириб
-            қўяди. Мажоз, образ, ифода, ўт, ҳеч кимникига ўхшамаган лиризмни ҳис
-            қиласиз. Миллият, соф муҳаббат, кўринмас ва ошкор фожиалар, тарих,
-            бугун ва эртанинг бир-бирига кавшарланган ҳалқаси, ростлик
-            даъвосидаги ёлғонлар, руҳ ва қондаги парадокслар сизни ўтмиш ва
-            келажак куйига асир қилади, ўйлатади, йиғлатади ва аччиқ-аччиқ
-            кулдиради. Ўтган аср бошида Германияда ўқиган талабалар, улар
-            маслаги ва фожиали қисмати бугунги ёшлар мақсади билан бир тарозига
-            тортилади. Мажоз, образ, ифода, ўт, ҳеч кимникига ўхшамаган лиризмни
-            ҳис қиласиз. Миллият, соф муҳаббат, кўринмас ва ошкор фожиалар,
-            тарих, бугун ва эртанинг бир-бирига кавшарланган ҳалқаси, ростлик
-            даъвосидаги ёлғонлар, руҳ ва қондаги парадокслар сизни ўтмиш ва
-            келажак куйига асир қилади, ўйлатади, йиғлатади ва аччиқ-аччиқ
-            кулдиради.
-          </p>
-          <div class="formats">
-            <span>PDF</span>
-            <span>EPUB</span>
-            <span>Audio</span>
-            <span>Onlayn o‘qish</span>
-          </div>
-          <button class="add-btn">Javonga qo‘shish</button>
-        </div>
-      </section>
+      <section id="main-book" class="main-book"></section>
     </div>
-    <div class="laster">
+    <div class="container">
       <div class="laster">
         <h3 onclick="mual(this)">Muallif haqida</h3>
-        <h3>Kitobdan iqtiboslar</h3>
         <h3 onclick="muallif(this)" class="muallif">Mualliflar taqrizi</h3>
       </div>
     </div>
@@ -113,7 +71,6 @@
               <span>1200 ta taqriz</span>
             </div>
           </div>
-
           <div class="review-form">
             <div class="user">
               <img src="/asign/image/autor1.png" alt="User" />
@@ -178,34 +135,20 @@
             </div>
           </div>
         </div>
-        <script>
-          function toggleMenu() {
-            document.querySelector('nav ul').classList.toggle('active');
-          }
-        </script>
       </body>
     </html>
+
     <!-- ? -->
     <div id="container" class="container">
       <div class="label">
-        <div class="muallif">
+        <div id="muallif" class="muallif">
           <div class="rasmi">
-            <img src="/asign/image/autor1.png" alt="Muallif rasmi" />
-          </div>
-          <div class="ismi">
-            <h1 class="iqtibos">Javlon Jovliyev</h1>
-            <p class="iqtibosim">
-              Жавлон Жовлиев 1991 yil Қашқадарё вилояти, Қамаши туманида
-              туғилган. Ўзбекистон давлат <br />санъат ва маданият институтининг
-              санъатшунослик журналистика йўналишини бакалавр ва магистратура
-              <br />
-              босқичини тамомлаган. Ҳозирда Алишер Навоий номидаги Ўзбекистон
-              Миллий кутубхонасида <br />
-              ишламоқда. Республика ёш ижодкорларининг анъанавий <br />
-              Зомин семинари иштирокчиси. 2019 йилда Ижод фонди томонидан
-              биринчи китоби нашр этилган.
-            </p>
-            <h3 class="iqtibos">Muallif haqida ko’proq...</h3>
+            <!-- <img
+              src="/asign/image/man-user-circle-icon.png"
+              alt="Muallif rasmi"
+            />
+          </div> -->
+            <!-- <div class="ismi">
             <img
               class="imoje"
               src="/asign/image/Frame (1).png"
@@ -216,8 +159,8 @@
               class="imoje"
               src="/asign/image/Frame (2).png"
               alt="Ulashish"
-            />
-            <img class="imoje" src="/asign/image/Frame (4).png" alt="Yuklash" />
+            /> -->
+            <!-- <img class="imoje" src="/asign/image/Frame (4).png" alt="Yuklash" /> -->
           </div>
         </div>
       </div>
@@ -234,26 +177,10 @@
           <img src="/asign/image/number.jpg" alt="" />
           <img src="/asign/image/goddes.webp" alt="" />
           <img src="/asign/image/dunyo ishlari.jpg" alt="" />
-          <img src="/asign/image/fact.webp" alt="" />
+          <!-- <img src="/asign/image/fact.webp" alt="" /> -->
         </div>
       </footer>
     </div>
-    <script>
-      function toggleMenu() {
-        document.querySelector('nav ul').classList.toggle('active');
-      }
-      function muallif(e) {
-        let ret = document.getElementById('container');
-        const main = document.getElementById('main');
-        ret.style.display = 'none';
-        main.style.display = 'block';
-      }
-      function mual(e) {
-        const ret = document.getElementById('container');
-        const main = document.getElementById('main');
-        main.style.display = 'none';
-        ret.style.display = 'block';
-      }
-    </script>
+    <script src="/java-script/book.js"></script>
   </body>
 </html>

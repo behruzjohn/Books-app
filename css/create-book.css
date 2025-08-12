@@ -56,6 +56,19 @@ input {
   gap: 20px;
   border-radius: 5px;
 }
+textarea {
+  background-color: #333030;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  line-height: 1.4;
+  resize: vertical; /* faqat balandligini o‘zgartirish mumkin */
+  font-family: inherit;
+  font-size: 14px;
+  vertical-align: top; /* matn yuqoridan boshlansin */
+}
+
 .inputs input {
   width: 300px;
   border-radius: 5px;
@@ -104,8 +117,9 @@ input {
   border-radius: 5px;
 }
 .tafsif_box_nav {
+  display: flex;
+  align-items: flex-start; /* o‘rtadan emas, tepadan */
   color: #fff;
-  width: 100%;
 }
 .tafsif_box {
   padding: 20px;
@@ -114,7 +128,10 @@ input {
   height: 400px;
 }
 .tafsif_box_nav_p {
-  padding: 10px;
+  flex: 1;
+  min-height: 100px; /* balandlik berish */
+  display: flex;
+  justify-content: left;
   color: #fff;
   background-color: #33303069;
   width: 100%;
@@ -231,7 +248,7 @@ input {
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-top: 30px;
+  margin-left: -20px;
   width: 100%;
   height: 48px;
   background-color: #c9ac8c;
@@ -319,6 +336,7 @@ input {
     justify-content: center;
     display: flex;
     margin-top: 30px;
+    margin-left: 0;
     width: 100%;
     height: 48px;
     background-color: #c9ac8c;

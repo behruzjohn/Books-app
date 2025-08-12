@@ -75,6 +75,10 @@ header {
   width: 45px;
   height: 45px;
 }
+footer {
+  position: absolute;
+  bottom: 100%;
+}
 @media only screen and (max-width: 768px) {
   .header_nav_ul {
     flex-direction: column;

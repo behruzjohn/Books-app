@@ -19,6 +19,8 @@
   margin-top: 20px  ;
 } */
 .coontainer_h1 {
+  color: var(--main-color);
+  font-family: var(--main-font);
   margin-top: 200px;
 }
 h1 {
