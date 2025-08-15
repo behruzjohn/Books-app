@@ -17,7 +17,9 @@
     <!-- <div class="container"> -->
     <header>
       <div class="header_nav">
-        <img src="/asign/image/Logo.svg" alt="" />
+        <a href="http://127.0.0.1:5500/html/next-page.html"
+          ><img src="/asign/image/Logo.svg" alt="" />
+        </a>
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
@@ -32,15 +34,20 @@
             <a href="#">Maqolalar</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Forum</a>
+            <a
+              id="addBookid"
+              href="http://127.0.0.1:5500/html/create-book.html"
+            ></a>
           </li>
         </ul>
         <div class="profile_box">
-          <img
-            class="profile_box_img"
-            src="/asign/image/defult.img"
-            alt="User photo"
-          />
+          <a href="http://127.0.0.1:5500/html/user-page.html">
+            <img
+              class="profile_box_img"
+              src="/asign/image/defult.img"
+              alt="User photo"
+            />
+          </a>
         </div>
       </div>
     </header>
@@ -49,6 +56,7 @@
       <div class="main-page">
         <div class="main-page_nav">
           <img
+            id="page_nav_img"
             class="main-page_nav_img"
             src="/asign/image/banner.png"
             alt="Banner"
@@ -84,29 +92,53 @@
               <div class="catagor_nav_header">
                 <ul class="catagor_nav_header_ul">
                   <li
+                    onclick="filterAll(this)"
+                    class="catagor_nav_header_ul_li"
+                  >
+                    <a
+                      id="allbookss"
+                      class="catagor_nav_header_ul_li_a"
+                      href="#"
+                      >All Books
+                    </a>
+                  </li>
+                  <li
                     onclick="filterClassic(this)"
                     class="catagor_nav_header_ul_li"
                   >
-                    <a class="catagor_nav_header_ul_li_a" href="#">Classic </a>
+                    <a id="clasics" class="catagor_nav_header_ul_li_a" href="#"
+                      >Classic
+                    </a>
                   </li>
                   <li
                     onclick="filterBiography(this)"
                     class="catagor_nav_header_ul_li"
                   >
-                    <a class="catagor_nav_header_ul_li_a" href="#"
+                    <a
+                      id="biographys"
+                      class="catagor_nav_header_ul_li_a"
+                      href="#"
                       >Biography
                     </a>
                   </li>
                   <li
-                    onclick="filterScients()"
+                    onclick="filterScients(this)"
                     class="catagor_nav_header_ul_li"
                   >
-                    <a class="catagor_nav_header_ul_li_a" href="#">Scients </a>
+                    <a id="scientss" class="catagor_nav_header_ul_li_a" href="#"
+                      >Scients
+                    </a>
                   </li>
                 </ul>
               </div>
               <div class="shoirs">
-                <h3 id="shoirs_h3">Sizga yoqishi mumkun:</h3>
+                <h3 id="shoirs_h3">Sizga yoqishi mumkin:</h3>
+                <div id="results">
+                  <img
+                    src="/asign/image/52378071-bdb3-49be-98e9-e7c915e75ec0-removebg-preview.png"
+                    alt="No result"
+                  />
+                </div>
                 <div id="shoirs" class="shoirs_nav"></div>
               </div>
             </div>
@@ -115,5 +147,6 @@
       </div>
     </div>
     <script src="/java-script/next-page.js"></script>
+    <script src="/java-script/user-page.js"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 .main {
+  gap: 50px;
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -6,26 +7,44 @@
 }
 
 .main_img {
-  width: 100%;
-  height: 550px;
+  width: 450px;
+  height: 640px;
+  border-radius: 20px;
+  background-size: cover;
   object-position: top;
-  object-fit: cover;
-  min-width: 320px;
-  max-width: 480px;
-  border-radius: 50px;
+}
+.unde {
+  font-size: 40px;
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+.undef {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .user-born {
+  width: auto;
   flex: 1;
 }
-
-.born {
-  margin-top: 50px;
+#titleColor {
+  color: var(--main-color);
 }
+#titleName {
+  margin-top: 13px;
+  font-weight: 100;
+  letter-spacing: 20px 10px;
+}
+.born {
+  margin-top: 10px;
+}
+
 .born_nav {
+  display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
   color: #fff;
   display: flex;
@@ -35,13 +54,43 @@
 }
 .born_nav_h1 {
   color: var(--main-color);
-  font-weight: bold;
+  font-weight: 300;
 }
 .user_info_h1 {
   font-family: var(--main-font);
   color: var(--main-color);
   font-weight: bold;
   font-size: 48px;
+}
+.swiper-button-prev {
+  left: 16px !important;
+  background: black;
+  padding: 10px;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.swiper-button-next {
+  width: 50px !important;
+  height: 50px !important;
+  background-color: black;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.titleName a {
+  color: var(--main-color);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: var(--main-color);
+  font-size: 24px !important;
 }
 .user_info_nav {
   margin-top: 20px;
@@ -106,11 +155,32 @@
   margin-top: 10px;
 }
 
+.shoirs {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
 /* Next page */
 
 /* create book */
-
+#shoirs_h2 {
+  margin-top: 14px;
+  margin-bottom: 10px;
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
 @media only screen and (max-width: 768px) {
+  .unde {
+    font-size: 25px;
+  }
+  .main_img {
+    width: 400px;
+    height: 500px;
+  }
+  .main {
+    width: 100%;
+    justify-content: center;
+  }
   /* .user_info_nav {
     width: 100%;
     justify-content: center;

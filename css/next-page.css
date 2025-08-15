@@ -5,9 +5,23 @@
   justify-content: center;
 }
 .main-page_nav_img {
+  object-fit: contain;
   width: 100%;
   background-size: cover;
   height: 200px;
+}
+#results h1 {
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+#results {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  font-size: 25px;
+}
+#results img {
+  border-radius: 50%;
 }
 .search {
   position: relative;
@@ -15,6 +29,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.undefi {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.undefi h1 {
+  color: var(--main-color);
+  font-family: var(--main-font);
 }
 .search-box {
   display: flex;
@@ -43,6 +66,8 @@
   justify-content: center;
 }
 .search-box_nav {
+  width: 100%;
+  max-width: 600px;
   text-align: center;
   align-items: center;
   padding: 20px;
@@ -55,21 +80,25 @@
 }
 
 .text-input_input {
-  width: 500px;
-  height: 30px;
+  height: 32px;
+  flex: 1;
   border: none;
-  border-radius: 12px;
+  border-radius: 6px;
+  color: white;
+  font-family: var(--secondary-font);
   background-color: #404040;
-  color: #ffffff4d;
   padding: 10px;
+
+  &::placeholder {
+    color: #ffffff4d;
+  }
 }
 .text-input_btn {
   padding: 10px;
   display: flex;
   border: none;
-  width: 75px;
-  height: 30px;
-  border-radius: 12px;
+  height: 32px;
+  border-radius: 6px;
   background-color: #c9ac8c;
   color: #3c2710;
   font-weight: 400;
@@ -77,14 +106,16 @@
   align-items: center;
 }
 .text-input {
-  margin-top: 10px;
-  gap: 5px;
+  width: 100%;
+  margin-top: 16px;
+  gap: 8px;
   display: flex;
   align-items: center;
 }
 .text-input_btn_img {
   width: 20px;
   height: 20px;
+  margin-right: 4px;
 }
 .text-input_btn_span {
   font-size: 15px;
@@ -102,12 +133,10 @@
   justify-content: center;
 }
 #shoirs {
-  margin-top: 15px;
+  margin-top: 24px;
 }
 #shoirs_h3 {
   color: var(--main-color);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .catagor_nav_header_ul li {
   list-style: none;
@@ -120,6 +149,7 @@
 }
 .catagor_nav_h1 {
   display: flex;
+  margin-top: 32px;
   justify-content: center;
 }
 .catagor_nav {
@@ -189,18 +219,17 @@
   font-size: 20px;
 }
 .shoirs_nav {
-  gap: 10px;
+  gap: 20px;
+  padding-bottom: 40px;
   flex-wrap: wrap;
   display: flex;
 }
 
 @media only screen and (max-width: 768px) {
-  /* .user_info_nav {
-    width: 100%;
-    justify-content: center;
-    margin-left: 0;
-    padding: 25px 25px;
-  } */
+  #results {
+    font-size: 20px;
+  }
+
   .text-input_btn {
     width: 40px;
   }

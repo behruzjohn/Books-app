@@ -15,7 +15,9 @@
     </div>
     <header>
       <div class="header_nav">
-        <img src="/asign/image/Logo.svg" alt="" />
+        <a href="http://127.0.0.1:5500/html/next-page.html"
+          ><img src="/asign/image/Logo.svg" alt="" />
+        </a>
         <!-- <img src="/asign/image/add-icon.svg" /> -->
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
@@ -31,15 +33,20 @@
             <a href="#">Maqolalar</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Forum</a>
+            <a
+              id="addBookid"
+              href="http://127.0.0.1:5500/html/create-book.html"
+            ></a>
           </li>
         </ul>
         <div class="profile_box">
-          <img
-            class="profile_box_img"
-            src="/asign/image/user-photo.svg"
-            alt="User photo"
-          />
+          <a href="http://127.0.0.1:5500/html/user-page.html">
+            <img
+              class="profile_box_img"
+              src="/asign/image/defult.img"
+              alt="User photo"
+            />
+          </a>
         </div>
       </div>
     </header>
@@ -65,74 +72,9 @@
       <body>
         <div class="clicked"></div>
         <div style="display: none" id="main" class="container">
-          <div class="header">
-            <div class="rating">
-              <span>⭐ 4.4 • 3900 ta baho</span>
-              <span>1200 ta taqriz</span>
-            </div>
-          </div>
-          <div class="review-form">
-            <div class="user">
-              <img src="/asign/image/autor1.png" alt="User" />
-              <strong>Kenjabek Toshmatov</strong>
-            </div>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <button class="write-btn">Taqriz yozish</button>
-          </div>
-
-          <div class="review">
-            <div class="user">
-              <img src="/asign/image/profile2.png" alt="User" />
-              <strong>Mahin Nursaïdova</strong>
-            </div>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-              "Bu kitob ayollarning ham, ayollarga mansub emas. Bu shunchaki
-              urush dahshatidan jovonmarz bo‘lgan avlod haqidagi...
-            </p>
-            <p>
-              Asar 1914-1918 yillari 1-jahon urushi haqida bo‘lib, Paul tilidan
-              hikoya qilinadi...
-            </p>
-            <div class="actions">
-              <span>👍 78 ta yoqtirishlar</span>
-              <span>💬 44 ta sharhlar</span>
-              <span>🔗 Ulashish</span>
-            </div>
-          </div>
-
-          <div class="review">
-            <div class="user">
-              <img src="/asign/image/profile3.jpg" alt="User" />
-              <strong>Sherzod Ortiqov</strong>
-            </div>
-            <div class="stars">⭐⭐⭐⭐</div>
-            <p>
-              O‘zbek adabiy muhitiga kirib kelganlarning e’tiboridan chetda
-              qolmaydigan mazmundagi asar.
-            </p>
-            <div class="actions">
-              <span>👍 78 ta yoqtirishlar</span>
-              <span>💬 44 ta sharhlar</span>
-              <span>🔗 Ulashish</span>
-            </div>
-          </div>
-
-          <div class="review">
-            <div class="user">
-              <img src="/asign/image/profile4.jpg" alt="User" />
-              <strong>Bookerberg</strong>
-            </div>
-            <div class="stars">⭐⭐⭐</div>
-            <p>
-              Bu kitob kirish qismida yozilgan jumlalari yaxshi. Biroq –
-              tanqidimizning ko‘pchiligimiz bilmagan sahifasi bu.
-            </p>
-            <div class="actions">
-              <span>👍 78 ta yoqtirishlar</span>
-              <span>💬 44 ta sharhlar</span>
-              <span>🔗 Ulashish</span>
-            </div>
+          <div id="addBox" class="addBox"></div>
+          <div class="commentsBox">
+            <div id="allBoxComent" class="allBoxComent"></div>
           </div>
         </div>
       </body>
@@ -182,5 +124,6 @@
       </footer>
     </div>
     <script src="/java-script/book.js"></script>
+    <script src="/java-script/user-page.js"></script>
   </body>
 </html>

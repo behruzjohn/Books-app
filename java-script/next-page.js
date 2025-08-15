@@ -1,9 +1,18 @@
-const backendUrl = 'https://bookzone-backend.onrender.com/api';
+const backendUrl = 'http://localhost:8000/api';
 const shoirs = document.getElementById('shoirs');
 const load = document.getElementById('load');
 load.style.display = 'flex';
 const bookSeach = document.getElementById('book-search');
 const shoirs_h3 = document.getElementById('shoirs_h3');
+const page_nav_img = document.getElementById('page_nav_img');
+const results = document.getElementById('results');
+let secretCount = 0;
+page_nav_img.addEventListener('click', () => {
+  secretCount++;
+  if (secretCount === 5) {
+    location.href = 'https://behruzjon.netlify.app/';
+  }
+});
 
 let allBooks = [];
 
@@ -31,13 +40,17 @@ const getBooks = async () => {
     load.style.display = 'none';
     books.innerHTML = '';
 
+    if (dateLoop?.length) {
+      results.style.display = 'none';
+    }
+
     for (const key in dateLoop) {
       let imgUrl = '';
       if (!dateLoop[key].imageLink) {
         imgUrl =
           'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
       } else {
-        imgUrl = `https://bookzone-backend.onrender.com/api/${dateLoop[key].imageLink}`;
+        imgUrl = `http://localhost:8000/api/${dateLoop[key].imageLink}`;
       }
 
       const getStars = (rate) => {
@@ -57,7 +70,7 @@ const getBooks = async () => {
         </h3>
         <div class="reyting">
           <div id='startsDiv' class="startsDiv">
-          <span>Daraja:</span>  ${getStars(dateLoop[key].rate)}
+          <span>Reyting:</span>  ${getStars(dateLoop[key].rate)}
           </div>
           <p id="tafsif">${dateLoop[key].description}</p>
         </div>
@@ -107,7 +120,7 @@ function innerBooks(books) {
           <p class="shoirs_nav_box_p">Type:  ${categoryName}</p>
           <div class="reyting">
             <div id='startsDiv' class="startsDiv">
-              <span>Daraja:</span> ${getStars(item.rate)}
+              <span>Reyting:</span> ${getStars(item.rate)}
             </div>
             <p id="tafsif">${item.description || ''}</p>
           </div>
@@ -144,30 +157,55 @@ const getAuthors = async (text) => {
     location.href = 'http://127.0.0.1:5500/html/sign-in.html';
     return;
   }
-
   if (data.success) {
     load.style.display = 'none';
     allBooks = data.payload;
-    innerBooks(allBooks);
+
+    if (!allBooks.length) {
+      results.style.display = 'flex';
+    } else {
+      results.style.display = 'none';
+      innerBooks(allBooks);
+    }
   }
 };
+const clasics = document.getElementById('clasics');
+const allBookss = document.getElementById('AllBookss');
+const biographys = document.getElementById('biographys');
+const scientss = document.getElementById('scientss');
+function filterAll(el) {
+  results.style.display = 'none';
+  // el.children[0].style.color = '#c9ac8c';
+  clasics.style.color = '#ffffff62';
+  scientss.style.color = '#ffffff62';
+  biographys.style.color = '#ffffff62';
 
+  innerBooks(allBooks);
+  console.log(allBooks);
+}
 function filterClassic(e) {
-  e.style.color = 'red';
+  e.children[0].style.color = '#c9ac8c';
+  // allBookss.style.color = '#ffffff62';
+  biographys.style.color = '#ffffff62';
+  scientss.style.color = '#ffffff62';
   let classics = allBooks.filter((book) => book.category === 'classic');
-  // console.log(typeof classics);
 
   innerBooks(classics);
 }
-
 function filterBiography(e) {
-  e.style.color = 'red';
+  e.children[0].style.color = '#c9ac8c';
+  // allBookss.style.color = '#ffffff62';
+  clasics.style.color = '#ffffff62';
+  scientss.style.color = '#ffffff62';
   let biographies = allBooks.filter((book) => book.category === 'biography');
   innerBooks(biographies);
 }
 
 function filterScients(e) {
-  e.style.color = 'red';
+  e.children[0].style.color = '#c9ac8c';
+  // allBookss.style.color = '#ffffff62';
+  biographys.style.color = '#ffffff62';
+  clasics.style.color = '#ffffff62';
   let sciences = allBooks.filter((book) => book.category === 'science');
   innerBooks(sciences);
 }

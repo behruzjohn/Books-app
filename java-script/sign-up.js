@@ -1,4 +1,4 @@
-const backendUrl = 'https://bookzone-backend.onrender.com/api';
+const backendUrl = 'http://localhost:8000/api';
 let selectedFile;
 
 document.getElementById('registerBtn').addEventListener('click', checkUser);
