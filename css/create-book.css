@@ -26,6 +26,7 @@ input {
   height: 35px;
 }
 .warning_p {
+ 
   margin-top: 10px;
   color: #ffffff;
 }
@@ -122,7 +123,7 @@ textarea {
 }
 .tafsif_box_nav {
   display: flex;
-  align-items: flex-start; /* o‘rtadan emas, tepadan */
+  align-items: flex-start; 
   color: #fff;
 }
 .tafsif_box {
@@ -133,7 +134,7 @@ textarea {
 }
 .tafsif_box_nav_p {
   flex: 1;
-  min-height: 100px; /* balandlik berish */
+  min-height: 100px; 
   display: flex;
   justify-content: left;
   color: #fff;
