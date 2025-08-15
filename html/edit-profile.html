@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="/css/edit-profile.css" />7
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Your Profile</h2>
+
+            <div class="buttons">
+                <button class="discard">Discard</button>
+                <button onclick="saveBut()" class="save">Save</button>
+            </div>
+        </div>
+
+        <div class="profile-picture">
+            <img class="img" src="/asign/image/defult.img" alt="Profile" />
+            <div>
+                <button class="btn-blue">Change picture</button>
+                <button class="btn-red">Delete picture</button>
+            </div>
+        </div>
+
+        <h3 class="informat">👤 Personal Information</h3>
+        <div class="form-group">
+            <label class="ppp">First Name</label>
+            <input id="inp" type="text" value="Name" />
+
+            <label class="ppp">Last Name</label>
+            <input id="inpu" type="text" value="Surname" />
+        </div>
+
+        <div class="form-group">
+            <label class="ppp">Date of birth</label>
+            <input id="input" type="date" value="dd-mm-yyyy" />
+
+            <label class="ppp">Phone number</label>
+            <div class="phone-input"><input id="phone-number" type="tel" value="+998" /></div>
+        </div>
+
+        <h3 class="informat">👤 Personal Location</h3>
+        <div class="form-group">
+            <label class="ppp">Address</label>
+            <input id="place" type="text" value="Street" />
+
+            <label class="ppp">City</label>
+            <input id="placeh" type="text" value="Your City" />
+
+            <label class="ppp">Region</label>
+            <input id="placeholde" type="text" value="Your Region" />
+
+            <label class="ppp">Language</label>
+            <select id="lang">
+                <option selected>eng</option>
+                <option selected>uz</option>
+                <option selected>uz</option>
+            </select>
+
+            <label class="ppp">Country</label>
+            <input id="placeholder" type="text" value="Your country" />
+            <script src="/java-script/edit-profile.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>

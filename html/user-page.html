@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/user-page.css" />
-    <link rel="stylesheet" href="/css/theme.css" />
-    <link rel="stylesheet" href="/css/loader.css" />
-  </head>
-  <body>
-    <div id="load" class="load">
-      <span class="loader"></span>
-    </div>
-    <!-- <div class="container"> -->
-    <header>
-      <div class="header_nav">
-        <img src="/asign/image/Logo.svg" alt="" />
-        <ul class="header_nav_ul">
-          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
-          </li>
-          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Adiblar</a>
-          </li>
-          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Kategoriya</a>
-          </li>
-          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Maqolalar</a>
-          </li>
-          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Forum</a>
-          </li>
-        </ul>
-        <div class="profile_box">
-          <a href="http://127.0.0.1:5500/html/user-page.html#">
-            <img
-              class="profile_box_img"
-              src="/asign/image/defult.img"
-              alt="User photo"
-            />
-          </a>
-        </div>
-      </div>
-    </header>
-    <div class="container">
-      <div id="user-banner" class="user-banner"></div>
-    </div>
-    <div class="books-header">
-      <div class="books-header_nav">
-        <ul class="books-header_ul">
-          <li><a onclick="booksMenu(this)" href="#">O’qilganlar</a></li>
-          <li id="main-li">
-            <a onclick="booksMenu(this)" href="#">O’zim yaratgan kitoblarim</a>
-          </li>
-          <li><a onclick="booksMenu(this)" href="#">O’qilmoqda</a></li>
-          <li><a onclick="booksMenu(this)" href="#">Adiblar</a></li>
-        </ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/user-page.css" />
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/loader.css" />
+</head>
+
+<body>
+  <div id="load" class="load">
+    <span class="loader"></span>
+  </div>
+  <!-- <div class="container"> -->
+  <header>
+    <div class="header_nav">
+      <img src="/asign/image/Logo.svg" alt="" />
+      <ul class="header_nav_ul">
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Adiblar</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Kategoriya</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Maqolalar</a>
+        </li>
+        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <a href="#">Forum</a>
+        </li>
+      </ul>
+      <div class="profile_box">
+        <a href="http://127.0.0.1:5500/html/user-page.html#">
+          <img class="profile_box_img" src="/asign/image/defult.img" alt="User photo" />
+        </a>
       </div>
     </div>
-    <div class="container">
-      <div id="books" class="books"></div>
+  </header>
+  <div class="container">
+    <div id="user-banner" class="user-banner"></div>
+  </div>
+  <div class="books-header">
+    <div class="books-header_nav">
+      <ul class="books-header_ul">
+        <li><a onclick="booksMenu(this)" href="#">O’qilganlar</a></li>
+        <li id="main-li">
+          <a onclick="booksMenu(this)" href="#">O’zim yaratgan kitoblarim</a>
+        </li>
+        <li><a onclick="booksMenu(this)" href="#">O’qilmoqda</a></li>
+        <li><a onclick="booksMenu(this)" href="#">Adiblar</a></li>
+      </ul>
     </div>
-    <footer>
-      <p>
-        @2025 <strong>Behruz</strong> and <strong>Muhammad</strong> All Rights
-        Reserved.
-      </p>
-    </footer>
-    <script src="/java-script/user-page.js"></script>
-  </body>
+  </div>
+  <div class="container">
+    <div id="books" class="books"></div>
+  </div>
+  <footer>
+    <p>
+      @2025 <strong>Behruz</strong> and <strong>Muhammad</strong> All Rights
+      Reserved.
+    </p>
+  </footer>
+  <script src="/java-script/user-page.js"></script>
+</body>
+
 </html>
