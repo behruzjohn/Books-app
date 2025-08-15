@@ -21,7 +21,8 @@
   <!-- <div class="container"> -->
   <header>
     <div class="header_nav">
-      <img src="/asign/image/Logo.svg" alt="" />
+      <a href="http://127.0.0.1:5500/html/next-page.html"><img src="/asign/image/Logo.svg" alt="" />
+      </a>
       <ul class="header_nav_ul">
         <li onclick="borderCheck(this)" id="li" class="header_nav_li">
           <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
@@ -36,15 +37,37 @@
           <a href="#">Maqolalar</a>
         </li>
         <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-          <a href="#">Forum</a>
+          <a id="addBookid" href="http://127.0.0.1:5500/html/create-book.html"></a>
         </li>
       </ul>
       <div class="profile_box">
         <a href="http://127.0.0.1:5500/html/user-page.html#">
-          <img class="profile_box_img" src="/asign/image/defult.img" alt="User photo" />
+          <img id="profileBox" class="profile_box_img" src="/asign/image/defult.img" alt="User photo" />
         </a>
       </div>
     </div>
+  </header>
+  <div style="display: none" id="logOut" class="logOut">
+    <div id="logOutBox" class="logOutBox">
+      <img src="/asign/image/logout.png" alt="LogOut" />
+      <p>Log out</p>
+    </div>
+  </div>
+  <div class="container">
+    <div id="user-banner" class="user-banner"></div>
+  </div>
+  <div class="books-header">
+    <div class="books-header_nav">
+      <ul class="books-header_ul">
+        <li>
+          <a id="shelfs" onclick="myShelfs(this)" href="#">Mening javonim</a>
+        </li>
+        <li id="main-li">
+          <a id="myCreates" onclick="booksMenu(this)" href="#">O’zim yaratgan kitoblarim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
   </header>
   <div class="container">
     <div id="user-banner" class="user-banner"></div>
@@ -60,17 +83,14 @@
         <li><a onclick="booksMenu(this)" href="#">Adiblar</a></li>
       </ul>
     </div>
-  </div>
-  <div class="container">
-    <div id="books" class="books"></div>
-  </div>
-  <footer>
-    <p>
-      @2025 <strong>Behruz</strong> and <strong>Muhammad</strong> All Rights
-      Reserved.
-    </p>
-  </footer>
-  <script src="/java-script/user-page.js"></script>
+    <footer>
+      <p>
+        @2025 <strong>Behruz</strong> and <strong>Muhammad</strong> All Rights
+        Reserved.
+      </p>
+    </footer>
+    <script src="/java-script/user-page.js"></script>
+    <script src="/java-script/user-page.js"></script>
 </body>
 
 </html>

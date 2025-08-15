@@ -14,7 +14,9 @@
     </div>
     <header>
       <div class="header_nav">
-        <img src="/asign/image/Logo.svg" alt="" />
+        <a href="http://127.0.0.1:5500/html/next-page.html"
+          ><img src="/asign/image/Logo.svg" alt="" />
+        </a>
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
@@ -29,15 +31,20 @@
             <a href="#">Maqolalar</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Forum</a>
+            <a
+              id="addBookid"
+              href="http://127.0.0.1:5500/html/create-book.html"
+            ></a>
           </li>
         </ul>
         <div class="profile_box">
-          <img
-            class="profile_box_img"
-            src="/asign/image/user-photo.svg"
-            alt="User photo"
-          />
+          <a href="http://127.0.0.1:5500/html/user-page.html">
+            <img
+              class="profile_box_img"
+              src="/asign/image/defult.img"
+              alt="User photo"
+            />
+          </a>
         </div>
       </div>
     </header>
@@ -187,7 +194,11 @@
               </div>
               <div class="add-images">
                 <div class="add-book_box">
-                  <button type="submit" class="time_box_btn1">
+                  <button
+                    onclick="changeInfo()"
+                    type="button"
+                    class="time_box_btn1"
+                  >
                     Tahrirlashga ruxsat
                   </button>
                 </div>
@@ -197,6 +208,7 @@
         </form>
       </div>
     </div>
-    <script src="/java-script/create-book.js"></script>
+    <script src="/java-script/edit-book.js"></script>
+    <script src="/java-script/user-page.js"></script>
   </body>
 </html>
