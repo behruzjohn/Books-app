@@ -1,7 +1,7 @@
 const form = document.getElementById('form');
 const title = document.getElementById('book-name');
 const country = document.getElementById('country');
-const language = document.getElementById('inputs_ss');
+const language = document.getElementById('lang');
 const pages = document.getElementById('pages');
 const price = document.getElementById('price');
 const rate = document.getElementById('rate');
@@ -42,10 +42,7 @@ async function handleFileChange(e) {
     });
     const data = await response.json();
     imageId = data.payload[0]._id;
-    console.log(data.msg);
-  } catch (err) {
-    console.log('Xatolik', err);
-  }
+  } catch (err) {}
 }
 
 form.addEventListener('submit', function (event) {
@@ -105,7 +102,6 @@ function addBook() {
           .then((val) => val?.json())
           .then((val) => val);
 
-        console.log(books.success);
         if (books.success === true) {
           load.style.display = 'none';
           alert("Kitob muvaoqiyatli qo'shildi✅");

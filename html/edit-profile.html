@@ -1,72 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Profile</title>
-    <link rel="stylesheet" href="/css/edit-profile.css" />7
-</head>
+    <link rel="stylesheet" href="/css/edit-profile.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+  </head>
 
-<body>
+  <body>
+    <div id="load" class="load">
+      <span class="loader"></span>
+    </div>
+    <header>
+      <div class="header_nav">
+        <a href="http://127.0.0.1:5500/html/next-page.html"
+          ><img src="/asign/image/Logo.svg" alt="" />
+        </a>
+        <ul class="header_nav_ul">
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/autor.html">Adiblar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/AboutUs.html"
+              >Biz haqimizda / Aloqa</a
+            >
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a
+              id="addBookid"
+              href="http://127.0.0.1:5500/html/create-book.html"
+            ></a>
+          </li>
+        </ul>
+        <div class="profile_box">
+          <a href="http://127.0.0.1:5500/html/user-page.html">
+            <img
+              class="profile_box_img"
+              src="/asign/image/defult.img"
+              alt="User photo"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
     <div class="container">
+      <div class="editBox">
         <div class="header">
-            <h2>Your Profile</h2>
+          <h2>Your Profile</h2>
 
-            <div class="buttons">
-                <button class="discard">Discard</button>
-                <button onclick="saveBut()" class="save">Save</button>
-            </div>
+          <div class="buttons">
+            <button onclick="discard()" class="discard">Discard</button>
+            <button onclick="saveBut()" class="save">Save</button>
+          </div>
         </div>
 
         <div class="profile-picture">
-            <img class="img" src="/asign/image/defult.img" alt="Profile" />
-            <div>
-                <button class="btn-blue">Change picture</button>
-                <button class="btn-red">Delete picture</button>
-            </div>
+          <img id="img" src="/asign/image/defult.img" alt="Profile" />
+          <div>
+            <!-- <button
+            id="showBtn"
+            type="button"
+            onclick="showFile()"
+            class="image_box_nav_img"
+          >
+            Rasmni yangilash
+          </button> -->
+            <input type="file" id="file" onchange="handleFileChange(event)" />
+          </div>
         </div>
 
-        <h3 class="informat">👤 Personal Information</h3>
+        <h3 class="informat">Personal Information</h3>
         <div class="form-group">
-            <label class="ppp">First Name</label>
-            <input id="inp" type="text" value="Name" />
+          <label class="ppp">First Name</label>
+          <input id="inp" type="text" value="Name" />
 
-            <label class="ppp">Last Name</label>
-            <input id="inpu" type="text" value="Surname" />
+          <label class="ppp">Last Name</label>
+          <input id="inpu" type="text" value="Surname" />
         </div>
 
         <div class="form-group">
-            <label class="ppp">Date of birth</label>
-            <input id="input" type="date" value="dd-mm-yyyy" />
+          <label class="ppp">Date of birth</label>
+          <input id="input" type="date" value="dd-mm-yyyy" />
 
-            <label class="ppp">Phone number</label>
-            <div class="phone-input"><input id="phone-number" type="tel" value="+998" /></div>
+          <label class="ppp">Phone number</label>
+          <div class="phone-input">
+            <input id="phone-number" type="tel" value="+998" />
+          </div>
         </div>
-
-        <h3 class="informat">👤 Personal Location</h3>
-        <div class="form-group">
-            <label class="ppp">Address</label>
-            <input id="place" type="text" value="Street" />
-
-            <label class="ppp">City</label>
-            <input id="placeh" type="text" value="Your City" />
-
-            <label class="ppp">Region</label>
-            <input id="placeholde" type="text" value="Your Region" />
-
-            <label class="ppp">Language</label>
-            <select id="lang">
-                <option selected>eng</option>
-                <option selected>uz</option>
-                <option selected>uz</option>
-            </select>
-
-            <label class="ppp">Country</label>
-            <input id="placeholder" type="text" value="Your country" />
-            <script src="/java-script/edit-profile.js"></script>
-        </div>
+      </div>
     </div>
-</body>
 
+    <script src="/java-script/edit-profile.js"></script>
+  </body>
 </html>

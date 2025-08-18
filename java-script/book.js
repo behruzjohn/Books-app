@@ -1,13 +1,20 @@
+const muallifInfo = document.getElementById('muallifInfo');
+const muallifTaqriz = document.getElementById('muallifTaqriz');
+muallifInfo.style.color = '#c9ac8c';
 function toggleMenu() {
   document.querySelector('nav ul').classList.toggle('active');
 }
 function muallif(e) {
+  muallifInfo.style.color = 'white';
+  muallifTaqriz.style.color = '#c9ac8c';
   let ret = document.getElementById('container');
   const main = document.getElementById('main');
   ret.style.display = 'none';
   main.style.display = 'block';
 }
 function mual(e) {
+  muallifInfo.style.color = '#c9ac8c';
+  muallifTaqriz.style.color = 'white';
   const ret = document.getElementById('container');
   const main = document.getElementById('main');
   main.style.display = 'none';
@@ -38,7 +45,6 @@ async function getBookById() {
   if (data.success) {
     load.style.display = 'none';
   }
-  console.log(data);
 
   dataComment = data;
   const item = data.payload.book;
@@ -47,7 +53,6 @@ async function getBookById() {
   let coments = item.comments;
   for (let i = 0; i < coments.length; i++) {
     let user = coments[i].user;
-    console.log(coments[i]);
 
     const allBoxComent = document.getElementById('allBoxComent');
     allBoxComent.innerHTML += `
@@ -87,7 +92,7 @@ async function getBookById() {
       resImg = item.image.url;
     } else {
       resImg =
-        'https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg';
+        'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
     }
 
     mainBook.innerHTML = `<div class="cover">
@@ -98,7 +103,7 @@ async function getBookById() {
     <h2>${item.title}</h2>
     <img
     id="editIcon"
-    onclick="editIcon()"
+    onclick="editIcon(this)"
     src="/asign/image/pen-line.svg"
     alt=""
     />
@@ -112,7 +117,7 @@ async function getBookById() {
     <div class='info'>
     <p style="color:grey">Chop etilgan: <b id='b' style="color:white"> ${item.updatedAt.slice(
       0,
-      7
+      10
     )}</b></p>
     </div>
     <div class='info'>
@@ -151,16 +156,16 @@ async function getBookById() {
     </div>`;
     //
     const editIcon = document.getElementById('editIcon');
+    if (userIds !== localStorage.getItem('userId')) {
+      editIcon.style.display = 'none';
+      localStorage.setItem('currentBookId', item._id);
+    } else {
+      editIcon.style.display = 'flex';
+    }
     editIcon.addEventListener('click', () => {
-      if (userIds !== localStorage.getItem('userId')) {
-        alert('Siz bu kitobning mualifi emasiz!');
-        localStorage.setItem('currentBookId', item._id);
-      } else {
-        const bookId = location.search.slice(4);
-        console.log(bookId);
+      const bookId = location.search.slice(4);
 
-        location.href = `http://127.0.0.1:5500/html/edit-book.html?id=${bookId}`;
-      }
+      location.href = `http://127.0.0.1:5500/html/edit-book.html?id=${bookId}`;
     });
   }
   async function addShelfBook() {
@@ -177,7 +182,7 @@ async function getBookById() {
     });
 
     const data = await res.json();
-    console.log(data);
+
     if (data.success) {
       alert(`Kitob muvofoqiyatli javoningizga qo'shildi✅`);
     }
@@ -204,7 +209,6 @@ async function getBookById() {
     } else {
       resImg = '/asign/image/man-user-circle-icon.png';
     }
-    console.log(authorInfo.firstName);
 
     mualliff.innerHTML = `
 <div class="rasmi">
@@ -265,7 +269,6 @@ async function getName() {
     location.href = 'http://127.0.0.1:5500/html/sign-in.html';
     return;
   }
-  console.log(myInfo);
 
   const addBox = document.getElementById('addBox');
   addBox.innerHTML = `
@@ -316,7 +319,7 @@ function add() {
     });
 
     const data = await res.json();
-    console.log(data);
+
     if (data.success) {
       addBox_input.value = '';
       load.style.display = 'none';
@@ -324,7 +327,6 @@ function add() {
       const allBoxComent = document.getElementById('allBoxComent');
       const user = data.payload.user;
       const text = data.payload.text;
-      console.log(user);
 
       allBoxComent.innerHTML += `
     <div id="commentss" data-id='${user._id}' class="comments_nav">
@@ -354,5 +356,3 @@ function add() {
 
   addCommit();
 }
-
-console.log(getCoomet);

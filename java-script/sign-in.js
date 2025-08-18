@@ -16,8 +16,6 @@ async function saveUserInfo() {
     }
   }
   var user = new GetUser(`${email.value}`, `${password.value}`);
-  console.log(user);
-  //
 
   const backendUrl = 'http://localhost:8000/api';
 
@@ -30,7 +28,6 @@ async function saveUserInfo() {
   }).then((res) => {
     return res.json();
   });
-  // localStorage.setItem('userInfo', json.stringify(user2.user));
 
   if (user2.success) {
     load.style.display = 'none';

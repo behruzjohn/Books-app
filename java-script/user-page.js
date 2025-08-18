@@ -10,6 +10,7 @@ const myCreates = document.getElementById('myCreates');
 const profileBox = document.getElementById('profileBox');
 const logOut = document.getElementById('logOut');
 const logOutBox = document.getElementById('logOutBox');
+addBookid.style.display = 'none';
 
 logOutBox.addEventListener('click', () => {
   location.href = 'http://127.0.0.1:5500/html/sign-in.html';
@@ -21,6 +22,7 @@ profileBox.addEventListener('click', () => {
   count++;
   if (count % 2 === 1) {
     logOut.style.display = 'flex';
+    logOut.style.flexDirection = 'column';
   } else {
     logOut.style.display = 'none';
   }
@@ -44,18 +46,11 @@ async function booksMenu(e) {
   });
 
   const data = await res.json();
-  console.log(data);
-
-  if (data.msg === 'jwt expired') {
-    alert("Iltimos ro'yxatdan o'ting");
-    location.href = 'http://127.0.0.1:5500/html/sign-in.html';
-    return;
-  }
 
   const dateLoop = data.payload.docs;
-  console.log(dateLoop.length);
 
   if (data.success) {
+    load.style.display = 'none';
     if (dateLoop.length === 0) {
       books.innerHTML = `<h1 class="unde">Siz yaratgan kitoblar mavjud emas!</h1>`;
     } else {
@@ -89,7 +84,7 @@ async function booksMenu(e) {
           <div class="startsDiv">
             ${getStars(dateLoop[key].rate)}
           </div>
-          <p>${dateLoop[key].description}</p>
+          <p class="books_box-category">${dateLoop[key].category}</p>
         </div>
       </div>
     `;
@@ -97,14 +92,26 @@ async function booksMenu(e) {
     }
   }
 
-  load.style.display = 'none';
   document.querySelectorAll('.books_box').forEach((box) => {
     box.addEventListener('click', () => {
       const id = box.getAttribute('data-id');
-      location.href = `http://127.0.0.1:5500/html/index.html?id=${id}`;
+      location.href = `http://127.0.0.1:5500/html/book.html?id=${id}`;
     });
   });
 }
+
+const phoneFormatter = (phone) => {
+  let value = phone.toString();
+  if (value.startsWith('+998')) {
+    value = value.slice(4);
+  }
+
+  const result = value
+    .toString()
+    .replace(/^(\d{2})(\d{3})(\d{2})(\d{2})$/, '($1) $2-$3-$4');
+
+  return `+998 ${result}`;
+};
 
 const userBan = document.getElementById('user-banner');
 async function getUserProfileImg() {
@@ -116,19 +123,24 @@ async function getUserProfileImg() {
   });
 
   const data = await res.json();
-  let phoneNum = '';
 
+  if (data.msg === 'jwt expired') {
+    alert("Iltimos ro'yxatdan o'ting");
+    location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+    return;
+  }
+
+  let phoneNum = '';
   let myInfo = data.user;
   if (myInfo.role === 'author') {
+    addBookid.style.display = 'flex';
     addBookid.innerText = `Yangi kitob qo'shish`;
   }
-  if (myInfo.phone.includes('+998')) {
-    phoneNum = myInfo.phone;
-  } else {
-    phoneNum = `+998${myInfo.phone}`;
-  }
+
+  phoneNum = phoneFormatter(myInfo.phone);
+
   let userId = myInfo._id;
-  console.log(userId);
+
   localStorage.setItem('userId', userId);
 
   let resImg = `/asign/image/man-user-circle-icon.png`;
@@ -142,7 +154,16 @@ async function getUserProfileImg() {
             <p class="imgages_p">${phoneNum}</p>
             </div>
             <div class="user-banner_info">
+            <div class="inbox">
             <h1>${myInfo.firstName} ${myInfo.lastName}</h1>
+            <img
+    id="editIcon"
+    onclick="editIcon(this)"
+    src="/asign/image/pen-line.svg"
+    alt=""
+    />
+            
+            </div>
             <div class="user-banner-info_p">
             <p><strong>Tavallud:</strong> ${myInfo.date_of_birth.slice(
               0,
@@ -153,6 +174,9 @@ async function getUserProfileImg() {
             </div>
             </div>
             </div>`;
+}
+function editIcon() {
+  location.href = 'http://127.0.0.1:5500/html/edit-profile.html';
 }
 getUserProfileImg();
 
@@ -170,14 +194,13 @@ async function myShelfs(e) {
   const data = await res.json();
 
   const dateLoop = data.payload.shelf;
-  console.log(dateLoop);
 
   if (data.msg === 'jwt expired') {
     alert("Iltimos ro'yxatdan o'ting");
     location.href = 'http://127.0.0.1:5500/html/sign-in.html';
     return;
   }
-  console.log(data);
+
   if (data.success) {
     if (dateLoop.length === 0) {
       books.innerHTML = `<h1 class="unde">Sizning javoningiz bo'sh!</h1>`;

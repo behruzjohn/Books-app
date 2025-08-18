@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.aboutUs {
+  width: 100%;
+  justify-content: center;
+  max-width: 500px;
+  margin-top: 120px;
+}
+.aboutUs_nav {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.aboutUs_nav h1 {
+  font-family: var(--main-font);
+  letter-spacing: 5px;
+  color: var(--main-color);
+}
+.aboutUs_nav p {
+  font-family: var(--secondary-font);
+  letter-spacing: 1.2px;
+}
+#aloqa {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.contact-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#aboutUs_nav_p {
+  margin-top: 10px;
+}
+.box {
+  display: flex;
+  justify-content: center;
+}
+i {
+  color: var(--main-color);
+}
+.contact {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact input {
+  border: none;
+  width: 100%;
+  height: 35px;
+  background-color: #333030;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+p a {
+  color: #0008a9;
+}
+#mess {
+  padding-top: 10px;
+
+  resize: none;
+  background-color: #333030;
+  color: #fff;
+  align-items: center;
+  display: flex;
+  padding-left: 8px;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+.contact button {
+  height: 40px;
+  background-color: var(--main-color);
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+}
+.footer {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(98, 96, 96, 0.317);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#comingSoon {
+  height: 100vh;
+  width: 100%;
+  background-image: url('rasmingiz.jpg');
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+}

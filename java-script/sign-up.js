@@ -24,6 +24,7 @@ async function checkUser() {
   for (const key of checkRole) {
     if (key.checked) {
       role = key.value;
+      return false;
     }
   }
 
@@ -64,14 +65,13 @@ async function checkUser() {
       });
 
       const data = await res.json();
-      // localStorage.setItem('userInfo', data);
       if (data.success) {
         location.href = 'http://127.0.0.1:5500/html/sign-in.html';
       }
       if (data.token) {
         load.style.display = 'none';
         localStorage.setItem('token', data.token);
-        alert(`Ro'yxatdan o'tdingiz`);
+        alert(`Ro'yxatdan o'tdingiz✅`);
       }
     } catch (err) {
       console.error('Xatolik:', err);
@@ -90,22 +90,27 @@ function checkPhone(phone) {
 
 function checkName(firstName, lastName) {
   if (firstName.value === '' || lastName.value === '') {
-    firstName.style.border = '3px solid red';
-    lastName.style.border = '3px solid red';
+    firstName.style.border = '1px solid red';
+    lastName.style.border = '1px solid red';
     return false;
   }
   return true;
 }
 
 function checkPassword(password, confirmPassword) {
-  if (password.value !== confirmPassword.value) {
-    alert('Parollingiz xato');
-    confirmPassword.style.border = '3px solid red';
-    return false;
+  if (password.value && confirmPassword.value) {
+    if (password.value !== confirmPassword.value) {
+      alert('Parollingiz xato');
+      confirmPassword.style.border = '1px solid red';
+      return false;
+    } else {
+      confirmPassword.style.border = 'none';
+    }
+    return true;
   } else {
-    confirmPassword.style.border = 'none';
+    alert('Parolni kiritishingiz zarur!');
+    return false;
   }
-  return true;
 }
 
 function showFile() {
