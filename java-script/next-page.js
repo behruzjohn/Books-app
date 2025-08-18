@@ -1,137 +1,112 @@
 const backendUrl = 'http://localhost:8000/api';
-const shoirs = document.getElementById('shoirs');
-const load = document.getElementById('load');
-load.style.display = 'flex';
-const bookSeach = document.getElementById('book-search');
-const shoirs_h3 = document.getElementById('shoirs_h3');
-const page_nav_img = document.getElementById('page_nav_img');
-const results = document.getElementById('results');
-let secretCount = 0;
-page_nav_img.addEventListener('click', () => {
-  secretCount++;
-  if (secretCount === 5) {
-    location.href = 'https://behruzjon.netlify.app/';
-  }
-});
+let authorsId = location.search.slice(4);
+async function loadAuthor() {
+  const res = await fetch(`${backendUrl}/books/author/${authorsId}`);
+  const data = await res.json();
 
-let allBooks = [];
-
-const getBooks = async () => {
-  load.style.display = 'flex';
-  const books = await fetch(backendUrl + '/books/', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-    },
-  });
-  const getBooksApi = await books.json();
-  if (getBooksApi.msg === 'jwt expired') {
-    alert("Iltimos ro'yxatdan o'ting");
-    location.assign('/html/sign-in.html');
+  const authorPayload = data.payload;
+  let authorInfo = authorPayload?.docs || [];
+  if (authorInfo.length === 0) {
+    main.innerHTML = `<div class="undef">
+    <h2 class="unde">Muallif haqida ma'lumot topilmadi!</h2>
+    </div>`;
     return;
   }
+  let popularBook = authorInfo.sort((a, b) => b.views - a.views);
+  let popularBookRes = popularBook[0];
 
-  const dateLoop = getBooksApi.payload.docs;
-  allBooks = dateLoop;
+  if (!popularBookRes?.author) {
+    main.innerHTML = "<h2>Muallif haqida ma'lumot topilmadi</h2>";
+    return;
+  }
+  let author = popularBookRes.author;
 
-  if (getBooksApi.success) {
-    load.style.display = 'none';
-    books.innerHTML = '';
+  let dead = '';
 
-    if (dateLoop?.length) {
-      results.style.display = 'none';
-    }
-
-    for (const key in dateLoop) {
-      let imgUrl = '';
-      if (!dateLoop[key].imageLink) {
-        imgUrl =
-          'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
-      } else {
-        imgUrl = `http://localhost:8000/api/${dateLoop[key].imageLink}`;
+  main.innerHTML = `
+  <img onclick="addId()" class="main_img" src="https://37assets.37signals.com/svn/765-default-avatar.png" alt="O'tkir Aka"/>
+  <div class="user_info">
+    <div class="user_info_nav">
+      <h1 id="user_name" style="text-transform: lowercase" class="user_info_h1">
+        ${author.firstName} ${author.lastName}
+      </h1>
+      <div class="born">
+      <div class="born_nav">
+      <div class="born-1">
+      <p class="born_nav_p">Tavvalud sanasi:</p>
+      <h1 id="born" class="born_nav_h1">${author.date_of_birth.slice(
+        0,
+        10
+      )}</h1>
+      <p class="born_nav_p">${popularBookRes.country} Uzbekistan</p>
+      </div>
+      ${
+        !author?.date_of_death
+          ? ``
+          : `<h1 id="born-2" class="born_nav_h1">-</h1>
+          <div id="born-2" class="born-2">
+            <p id="born-2" class="born_nav_p">O'lgan sanasi:</p>
+            <h1 id="died" class="born_nav_h1">${dead}</h1>
+            <p class="born_nav_p">${popularBookRes.country}, Uzbekistan</p>
+         
+          </div>`
       }
-
-      const getStars = (rate) => {
-        let result = '';
-        for (let i = 0; i < rate; i++) {
-          result += `<img id='rateImg' src='/asign/image/star (2).svg' id="starts"/>`;
-        }
-        return result;
-      };
-
-      if (dateLoop[key].rate > 1) {
-        shoirs.innerHTML += `
-      <div id="booksBox" class="books_box" data-id="${dateLoop[key]._id}">
-        <img id="img" src="${imgUrl}" alt="Books 1" />
-        <h3 id="title" class="books_box_h3" style="text-transform: uppercase">
-          ${dateLoop[key].title}
-        </h3>
-        <div class="reyting">
-          <div id='startsDiv' class="startsDiv">
-          <span>Reyting:</span>  ${getStars(dateLoop[key].rate)}
-          </div>
-          <p id="tafsif">${dateLoop[key].description}</p>
         </div>
       </div>
-    `;
-      }
+      <h3 id="titleName">${author.firstName} ${author.lastName}ning ${
+    authorPayload.totalDocs
+  } ga yaqin kitoblari mavjud.
+      U ko'proq ${popularBookRes.language} tilida kitoblarni nashr qiladi.
+      Uning eng mashhur kitoblaridan biri <a href="book.html?id=${
+        popularBookRes?._id
+      }" id='titleColor'>${popularBookRes.title}</a> hisoblanadi.
+      Chunki uni ${popularBookRes.views} ta odam tomosha qilgan.</h3>
+      <h2 id='shoirs_h2'>Kitoblari:</h2>
+
+      <div class="swiper">
+        <div class="swiper-wrapper" id="shoirs"></div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </div>`;
+  const getStars = function (rate) {
+    let result = '';
+    for (let i = 0; i < rate; i++) {
+      result += `<img id='rateImg' src='/asign/image/star (2).svg' alt="star"/>`;
     }
-    document.querySelectorAll('.books_box').forEach((box) => {
-      box.addEventListener('click', () => {
-        const bookId = box.getAttribute('data-id');
-        location.assign(`/html/book.html?id=${bookId}`);
-      });
-    });
-  }
-};
-load.style.display = 'none';
+    return result;
+  };
 
-getBooks();
-getBooks();
-getBooks();
-
-function innerBooks(books) {
-  shoirs.innerHTML = '';
-
-  books.forEach((item) => {
+  let box = document.getElementById('shoirs');
+  for (const book of popularBook) {
     let categoryName =
-      item.category.charAt(0).toUpperCase() +
-      item.category.slice(1).toLowerCase();
+      book.category.charAt(0).toUpperCase() +
+      book.category.slice(1).toLowerCase();
 
-    const getStars = (rate) => {
-      let result = '';
-      for (let i = 0; i < rate; i++) {
-        result += `<img id='rateImg' src='/asign/image/star (2).svg' alt="star"/>`;
-      }
-      return result;
-    };
-
-    let resImg = '';
-    if (!item.image || !item.image.url || item.image.url === '') {
-      resImg =
-        'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
-    } else {
-      resImg = item.image.url;
-    }
-    if (item.rate > 1) {
-      shoirs.innerHTML += `
-        <div id="booksBox" class="books_box" data-id="${item._id}">
-          <img id="img" src="${resImg}" alt="${item.title}" />
-          <h3 id="title" class="books_box_h3" style="text-transform: uppercase">
-            ${item.title}
-          </h3>
-          <p class="shoirs_nav_box_p">Type:  ${categoryName}</p>
-          <div class="reyting">
-            <div id='startsDiv' class="startsDiv">
-              <span>Reyting:</span> ${getStars(item.rate)}
-            </div>
-            <p id="tafsif">${item.description || ''}</p>
+    box.innerHTML += `
+    <div class="swiper-slide">
+      <div id="booksBox" class="books_box" data-id="${book._id}">
+        <img id="img" src="https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg" alt="${
+          book.title
+        }"/>
+        <h3 id="title" class="books_box_h3" style="text-transform: uppercase">${
+          book.title
+        }</h3>
+        <p class="shoirs_nav_box_p">Type: ${categoryName}</p>
+        <div class="reyting">
+          <div id="startsDiv" class="startsDiv">
+            <span>Reyting:</span> ${getStars(book.rate)}
           </div>
+          <p id="tafsif">${book.description}</p>
         </div>
-      `;
-    }
-  });
+      </div>
+    </div>
+  `;
+  }
 
   document.querySelectorAll('.books_box').forEach((box) => {
     box.addEventListener('click', () => {
@@ -139,85 +114,24 @@ function innerBooks(books) {
       location.assign(`/html/book.html?id=${bookId}`);
     });
   });
+
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    loop: true,
+    breakpoints: {
+      992: { slidesPerView: 3 },
+      768: { slidesPerView: 2 },
+      480: { slidesPerView: 1 },
+    },
+  });
 }
-
-const getAuthors = async (text) => {
-  shoirs.innerHTML = '';
-
-  const res = await fetch(
-    `${backendUrl}/books/search${text ? `?title=${text}` : ''}`,
-    {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
-
-  const data = await res.json();
-
-  if (data.msg === 'jwt expired') {
-    alert("Iltimos ro'yxatdan o'ting");
-    location.assign('/html/sign-in.html');
-    return;
-  }
-  if (data.success) {
-    load.style.display = 'none';
-    allBooks = data.payload;
-
-    if (!allBooks.length) {
-      results.style.display = 'flex';
-    } else {
-      results.style.display = 'none';
-      innerBooks(allBooks);
-    }
-  }
-};
-const clasics = document.getElementById('clasics');
-const allBookss = document.getElementById('AllBookss');
-const biographys = document.getElementById('biographys');
-const scientss = document.getElementById('scientss');
-function filterAll(el) {
-  results.style.display = 'none';
-  clasics.style.color = '#ffffff62';
-  scientss.style.color = '#ffffff62';
-  biographys.style.color = '#ffffff62';
-
-  innerBooks(allBooks);
-}
-function filterClassic(e) {
-  e.children[0].style.color = '#c9ac8c';
-  biographys.style.color = '#ffffff62';
-  scientss.style.color = '#ffffff62';
-  let classics = allBooks.filter((book) => book.category === 'classic');
-
-  innerBooks(classics);
-}
-function filterBiography(e) {
-  e.children[0].style.color = '#c9ac8c';
-  clasics.style.color = '#ffffff62';
-  scientss.style.color = '#ffffff62';
-  let biographies = allBooks.filter((book) => book.category === 'biography');
-  innerBooks(biographies);
-}
-
-function filterScients(e) {
-  e.children[0].style.color = '#c9ac8c';
-  biographys.style.color = '#ffffff62';
-  clasics.style.color = '#ffffff62';
-  let sciences = allBooks.filter((book) => book.category === 'science');
-  innerBooks(sciences);
-}
-
-function search() {
-  load.style.display = 'flex';
-  if (bookSeach.value) {
-    shoirs_h3.style.display = 'none';
-    getAuthors(bookSeach.value);
-    load.style.display = 'flex';
-  } else {
-    load.style.display = 'none';
-  }
-}
-
-getAuthors();
+loadAuthor();

@@ -7,13 +7,13 @@ body {
 }
 
 .container {
-    background-color: rgb(44, 44, 44);
-    color: #f7f7fb;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: rgb(44, 44, 44);
+  color: #f7f7fb;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 .informat {
   color: var(--main-color);
@@ -21,8 +21,8 @@ body {
 }
 
 .informat {
-    color: var(--main-color);
-    font-family: var(--main-font);
+  color: var(--main-color);
+  font-family: var(--main-font);
 }
 
 .header {
@@ -37,24 +37,27 @@ body {
   color: white;
   font-size: 0.9em;
 }
-
+.editBox {
+  margin-top: 110px;
+  padding: 20px;
+}
 .buttons {
   display: flex;
   gap: 10px;
 }
 
 button {
-    padding: 8px 14px;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    font-family: var(--secondary-font);
-    cursor: pointer;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: var(--secondary-font);
+  cursor: pointer;
 }
 
 .save {
-    background: var(--main-color);
-    color: #3C2710;
+  background: var(--main-color);
+  color: #3c2710;
 }
 
 .discard {
@@ -77,9 +80,9 @@ button {
 }
 
 .btn-blue {
-    background: var(--main-color);
-    color: #3C2710;
-    margin-right: 10px;
+  background: var(--main-color);
+  color: #3c2710;
+  margin-right: 10px;
 }
 
 .btn-red {
@@ -94,7 +97,7 @@ h3 {
 }
 
 .ppp {
-    color: #f7f7fb;
+  color: #f7f7fb;
 }
 
 .form-group {
@@ -104,10 +107,10 @@ h3 {
 }
 
 label {
-    color: #f7f7fb;
-    margin-top: 16px;
-    margin-bottom: 5px;
-    color: #333;
+  color: #f7f7fb;
+  margin-top: 16px;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 input,
@@ -121,17 +124,17 @@ select {
 }
 
 .phone-input {
-    display: flex;
-    gap: 10px;
-    width: 100%;
+  display: flex;
+  gap: 10px;
+  width: 100%;
 }
 
 #phone-number {
-    width: 100%;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
-    .btn-blue {
-        margin-bottom: 10px;
-    }
+  .btn-blue {
+    margin-bottom: 10px;
+  }
 }

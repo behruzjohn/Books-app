@@ -79,7 +79,7 @@ async function getBookById() {
   document.querySelectorAll('.comments_nav').forEach((commentBox) => {
     commentBox.addEventListener('click', () => {
       const userId = commentBox.getAttribute('data-id');
-      location.assign(`/html/index.html?id=${userId}`);
+      location.assign(`/html/next-page.html?id=${userId}`);
     });
   });
 
@@ -230,7 +230,7 @@ async function getBookById() {
 </div>`;
   }
   mualliff.addEventListener('click', () => {
-    location.assign(`/html/index.html?id=${authorInfo._id}`);
+    location.assign(`/html/next-page.html?id=${authorInfo._id}`);
   });
   const socialMed = document.getElementById('socialMed');
   if (
@@ -349,7 +349,7 @@ function add() {
       const newComment = allBoxComent.lastElementChild;
       newComment.addEventListener('click', () => {
         const userId = newComment.getAttribute('data-id');
-        location.assign(`/html/index.html?id=${userId}`);
+        location.assign(`/html/next-page.html?id=${userId}`);
       });
     }
   }

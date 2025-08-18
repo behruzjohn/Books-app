@@ -243,7 +243,7 @@ async function myShelfs(e) {
     document.querySelectorAll('.books_box').forEach((box) => {
       box.addEventListener('click', () => {
         const id = box.getAttribute('data-id');
-        location.assign(`/html/index.html?id=${id}`);
+        location.assign(`/html/next-page.html?id=${id}`);
       });
     });
   }

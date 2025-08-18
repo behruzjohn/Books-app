@@ -4,30 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="/css/next-page.css" />
     <link rel="stylesheet" href="/css/theme.css" />
-    <link rel="stylesheet" href="/css/loader.css" />
     <link rel="stylesheet" href="/css/user-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
-
   <body>
-    <div id="load" class="load">
-      <span class="loader"></span>
-    </div>
     <header>
       <div class="header_nav">
-        <a href="/html/next-page.html"
-          ><img src="/asign/image/Logo.svg" alt="" />
-        </a>
+        <a href="../index.html"><img src="/asign/image/Logo.svg" alt="" /> </a>
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="/html/next-page.html">Bosh sahifa</a>
+            <a href="../index.html">Bosh sahifa</a>
           </li>
-          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+          <li id="li" class="header_nav_li">
             <a href="/html/autor.html">Adiblar</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="/html/AboutUs.html">Biz haqimizda / Aloqa</a>
+            <a href="/html/../aboutUs.html">Biz haqimizda / Aloqa</a>
+          </li>
+          <li id="li" class="header_nav_li">
+            <a id="addBookid" href="/html/create-book.html"></a>
           </li>
         </ul>
         <div class="profile_box">
@@ -41,102 +46,13 @@
         </div>
       </div>
     </header>
+
     <div class="container">
-      <div class="main-page">
-        <div class="main-page_nav">
-          <img
-            style="object-fit: cover"
-            id="page_nav_img"
-            class="main-page_nav_img"
-            src="/asign/image/iStock-1354989842-1600x1067.jpg"
-            alt="Banner"
-          />
-          <div class="search">
-            <div class="search-box">
-              <div class="search-box_nav">
-                <h1 class="search-box_nav_h1">Qidirish</h1>
-                <div class="text-input">
-                  <input
-                    id="book-search"
-                    class="text-input_input"
-                    placeholder="Adiblar, kitoblar, audiolar, Biz haqimizda / Aloqa..."
-                    type="text"
-                  />
-                  <button onclick="search()" class="text-input_btn">
-                    <img
-                      class="text-input_btn_img"
-                      src="/asign/image/search-icon.svg"
-                    /><span class="text-input_btn_span">Izlash</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="catagor">
-            <div class="catagor_nav">
-              <div class="texts-catog">
-                <h1 class="catagor_nav_h1">Asosiy kategoriyalar</h1>
-              </div>
-              <div class="catagor_nav_header">
-                <ul class="catagor_nav_header_ul">
-                  <li
-                    onclick="filterAll(this)"
-                    class="catagor_nav_header_ul_li"
-                  >
-                    <a
-                      id="allbookss"
-                      class="catagor_nav_header_ul_li_a"
-                      href="#"
-                      >All Books
-                    </a>
-                  </li>
-                  <li
-                    onclick="filterClassic(this)"
-                    class="catagor_nav_header_ul_li"
-                  >
-                    <a id="clasics" class="catagor_nav_header_ul_li_a" href="#"
-                      >Classic
-                    </a>
-                  </li>
-                  <li
-                    onclick="filterBiography(this)"
-                    class="catagor_nav_header_ul_li"
-                  >
-                    <a
-                      id="biographys"
-                      class="catagor_nav_header_ul_li_a"
-                      href="#"
-                      >Biography
-                    </a>
-                  </li>
-                  <li
-                    onclick="filterScients(this)"
-                    class="catagor_nav_header_ul_li"
-                  >
-                    <a id="scientss" class="catagor_nav_header_ul_li_a" href="#"
-                      >Scients
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="shoirs">
-                <h3 id="shoirs_h3">Sizga yoqishi mumkin:</h3>
-                <div id="results">
-                  <img
-                    src="/asign/image/52378071-bdb3-49be-98e9-e7c915e75ec0-removebg-preview.png"
-                    alt="No result"
-                  />
-                </div>
-                <div id="shoirs" class="shoirs_nav"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="main" class="main"></div>
     </div>
-    <script src="/java-script/next-page.js"></script>
+
+    <script type="module" src="/java-script/next-page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/java-script/user-page.js"></script>
   </body>
 </html>
