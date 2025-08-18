@@ -137,7 +137,7 @@ function changeInfo() {
     if (data.success) {
       load.style.display = 'none';
       alert('Kitob muvafoqiyatli yangilandi✅');
-      location.href = `http://127.0.0.1:5500/html/book.html${location.search}`;
+      location.assign(`/html/book.html${location.search}`);
     }
   }
 

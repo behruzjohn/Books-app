@@ -58,7 +58,7 @@ async function handleFileChange(e) {
   } catch (err) {}
 }
 function discard() {
-  location.href = 'http://127.0.0.1:5500/html/user-page.html';
+  location.assign('/html/user-page.html');
 }
 function saveBut() {
   load.style.display = 'flex';
@@ -86,7 +86,7 @@ function saveBut() {
     const data = await res.json();
     if (data.success) {
       load.style.display = 'none';
-      location.href = 'http://127.0.0.1:5500/html/user-page.html';
+      location.assign('/html/user-page.html');
     }
   }
   editBook();

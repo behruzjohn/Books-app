@@ -13,7 +13,7 @@ const logOutBox = document.getElementById('logOutBox');
 addBookid.style.display = 'none';
 
 logOutBox.addEventListener('click', () => {
-  location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+  location.assign('/html/sign-in.html');
 });
 
 let count = 0;
@@ -95,7 +95,7 @@ async function booksMenu(e) {
   document.querySelectorAll('.books_box').forEach((box) => {
     box.addEventListener('click', () => {
       const id = box.getAttribute('data-id');
-      location.href = `http://127.0.0.1:5500/html/book.html?id=${id}`;
+      location.assign(`/html/book.html?id=${id}`);
     });
   });
 }
@@ -126,7 +126,7 @@ async function getUserProfileImg() {
 
   if (data.msg === 'jwt expired') {
     alert("Iltimos ro'yxatdan o'ting");
-    location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+    location.assign('/html/sign-in.html');
     return;
   }
 
@@ -176,7 +176,7 @@ async function getUserProfileImg() {
             </div>`;
 }
 function editIcon() {
-  location.href = 'http://127.0.0.1:5500/html/edit-profile.html';
+  location.assign('/html/edit-profile.html');
 }
 getUserProfileImg();
 
@@ -197,7 +197,7 @@ async function myShelfs(e) {
 
   if (data.msg === 'jwt expired') {
     alert("Iltimos ro'yxatdan o'ting");
-    location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+    location.assign('/html/sign-in.html');
     return;
   }
 
@@ -243,7 +243,7 @@ async function myShelfs(e) {
     document.querySelectorAll('.books_box').forEach((box) => {
       box.addEventListener('click', () => {
         const id = box.getAttribute('data-id');
-        location.href = `http://127.0.0.1:5500/html/index.html?id=${id}`;
+        location.assign(`/html/index.html?id=${id}`);
       });
     });
   }

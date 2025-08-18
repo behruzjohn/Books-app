@@ -105,9 +105,9 @@ function addBook() {
         if (books.success === true) {
           load.style.display = 'none';
           alert("Kitob muvaoqiyatli qo'shildi✅");
-          location.href = 'http://127.0.0.1:5500/html/user-page.html';
+          location.assign('/html/user-page.html');
         } else {
-          location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+          location.assign('/html/sign-in.html');
         }
       } catch (error) {
         alert(`Xatolik:${error}`);

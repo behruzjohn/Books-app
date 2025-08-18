@@ -31,7 +31,7 @@ async function saveUserInfo() {
 
   if (user2.success) {
     load.style.display = 'none';
-    location.href = 'http://127.0.0.1:5500/html/user-page.html';
+    location.assign('/html/user-page.html');
   } else {
     alert('Parol yoki emailingiz xato!');
     load.style.display = 'none';

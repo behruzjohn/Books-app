@@ -47,7 +47,7 @@ async function getAutorInfo() {
     document.querySelectorAll('.books_box').forEach((box) => {
       box.addEventListener('click', () => {
         const userId = box.getAttribute('data-id');
-        location.href = `http://127.0.0.1:5500/html/index.html?id=${userId}`;
+        location.assign(`/html/index.html?id=${userId}`);
       });
     });
   }

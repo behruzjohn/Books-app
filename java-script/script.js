@@ -111,7 +111,7 @@ async function loadAuthor() {
   document.querySelectorAll('.books_box').forEach((box) => {
     box.addEventListener('click', () => {
       const bookId = box.getAttribute('data-id');
-      location.href = `http://127.0.0.1:5500/html/book.html?id=${bookId}`;
+      location.assign(`/html/book.html?id=${bookId}`);
     });
   });
 

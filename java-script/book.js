@@ -79,7 +79,7 @@ async function getBookById() {
   document.querySelectorAll('.comments_nav').forEach((commentBox) => {
     commentBox.addEventListener('click', () => {
       const userId = commentBox.getAttribute('data-id');
-      location.href = `http://127.0.0.1:5500/html/index.html?id=${userId}`;
+      location.assign(`/html/index.html?id=${userId}`);
     });
   });
 
@@ -165,7 +165,7 @@ async function getBookById() {
     editIcon.addEventListener('click', () => {
       const bookId = location.search.slice(4);
 
-      location.href = `http://127.0.0.1:5500/html/edit-book.html?id=${bookId}`;
+      location.assign(`/html/edit-book.html?id=${bookId}`);
     });
   }
   async function addShelfBook() {
@@ -230,7 +230,7 @@ async function getBookById() {
 </div>`;
   }
   mualliff.addEventListener('click', () => {
-    location.href = `http://127.0.0.1:5500/html/index.html?id=${authorInfo._id}`;
+    location.assign(`/html/index.html?id=${authorInfo._id}`);
   });
   const socialMed = document.getElementById('socialMed');
   if (
@@ -266,7 +266,7 @@ async function getName() {
   localStorage.setItem('lastName', myInfo.lastName);
   if (data.msg === 'jwt expired') {
     alert("Iltimos ro'yxatdan o'ting");
-    location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+    location.assign('/html/sign-in.html');
     return;
   }
 
@@ -349,7 +349,7 @@ function add() {
       const newComment = allBoxComent.lastElementChild;
       newComment.addEventListener('click', () => {
         const userId = newComment.getAttribute('data-id');
-        location.href = `http://127.0.0.1:5500/html/index.html?id=${userId}`;
+        location.assign(`/html/index.html?id=${userId}`);
       });
     }
   }

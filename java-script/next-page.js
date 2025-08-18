@@ -28,7 +28,7 @@ const getBooks = async () => {
   const getBooksApi = await books.json();
   if (getBooksApi.msg === 'jwt expired') {
     alert("Iltimos ro'yxatdan o'ting");
-    location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+    location.assign('/html/sign-in.html');
     return;
   }
 
@@ -80,7 +80,7 @@ const getBooks = async () => {
     document.querySelectorAll('.books_box').forEach((box) => {
       box.addEventListener('click', () => {
         const bookId = box.getAttribute('data-id');
-        location.href = `http://127.0.0.1:5500/html/book.html?id=${bookId}`;
+        location.assign(`/html/book.html?id=${bookId}`);
       });
     });
   }
@@ -136,7 +136,7 @@ function innerBooks(books) {
   document.querySelectorAll('.books_box').forEach((box) => {
     box.addEventListener('click', () => {
       const bookId = box.getAttribute('data-id');
-      location.href = `http://127.0.0.1:5500/html/book.html?id=${bookId}`;
+      location.assign(`/html/book.html?id=${bookId}`);
     });
   });
 }
@@ -158,7 +158,7 @@ const getAuthors = async (text) => {
 
   if (data.msg === 'jwt expired') {
     alert("Iltimos ro'yxatdan o'ting");
-    location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+    location.assign('/html/sign-in.html');
     return;
   }
   if (data.success) {

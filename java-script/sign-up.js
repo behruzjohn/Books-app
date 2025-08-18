@@ -66,7 +66,7 @@ async function checkUser() {
 
       const data = await res.json();
       if (data.success) {
-        location.href = 'http://127.0.0.1:5500/html/sign-in.html';
+        location.assign('/html/sign-in.html');
       }
       if (data.token) {
         load.style.display = 'none';
