@@ -26,14 +26,11 @@ body ul {
 body img {
   cursor: pointer;
 }
-body p {
-  cursor: pointer;
-}
-body h1 {
-  cursor: pointer;
-}
-body h2 {
-  cursor: pointer;
+#bgImg {
+  position: absolute;
+  bottom: 0;
+  width: 500px;
+  right: 0;
 }
 body h3 {
   cursor: pointer;
@@ -52,6 +49,7 @@ body button {
   width: 100%;
   padding: 0 15px;
 }
+
 .container ul {
   cursor: pointer;
 }
@@ -105,9 +103,7 @@ header {
   width: 45px;
   height: 45px;
 }
-/* .profile_box_img:hover .profileBoxImg {
-    display: flex;
-  } */
+
 footer {
   position: absolute;
   bottom: 100%;

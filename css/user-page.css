@@ -16,6 +16,31 @@
   display: flex;
 }
 
+.container {
+  padding-bottom: 40px !important;
+}
+.header_nav_lii {
+  width: 100%;
+  list-style: none;
+}
+.create {
+  width: 100%;
+}
+#addBookid {
+  list-style: none;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 12px;
+  width: 100% !important;
+  height: 50px;
+  background-color: #c9ac8c5d;
+  color: #c9ac8c;
+}
+.logOut_nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 .books-header_ul a {
   text-decoration: none;
   color: #fff;
@@ -43,6 +68,7 @@
   font-style: normal;
   margin-top: 10px;
   color: #fff;
+  flex: 1;
 }
 .user-banner_info p {
   color: gray;
@@ -86,15 +112,18 @@
   margin-top: 20px;
 }
 #books {
-  gap: 20px;
-  width: 100%;
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
 }
+
 .unde {
   margin-top: 100px;
   color: var(--main-color);
   font-family: var(--main-font);
+  width: 100%;
+  text-align: center;
 }
 #tafsif {
   overflow: hidden;
@@ -129,17 +158,15 @@
   height: 20px;
 }
 #booksBox {
-  min-width: 180px;
   flex: 0 0 200px;
+  max-width: 200px;
   border-radius: 12px;
   padding: 15px;
   background-color: #212121;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  max-width: 240px;
-  flex: 1;
 }
+
 #rateImg {
   width: 10px;
   height: 10px;
@@ -196,9 +223,6 @@
   }
 }
 footer {
-  /* position: absolute;
-  bottom: 0;
-  left: 0; */
   padding: 10px;
   text-align: center;
   width: 100%;
@@ -222,7 +246,7 @@ footer {
   border-bottom-left-radius: 8px;
   padding: 15px;
   width: 300px;
-  height: 85px;
+  height: 150px;
   position: absolute;
   background-color: rgba(98, 96, 96, 0.317);
   backdrop-filter: blur(10px);
@@ -243,4 +267,13 @@ footer {
 .logOutBox img {
   width: 30px;
   height: 30px;
+}
+
+.books_box-category {
+  text-transform: capitalize;
+}
+.inbox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

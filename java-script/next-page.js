@@ -34,7 +34,6 @@ const getBooks = async () => {
 
   const dateLoop = getBooksApi.payload.docs;
   allBooks = dateLoop;
-  console.log(dateLoop);
 
   if (getBooksApi.success) {
     load.style.display = 'none';
@@ -108,12 +107,17 @@ function innerBooks(books) {
       return result;
     };
 
+    let resImg = '';
+    if (!item.image || !item.image.url || item.image.url === '') {
+      resImg =
+        'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
+    } else {
+      resImg = item.image.url;
+    }
     if (item.rate > 1) {
       shoirs.innerHTML += `
         <div id="booksBox" class="books_box" data-id="${item._id}">
-          <img id="img" src="https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg" alt="${
-            item.title
-          }" />
+          <img id="img" src="${resImg}" alt="${item.title}" />
           <h3 id="title" class="books_box_h3" style="text-transform: uppercase">
             ${item.title}
           </h3>
@@ -175,17 +179,14 @@ const biographys = document.getElementById('biographys');
 const scientss = document.getElementById('scientss');
 function filterAll(el) {
   results.style.display = 'none';
-  // el.children[0].style.color = '#c9ac8c';
   clasics.style.color = '#ffffff62';
   scientss.style.color = '#ffffff62';
   biographys.style.color = '#ffffff62';
 
   innerBooks(allBooks);
-  console.log(allBooks);
 }
 function filterClassic(e) {
   e.children[0].style.color = '#c9ac8c';
-  // allBookss.style.color = '#ffffff62';
   biographys.style.color = '#ffffff62';
   scientss.style.color = '#ffffff62';
   let classics = allBooks.filter((book) => book.category === 'classic');
@@ -194,7 +195,6 @@ function filterClassic(e) {
 }
 function filterBiography(e) {
   e.children[0].style.color = '#c9ac8c';
-  // allBookss.style.color = '#ffffff62';
   clasics.style.color = '#ffffff62';
   scientss.style.color = '#ffffff62';
   let biographies = allBooks.filter((book) => book.category === 'biography');
@@ -203,7 +203,6 @@ function filterBiography(e) {
 
 function filterScients(e) {
   e.children[0].style.color = '#c9ac8c';
-  // allBookss.style.color = '#ffffff62';
   biographys.style.color = '#ffffff62';
   clasics.style.color = '#ffffff62';
   let sciences = allBooks.filter((book) => book.category === 'science');

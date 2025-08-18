@@ -9,6 +9,50 @@ const load = document.getElementById('load');
 const bookType = document.getElementById('book-type');
 
 const file = document.getElementById('file');
+const showBtn = document.getElementById('showBtn');
+
+let selectedFile = '';
+let imageId = null;
+
+function checkTextInputValue(value) {
+  if (value) {
+    return true;
+  } else {
+    return false;
+  }
+}
+const backendUrl = 'http://localhost:8000/api';
+async function handleFileChange(e) {
+  selectedFile = e.target.files[0];
+  if (!selectedFile) {
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('files', selectedFile);
+
+  try {
+    const response = await fetch(backendUrl + '/files/', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    const data = await response.json();
+    imageId = data.payload[0]._id;
+  } catch (err) {}
+}
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  addBook();
+});
+function showFile() {
+  const showBtn = document.getElementById('showBtn');
+  file.style.display = 'block';
+  showBtn.style.display = 'none';
+}
 
 async function getBookById() {
   const backendUrl = 'http://localhost:8000/api';
@@ -28,7 +72,6 @@ async function getBookById() {
     } else {
       description.value = item.description;
     }
-    console.log(item);
     language.value = item.language;
     bookType.value = item.category;
     pages.value = item.pages;
@@ -36,13 +79,8 @@ async function getBookById() {
     rate.value = item.rate;
     title.value = item.title;
     country.value = item.country;
-    file.value = '';
   }
 }
-
-const showBtn = document.getElementById('showBtn');
-showBtn.style.display = 'none';
-file.style.display = 'none';
 
 getBookById();
 
@@ -57,7 +95,8 @@ function changeInfo() {
       pages,
       price,
       category,
-      rate
+      rate,
+      image
     ) {
       this.title = title;
       this.country = country;
@@ -67,6 +106,7 @@ function changeInfo() {
       this.price = price;
       this.category = category;
       this.rate = rate;
+      this.image = image;
     }
   }
 
@@ -78,7 +118,8 @@ function changeInfo() {
     pages.value,
     price.value,
     bookType.value,
-    rate.value
+    rate.value,
+    imageId
   );
   async function editBook() {
     const backendUrl = 'http://localhost:8000/api';
@@ -93,10 +134,10 @@ function changeInfo() {
 
     const data = await res.json();
 
-    console.log(data);
     if (data.success) {
       load.style.display = 'none';
-      alert("Kitob muvafoqiyatli qo'shildi✅");
+      alert('Kitob muvafoqiyatli yangilandi✅');
+      location.href = `http://127.0.0.1:5500/html/book.html${location.search}`;
     }
   }
 

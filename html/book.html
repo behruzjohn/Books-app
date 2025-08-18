@@ -11,26 +11,23 @@
   <body>
     <div id="load" class="load">
       <span class="loader"></span>
-      <!-- <h1><a href="">Header _nav</a></h1> -->
     </div>
     <header>
       <div class="header_nav">
         <a href="http://127.0.0.1:5500/html/next-page.html"
           ><img src="/asign/image/Logo.svg" alt="" />
         </a>
-        <!-- <img src="/asign/image/add-icon.svg" /> -->
         <ul class="header_nav_ul">
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Adiblar</a>
+            <a href="http://127.0.0.1:5500/html/autor.html">Adiblar</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Kategoriya</a>
-          </li>
-          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Maqolalar</a>
+            <a href="http://127.0.0.1:5500/html/AboutUs.html"
+              >Biz haqimizda / Aloqa</a
+            >
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a
@@ -55,11 +52,12 @@
     </div>
     <div class="container">
       <div class="laster">
-        <h3 onclick="mual(this)">Muallif haqida</h3>
-        <h3 onclick="muallif(this)" class="muallif">Mualliflar taqrizi</h3>
+        <h3 id="muallifInfo" onclick="mual(this)">Muallif haqida</h3>
+        <h3 id="muallifTaqriz" onclick="muallif(this)" class="muallif">
+          Mualliflar taqrizi
+        </h3>
       </div>
     </div>
-    <!-- ? -->
     <!DOCTYPE html>
     <html lang="uz">
       <head>
@@ -80,30 +78,10 @@
       </body>
     </html>
 
-    <!-- ? -->
     <div id="container" class="container">
       <div class="label">
         <div id="muallif" class="muallif">
-          <div class="rasmi">
-            <!-- <img
-              src="/asign/image/man-user-circle-icon.png"
-              alt="Muallif rasmi"
-            />
-          </div> -->
-            <!-- <div class="ismi">
-            <img
-              class="imoje"
-              src="/asign/image/Frame (1).png"
-              alt="Ulashish"
-            />
-            <img class="imoje" src="/asign/image/Frame (3).png" alt="Like" />
-            <img
-              class="imoje"
-              src="/asign/image/Frame (2).png"
-              alt="Ulashish"
-            /> -->
-            <!-- <img class="imoje" src="/asign/image/Frame (4).png" alt="Yuklash" /> -->
-          </div>
+          <div class="rasmi"></div>
         </div>
       </div>
       <footer class="footer">
@@ -119,7 +97,6 @@
           <img src="/asign/image/number.jpg" alt="" />
           <img src="/asign/image/goddes.webp" alt="" />
           <img src="/asign/image/dunyo ishlari.jpg" alt="" />
-          <!-- <img src="/asign/image/fact.webp" alt="" /> -->
         </div>
       </footer>
     </div>

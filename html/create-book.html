@@ -14,7 +14,7 @@
     </div>
     <header>
       <div class="header_nav">
-         <a href="http://127.0.0.1:5500/html/next-page.html"
+        <a href="http://127.0.0.1:5500/html/next-page.html"
           ><img src="/asign/image/Logo.svg" alt="" />
         </a>
         <ul class="header_nav_ul">
@@ -22,13 +22,12 @@
             <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Adiblar</a>
+            <a href="http://127.0.0.1:5500/html/autor.html">Adiblar</a>
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Kategoriya</a>
-          </li>
-          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-            <a href="#">Maqolalar</a>
+            <a href="http://127.0.0.1:5500/html/AboutUs.html"
+              >Biz haqimizda / Aloqa</a
+            >
           </li>
           <li onclick="borderCheck(this)" id="li" class="header_nav_li">
             <a
@@ -45,7 +44,6 @@
               alt="User photo"
             />
           </a>
-        </div>
         </div>
       </div>
     </header>
@@ -84,20 +82,17 @@
                     placeholder="Country"
                   />
                 </div>
-                <div class="inputs_box">
-                  <p class="warning_p">Til</p>
-                  <input id="inputs_ss" type="text" placeholder="language" />
+                <div class="catogor">
+                  <label for="book-type">Kitob tili:</label>
+                  <select id="lang" name="book_type">
+                    <option value="classic">Uzbek</option>
+                    <option value="biography">English</option>
+                    <option value="science">Rusian</option>
+                  </select>
                 </div>
               </div>
-              <div class="inputs_box">
-                <!-- <p class="settings_sec_p">Description</p>
-                <input
-                  id="description"
-                  class="warning_input1"
-                  type="text"
-                  required
-                  placeholder="Your Description"
-                /> -->
+
+              <div class="catogor">
                 <p class="warning_p">Sahifalar soni</p>
                 <input
                   id="pages"
@@ -134,7 +129,6 @@
               <p class="tafsif">Tavfsif</p>
               <div class="tafsif_box">
                 <div class="tafsif_box_nav">
-                  <!-- <h3>Why you should read Ikki eshik orasi?</h3> -->
                   <textarea id="description" class="tafsif_box_nav_p">
                   </textarea>
                 </div>
@@ -188,8 +182,9 @@
                     <span>Kitoblar turlari:</span>Iltimos, faqat kitoblarni
                     qo'shing. Kitoblar odatda ISBN raqamlariga ega (lekin shart
                     emas) va odatda nashr etiladi. Gazeta, jurnal va komikslar
-                    kabi davriy nashrlar kitob emas. Biroq, komikslar yoki
-                    maqolalar yoki grafik romanlar to'plami kitob hisoblanadi.
+                    kabi davriy nashrlar kitob emas. Biroq, komikslar yoki Biz
+                    haqimizda / Aloqa yoki grafik romanlar to'plami kitob
+                    hisoblanadi.
                   </p>
                 </div>
               </div>

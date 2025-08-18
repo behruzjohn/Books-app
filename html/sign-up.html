@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/theme.css" />
   </head>
   <body>
+    <img id="bgImg" src="/asign/image/ornament.png" />
     <div id="load" class="load">
       <span class="loader"></span>
     </div>
@@ -23,35 +24,36 @@
         Do‘stlaringiz nima o‘qiyotganini ko‘ring, kitob tavsiyalarini oling va
         kitob ustida zavqli suhbatlar uyushtiring
       </p>
-
-      <form>
-        <div class="radios">
-          <div class="role-wrapper">
-            <input value="author" name="role" id="author" type="radio" />
-            <label for="author">Author</label>
+      <div class="container">
+        <form style="width: 700px">
+          <div class="radios">
+            <div class="role-wrapper">
+              <input value="author" name="role" id="author" type="radio" />
+              <label for="author">Author</label>
+            </div>
+            <div class="role-wrapper">
+              <input value="reader" name="role" id="reader" type="radio" />
+              <label for="reader">Reader</label>
+            </div>
           </div>
-          <div class="role-wrapper">
-            <input value="reader" name="role" id="reader" type="radio" />
-            <label for="reader">Reader</label>
-          </div>
-        </div>
-        <input id="firstName" type="text" placeholder="Ism" />
-        <input id="lastName" type="text" placeholder="Familiya" />
-        <input id="email" type="email" placeholder="Elektron pochta" />
-        <input id="phone" type="tel" placeholder="Telefon" />
-        <input id="addres" type="text" placeholder="Address" />
-        <input
-          id="birth"
-          type="date"
-          placeholder="Tugulgan yilingiz va kungiz.Misol:(2025-04)"
-        />
-        <input id="password" type="password" placeholder="Parol" />
-        <input
-          id="password2"
-          type="password"
-          placeholder="Parolni tasdiqlang"
-        />
-      </form>
+          <input id="firstName" type="text" placeholder="Ism" />
+          <input id="lastName" type="text" placeholder="Familiya" />
+          <input id="email" type="email" placeholder="Elektron pochta" />
+          <input id="phone" type="tel" placeholder="Telefon" />
+          <input id="addres" type="text" placeholder="Address" />
+          <input
+            id="birth"
+            type="date"
+            placeholder="Tugulgan yilingiz va kungiz.Misol:(2025-04)"
+          />
+          <input id="password" type="password" placeholder="Parol" />
+          <input
+            id="password2"
+            type="password"
+            placeholder="Parolni tasdiqlang"
+          />
+        </form>
+      </div>
       <button style="margin-top: 20px" onclick="checkUser()" id="registerBtn">
         Ro'yxatdan o'tish
       </button>

@@ -1,96 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/user-page.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="../css/user-page.css" />
-  <link rel="stylesheet" href="/css/theme.css" />
-  <link rel="stylesheet" href="/css/loader.css" />
-</head>
+  <body>
+    <div id="load" class="load">
+      <span class="loader"></span>
+    </div>
 
-<body>
-  <div id="load" class="load">
-    <span class="loader"></span>
-  </div>
-  <!-- <div class="container"> -->
-  <header>
-    <div class="header_nav">
-      <a href="http://127.0.0.1:5500/html/next-page.html"><img src="/asign/image/Logo.svg" alt="" />
-      </a>
-      <ul class="header_nav_ul">
-        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-          <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
-        </li>
-        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-          <a href="#">Adiblar</a>
-        </li>
-        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-          <a href="#">Kategoriya</a>
-        </li>
-        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-          <a href="#">Maqolalar</a>
-        </li>
-        <li onclick="borderCheck(this)" id="li" class="header_nav_li">
-          <a id="addBookid" href="http://127.0.0.1:5500/html/create-book.html"></a>
-        </li>
-      </ul>
-      <div class="profile_box">
-        <a href="http://127.0.0.1:5500/html/user-page.html#">
-          <img id="profileBox" class="profile_box_img" src="/asign/image/defult.img" alt="User photo" />
+    <header>
+      <div class="header_nav">
+        <a href="http://127.0.0.1:5500/html/next-page.html">
+          <img src="/asign/image/Logo.svg" alt="" />
         </a>
+        <ul class="header_nav_ul">
+          <li onclick="borderCheck(this)" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
+          </li>
+          <li onclick="borderCheck(this)" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/autor.html">Adiblar</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/AboutUs.html"
+              >Biz haqimizda / Aloqa</a
+            >
+          </li>
+        </ul>
+        <div class="profile_box">
+          <a href="#">
+            <img
+              id="profileBox"
+              class="profile_box_img"
+              src="/asign/image/defult.img"
+              alt="User photo"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div style="display: none" id="logOut" class="logOut">
+      <div class="logOut_nav">
+        <div id="logOutBox" class="logOutBox">
+          <img src="/asign/image/logout.png" alt="LogOut" />
+          <p>Log out</p>
+        </div>
+        <div class="create">
+          <li onclick="borderCheck(this)" class="header_nav_lii">
+            <a
+              id="addBookid"
+              href="http://127.0.0.1:5500/html/create-book.html"
+            ></a>
+          </li>
+        </div>
       </div>
     </div>
-  </header>
-  <div style="display: none" id="logOut" class="logOut">
-    <div id="logOutBox" class="logOutBox">
-      <img src="/asign/image/logout.png" alt="LogOut" />
-      <p>Log out</p>
+
+    <div class="container">
+      <div id="user-banner" class="user-banner"></div>
     </div>
-  </div>
-  <div class="container">
-    <div id="user-banner" class="user-banner"></div>
-  </div>
-  <div class="books-header">
-    <div class="books-header_nav">
-      <ul class="books-header_ul">
-        <li>
-          <a id="shelfs" onclick="myShelfs(this)" href="#">Mening javonim</a>
-        </li>
-        <li id="main-li">
-          <a id="myCreates" onclick="booksMenu(this)" href="#">O’zim yaratgan kitoblarim</a>
-        </li>
-      </ul>
+
+    <div class="books-header">
+      <div class="books-header_nav">
+        <ul class="books-header_ul">
+          <li>
+            <a id="shelfs" onclick="myShelfs(this)" href="#myShelfs"
+              >Mening javonim</a
+            >
+          </li>
+          <li id="main-li">
+            <a id="myCreates" onclick="booksMenu(this)" href="#myBooks"
+              >O’zim yaratgan kitoblarim</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-  </header>
-  <div class="container">
-    <div id="user-banner" class="user-banner"></div>
-  </div>
-  <div class="books-header">
-    <div class="books-header_nav">
-      <ul class="books-header_ul">
-        <li><a onclick="booksMenu(this)" href="#">O’qilganlar</a></li>
-        <li id="main-li">
-          <a onclick="booksMenu(this)" href="#">O’zim yaratgan kitoblarim</a>
-        </li>
-        <li><a onclick="booksMenu(this)" href="#">O’qilmoqda</a></li>
-        <li><a onclick="booksMenu(this)" href="#">Adiblar</a></li>
-      </ul>
+
+    <div class="container">
+      <div id="books"></div>
     </div>
+
     <footer>
       <p>
         @2025 <strong>Behruz</strong> and <strong>Muhammad</strong> All Rights
         Reserved.
       </p>
     </footer>
-    <script src="/java-script/user-page.js"></script>
-    <script src="/java-script/user-page.js"></script>
-</body>
 
+    <script src="/java-script/user-page.js"></script>
+  </body>
 </html>

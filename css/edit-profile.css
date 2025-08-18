@@ -1,9 +1,9 @@
 @import url('./theme.css');
 
 body {
-    font-family: var(--secondary-font);
-    background: var(--main-bg-color);
-    padding: 20px;
+  font-family: var(--secondary-font);
+  background: var(--main-bg-color);
+  padding: 20px;
 }
 
 .container {
@@ -14,7 +14,10 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-
+}
+.informat {
+  color: var(--main-color);
+  font-family: var(--main-font);
 }
 
 .informat {
@@ -23,21 +26,21 @@ body {
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--main-font);
-    color: #f7f7fb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--main-font);
+  color: #f7f7fb;
 }
 
 .header p {
-    color: white;
-    font-size: 0.9em;
+  color: white;
+  font-size: 0.9em;
 }
 
 .buttons {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 button {
@@ -55,22 +58,22 @@ button {
 }
 
 .discard {
-    background: #fff;
-    border: 1px solid #ccc;
-    color: #b91c1c;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #b91c1c;
 }
 
 .profile-picture {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
 }
 
 .profile-picture img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 .btn-blue {
@@ -80,14 +83,14 @@ button {
 }
 
 .btn-red {
-    background: #fcd3d0;
-    color: #b91c1c;
+  background: #fcd3d0;
+  color: #b91c1c;
 }
 
 h3 {
-    margin-top: 30px;
-    color: #333;
-    color: #f7f7fb;
+  margin-top: 30px;
+  color: #333;
+  color: #f7f7fb;
 }
 
 .ppp {
@@ -95,9 +98,9 @@ h3 {
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 label {
@@ -109,12 +112,12 @@ label {
 
 input,
 select {
-    outline: none;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    background: #333030;
-    color: #f7f7fb;
+  outline: none;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #333030;
+  color: #f7f7fb;
 }
 
 .phone-input {

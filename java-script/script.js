@@ -34,8 +34,11 @@ async function loadAuthor() {
       <div class="born_nav">
       <div class="born-1">
       <p class="born_nav_p">Tavvalud sanasi:</p>
-      <h1 id="born" class="born_nav_h1">${author.date_of_birth.slice(0, 7)}</h1>
-      <p class="born_nav_p">${popularBookRes.country}, Uzbekistan</p>
+      <h1 id="born" class="born_nav_h1">${author.date_of_birth.slice(
+        0,
+        10
+      )}</h1>
+      <p class="born_nav_p">${popularBookRes.country} Uzbekistan</p>
       </div>
       ${
         !author?.date_of_death

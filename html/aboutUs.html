@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/aboutUs.css" />
+  </head>
+  <body>
+    <img
+      style="display: none"
+      id="comingSoon"
+      src="/SL-070720-32260-27.jpg"
+      alt=""
+    />
+    <header>
+      <div class="header_nav">
+        <a href="http://127.0.0.1:5500/html/next-page.html"
+          ><img src="/asign/image/Logo.svg" alt="" />
+        </a>
+        <ul class="header_nav_ul">
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/next-page.html">Bosh sahifa</a>
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/autor.html">Adiblar</a>
+          </li>
+
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a href="http://127.0.0.1:5500/html/AboutUs.html"
+              >Biz haqimizda / Aloqa</a
+            >
+          </li>
+          <li onclick="borderCheck(this)" id="li" class="header_nav_li">
+            <a
+              id="addBookid"
+              href="http://127.0.0.1:5500/html/create-book.html"
+            ></a>
+          </li>
+        </ul>
+        <div class="profile_box">
+          <a href="http://127.0.0.1:5500/html/user-page.html">
+            <img
+              class="profile_box_img"
+              src="/asign/image/defult.img"
+              alt="User photo"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="box">
+        <div class="aboutUs">
+          <div class="aboutUs_nav">
+            <h1>Biz haqimizda</h1>
+            <p id="aboutUs_nav_p">
+              📚 “Tavsif” – bu o‘quvchilar uchun yaratilgan onlayn kutubxona.
+              Bizning maqsadimiz – o‘zbek va jahon adabiyotini keng targ‘ib
+              qilish, o‘quvchilarga kitoblarni qulay shaklda taqdim etish.<br /><br />
+              Saytimizda siz klassik, ilmiy, tarixiy va zamonaviy kitoblarni
+              topishingiz, adiblar haqida ma’lumot olishingiz hamda maqolalarni
+              o‘qishingiz mumkin.
+            </p>
+
+            <h1 id="aloqa">Aloqa</h1>
+            <p>
+              Biz bilan bog‘lanish uchun quyidagi manzillardan foydalanishingiz
+              mumkin:
+            </p>
+
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Manzil: Jizzax,
+                O‘zbekiston
+              </p>
+              <p>
+                <i class="fas fa-envelope"></i> Email:
+                <a
+                  href="mailto:baxtiyorovbehruzjon6789@gmail.com"
+                  target="_blank"
+                >
+                  baxtiyorovbehruzjon6789@gmail.com
+                </a>
+              </p>
+              <p><i class="fas fa-phone"></i> Telefon: +998 99 484 67 89</p>
+              <p>
+                <i class="fab fa-instagram"></i> Instagram 1:
+                <a href="https://instagram.com/behruzjon.web" target="_blank"
+                  >@behruzjon.web</a
+                >
+              </p>
+              <p>
+                <i class="fab fa-instagram"></i> Instagram 2:
+                <a href="https://instagram.com/erkinov.web" target="_blank"
+                  >@erkinov.web</a
+                >
+              </p>
+            </div>
+
+            <form
+              class="contact"
+              action="https://formspree.io/f/mjkodvow"
+              method="POST"
+            >
+              <input name="name" placeholder="Ismingiz" type="text" required />
+              <input
+                name="email"
+                placeholder="Email manzilingiz"
+                type="email"
+                required
+              />
+              <textarea
+                name="message"
+                id="mess"
+                placeholder="Xabaringizni yozing..."
+                required
+              ></textarea>
+              <button type="submit">
+                <i class="fas fa-paper-plane"></i> Yuborish
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>
+        @2025 <strong>Behruz</strong> and <strong>Muhammad</strong> All Rights
+        Reserved.
+      </p>
+    </div>
+    <script src="/java-script/autorUs.js"></script>
+  </body>
+</html>

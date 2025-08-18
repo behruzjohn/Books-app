@@ -5,7 +5,6 @@
   justify-content: center;
 }
 .main-page_nav_img {
-  object-fit: contain;
   width: 100%;
   background-size: cover;
   height: 200px;
@@ -253,7 +252,6 @@
     padding: 0 25px;
   }
 
-  /* next -page media*/
   .main-page_nav {
     width: 100%;
   }

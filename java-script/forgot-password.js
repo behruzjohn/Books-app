@@ -10,7 +10,6 @@ async function getUserProfileImg() {
   });
 
   const data = await res.json();
-  console.log(data);
 }
 function hrefLogin() {
   location.href = 'http://127.0.0.1:5500/html/sign-in.html';
