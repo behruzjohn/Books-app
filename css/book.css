@@ -341,6 +341,9 @@ nav a {
 }
 
 @media (max-width: 768px) {
+  .container {
+    margin-bottom: 40px;
+  }
   .laster {
     gap: 30px;
   }

@@ -226,6 +226,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  #results img {
+    width: 100%;
+  }
   #results {
     font-size: 20px;
   }
