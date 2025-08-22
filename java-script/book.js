@@ -261,14 +261,17 @@ async function getName() {
 
   const data = await res.json();
 
-  let myInfo = data.user;
-  localStorage.setItem('firstName', myInfo.firstName);
-  localStorage.setItem('lastName', myInfo.lastName);
   if (data.msg === 'jwt expired') {
     alert("Iltimos ro'yxatdan o'ting");
     location.assign('/html/sign-in.html');
     return;
   }
+
+  let myInfo = data.user;
+  console.log(myInfo);
+
+  localStorage.setItem('firstName', myInfo.firstName);
+  localStorage.setItem('lastName', myInfo.lastName);
 
   const addBox = document.getElementById('addBox');
   addBox.innerHTML = `
