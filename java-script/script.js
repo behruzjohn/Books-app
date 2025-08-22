@@ -26,7 +26,7 @@ const getBooks = async () => {
     },
   });
   const getBooksApi = await books.json();
-  if (getBooksApi.msg === 'jwt expired') {
+  if (data.msg === 'jwt expired' || data.msg === 'jwt malformed') {
     alert("Iltimos ro'yxatdan o'ting");
     location.assign('/html/sign-in.html');
     return;

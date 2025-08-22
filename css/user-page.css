@@ -222,7 +222,7 @@
     flex-direction: column;
   }
   .books-header_nav li {
-    width: 450px;
+    width: 100%;
     height: 30px;
     background-color: rgba(39, 39, 40, 0.833);
     border-radius: 12px;
