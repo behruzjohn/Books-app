@@ -47,7 +47,7 @@ async function booksMenu(e) {
 
   const data = await res.json();
 
-  const dateLoop = data.payload.docs;
+  const dateLoop = data?.payload?.docs || [];
 
   if (data.success) {
     load.style.display = 'none';
@@ -124,7 +124,7 @@ async function getUserProfileImg() {
 
   const data = await res.json();
 
-  if (data.msg === 'jwt expired') {
+  if (data.msg === 'jwt expired' || data.msg === 'jwt malformed') {
     alert("Iltimos ro'yxatdan o'ting");
     location.assign('/html/sign-in.html');
     return;
