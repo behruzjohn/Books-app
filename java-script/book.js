@@ -261,7 +261,7 @@ async function getName() {
 
   const data = await res.json();
 
-  if (data.msg === 'jwt expired') {
+  if (data.msg === 'jwt expired' || data.msg === 'jwt malformed') {
     alert("Iltimos ro'yxatdan o'ting");
     location.assign('/html/sign-in.html');
     return;
