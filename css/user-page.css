@@ -41,6 +41,9 @@
   flex-direction: column;
   gap: 15px;
 }
+.books-header_ul li {
+  padding: 5px;
+}
 .books-header_ul a {
   text-decoration: none;
   color: #fff;
@@ -194,6 +197,9 @@
   gap: 10px;
 }
 @media only screen and (max-width: 768px) {
+  #books {
+    justify-content: center;
+  }
   .user-banner_nav {
     justify-content: center;
   }
