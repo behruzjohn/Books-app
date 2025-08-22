@@ -117,7 +117,7 @@ async function loadAuthor() {
 
   const swiper = new Swiper('.swiper', {
     slidesPerView: 3,
-    spaceBetween: 10,
+    spaceBetween: 20,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -128,9 +128,23 @@ async function loadAuthor() {
     },
     loop: true,
     breakpoints: {
-      992: { slidesPerView: 3 },
-      768: { slidesPerView: 2 },
-      480: { slidesPerView: 1 },
+      0: {
+        // 🔥 0px dan boshlab telefonlar uchun
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
     },
   });
 }

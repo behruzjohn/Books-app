@@ -139,6 +139,7 @@
 }
 .catagor_nav_header_ul li {
   list-style: none;
+  width: 100%;
 }
 .catagor_nav_header_ul li a {
   font-weight: 400;

@@ -172,7 +172,7 @@
     font-size: 25px;
   }
   .main_img {
-    width: 400px;
+    width: 100%;
     height: 500px;
   }
   .main {
@@ -217,6 +217,7 @@
     flex-direction: column;
     gap: 10px;
   }
+
   .catagor_nav_header_ul_li {
     text-align: center;
     background-color: #404040;
