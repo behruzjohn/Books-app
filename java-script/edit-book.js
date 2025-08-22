@@ -21,7 +21,7 @@ function checkTextInputValue(value) {
     return false;
   }
 }
-const backendUrl = 'http://localhost:8000/api';
+const backendUrl = 'https://bookzone-backend.onrender.com/api';
 async function handleFileChange(e) {
   selectedFile = e.target.files[0];
   if (!selectedFile) {
@@ -55,7 +55,7 @@ function showFile() {
 }
 
 async function getBookById() {
-  const backendUrl = 'http://localhost:8000/api';
+  const backendUrl = 'https://bookzone-backend.onrender.com/api';
   const res = await fetch(backendUrl + `/books/${location.search.slice(4)}`, {
     method: 'GET',
     headers: {
@@ -122,7 +122,7 @@ function changeInfo() {
     imageId
   );
   async function editBook() {
-    const backendUrl = 'http://localhost:8000/api';
+    const backendUrl = 'https://bookzone-backend.onrender.com/api';
     const res = await fetch(`${backendUrl}/books/${location.search.slice(4)}`, {
       method: 'PATCH',
       headers: {

@@ -21,7 +21,7 @@ function checkTextInputValue(value) {
   }
 }
 
-const backendUrl = 'http://localhost:8000/api';
+const backendUrl = 'https://bookzone-backend.onrender.com/api';
 
 async function handleFileChange(e) {
   selectedFile = e.target.files[0];

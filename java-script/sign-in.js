@@ -17,7 +17,7 @@ async function saveUserInfo() {
   }
   var user = new GetUser(`${email.value}`, `${password.value}`);
 
-  const backendUrl = 'http://localhost:8000/api';
+  const backendUrl = 'https://bookzone-backend.onrender.com/api';
 
   const user2 = await fetch(backendUrl + '/login', {
     method: 'POST',

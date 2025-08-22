@@ -1,4 +1,4 @@
-const backendUrl = 'http://localhost:8000/api';
+const backendUrl = 'https://bookzone-backend.onrender.com/api';
 let authorsId = location.search.slice(4);
 async function loadAuthor() {
   const res = await fetch(`${backendUrl}/books/author/${authorsId}`);

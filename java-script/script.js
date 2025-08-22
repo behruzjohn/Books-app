@@ -1,4 +1,4 @@
-const backendUrl = 'http://localhost:8000/api';
+const backendUrl = 'https://bookzone-backend.onrender.com/api';
 const shoirs = document.getElementById('shoirs');
 const load = document.getElementById('load');
 load.style.display = 'flex';
@@ -49,7 +49,7 @@ const getBooks = async () => {
         imgUrl =
           'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
       } else {
-        imgUrl = `http://localhost:8000/api/${dateLoop[key].imageLink}`;
+        imgUrl = `https://bookzone-backend.onrender.com/api/${dateLoop[key].imageLink}`;
       }
 
       const getStars = (rate) => {

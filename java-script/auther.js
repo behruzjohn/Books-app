@@ -4,7 +4,7 @@ const addBookid = document.getElementById('addBookid');
 addBookid.style.display = 'none';
 async function getAutorInfo() {
   load.style.display = 'flex';
-  const backendUrl = 'http://localhost:8000/api';
+  const backendUrl = 'https://bookzone-backend.onrender.com/api';
 
   const res = await fetch(backendUrl + '/authors/', {
     method: 'GET',

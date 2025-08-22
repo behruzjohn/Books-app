@@ -29,7 +29,7 @@ load.style.display = 'flex';
 let dataComment = '';
 let getCoomet = '';
 async function getBookById() {
-  const backendUrl = 'http://localhost:8000/api';
+  const backendUrl = 'https://bookzone-backend.onrender.com/api';
   const res = await fetch(
     backendUrl + `/books/${location.search.slice(4, 2000000)}`,
     {
@@ -251,7 +251,7 @@ async function getBookById() {
 }
 const userBan = document.getElementById('user-banner');
 async function getName() {
-  const backendUrl = 'http://localhost:8000/api';
+  const backendUrl = 'https://bookzone-backend.onrender.com/api';
   const res = await fetch(backendUrl + '/users/', {
     method: 'GET',
     headers: {
@@ -308,7 +308,7 @@ function add() {
 
   async function addCommit() {
     load.style.display = 'flex';
-    const backendUrl = 'http://localhost:8000/api';
+    const backendUrl = 'https://bookzone-backend.onrender.com/api';
     const res = await fetch(backendUrl + `/books/comment`, {
       method: 'POST',
       body: JSON.stringify({

@@ -28,7 +28,7 @@ profileBox.addEventListener('click', () => {
   }
 });
 
-const backendUrl = 'http://localhost:8000/api';
+const backendUrl = 'https://bookzone-backend.onrender.com/api';
 window.addEventListener('DOMContentLoaded', () => {
   const myCreatesBtn = document.getElementById('myCreates');
   booksMenu(myCreatesBtn);
@@ -63,7 +63,7 @@ async function booksMenu(e) {
           imgUrl =
             'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
         } else {
-          imgUrl = `http://localhost:8000/api/${dateLoop[key].imageLink}`;
+          imgUrl = `https://bookzone-backend.onrender.com/api/${dateLoop[key].imageLink}`;
         }
 
         const getStars = (rate) => {
@@ -214,7 +214,7 @@ async function myShelfs(e) {
         imgUrl =
           'https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg';
       } else {
-        imgUrl = `http://localhost:8000/api/${dateLoop[key].imageLink}`;
+        imgUrl = `https://bookzone-backend.onrender.com/api/${dateLoop[key].imageLink}`;
       }
 
       const getStars = (rate) => {

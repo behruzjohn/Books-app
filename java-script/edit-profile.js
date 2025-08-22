@@ -10,7 +10,7 @@ const load = document.getElementById('load');
 
 let selectedFile = '';
 let imageId = null;
-const backendUrl = 'http://localhost:8000/api';
+const backendUrl = 'https://bookzone-backend.onrender.com/api';
 
 async function getUserInfo() {
   const res = await fetch(`${backendUrl}/users`, {
